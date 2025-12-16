@@ -1,31 +1,52 @@
-HEAD
-<section class="projects-container">
-    <div class="project-card">
-        <img src="images/esp32.png" alt="ESP32 Project">
-        <h3>ESP32 Motion Detection</h3>
-        <p>ESP32 + PIR sensor detects motion and sends alerts.</p>
-    </div>
-=======
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Projects | Aqila Saffia</title>
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Aqila Saffia</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>My Projects</h1>
-3362da3 (Add style.css and update projects page)
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <h1>Aqila Saffia</h1>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+      </div>
+    </nav>
+  </header>
 
-    <div class="project-card">
-        <img src="images/indoor_nav.png" alt="Indoor Navigation App">
-        <h3>Indoor Navigation App</h3>
-        <p>Flutter + Firebase app tracks zones inside a building.</p>
-    </div>
+  <!-- PROJECTS SECTION -->
+  <main>
+    <section class="projects-section">
+      <h2>My Projects</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <img src="images/esp32.png" alt="ESP32 Project">
+          <h3>ESP32 Motion Detection</h3>
+          <p>ESP32 + PIR sensor detects motion and sends alerts. IoT project for smart monitoring.</p>
+        </div>
+        <div class="project-card">
+          <img src="images/indoor_nav.png" alt="Indoor Navigation App">
+          <h3>Indoor Navigation App</h3>
+          <p>Flutter + Firebase app tracks zones inside a building, like Food_zone and Souvenir_zone.</p>
+        </div>
+        <div class="project-card">
+          <img src="images/motor_vantage.png" alt="Motor Vantage">
+          <h3>Motor Vantage for Disability</h3>
+          <p>Rain sensor + LCD + motion alert helps disabled motor users drive safely.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <div class="project-card">
-        <img src="images/motor_vantage.png" alt="Motor Vantage">
-        <h3>Motor Vantage for Disability</h3>
-        <p>Rain sensor + LCD + motion alert helps disabled motor users drive safely.</p>
-    </div>
-</section>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Aqila Saffia. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
