@@ -14,25 +14,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
 
 :root {
-  /* Color Palette (Black & Dark Blue Theme) */
-  --bg-primary: #03050a;       /* Solid obsidian off-black */
-  --bg-secondary: #070b16;     /* Deepest navy/charcoal */
-  --bg-card: #0d1326;          /* Dark blue-slate card background */
-  --bg-card-glass: rgba(13, 19, 38, 0.5); /* Semi-transparent background for glassmorphism */
+  /* Color Palette (Light Minimalist Bold Red Theme) */
+  --bg-primary: #f4f4f5;       /* Light zinc/gray background */
+  --bg-secondary: #ececec;     /* Slightly darker light gray */
+  --bg-card: #ffffff;          /* Pure white card background */
+  --bg-card-glass: rgba(255, 255, 255, 0.75); /* Semi-transparent white card */
   
-  /* Accent Colors (Gradients are created with these) */
-  --accent-primary: #1e40af;   /* Dark Royal Blue */
-  --accent-secondary: #3b82f6; /* Cobalt Blue */
-  --accent-glow: rgba(59, 130, 246, 0.15); /* Light glow shadow */
+  /* Accent Colors (Bold Crimson Red - No glows) */
+  --accent-primary: #991b1b;   /* Dark Crimson Red */
+  --accent-secondary: #b91c1c; /* Solid Red */
+  --accent-glow: rgba(185, 28, 28, 0.05);
   
   /* Text Colors */
-  --text-main: #f8fafc;        /* High-contrast off-white */
-  --text-secondary: #cbd5e1;   /* Medium-contrast light gray */
-  --text-muted: #64748b;       /* Low-contrast slate gray */
+  --text-main: #09090b;        /* Deep zinc black */
+  --text-secondary: #27272a;   /* Slate black body text */
+  --text-muted: #71717a;       /* Low-contrast gray */
   
   /* Border & Radius */
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-glow: rgba(59, 130, 246, 0.3);
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-glow: rgba(185, 28, 28, 0.25);
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -231,8 +231,8 @@ header {
 }
 
 .hero-badge {
-  background: rgba(37, 99, 235, 0.1);
-  border: 1px solid rgba(37, 99, 235, 0.2);
+  background: rgba(185, 28, 28, 0.08);
+  border: 1px solid rgba(185, 28, 28, 0.15);
   color: var(--accent-secondary);
   padding: 0.5rem 1rem;
   border-radius: 50px;
@@ -312,14 +312,14 @@ header {
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.03);
   color: var(--text-main);
   border: 1px solid var(--border-color);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
 
@@ -1216,5 +1216,49 @@ footer {
   .footer-container {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+/* 
+  =========================================
+  BLURRY 4-POINTED STAR DECORATION
+  =========================================
+  Mimics the retro-minimalist design sparkles from your screenshot reference.
+*/
+.star-glow {
+  position: absolute;
+  top: 25%;
+  right: 12%;
+  width: 140px;
+  height: 140px;
+  background: var(--accent-secondary);
+  clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
+  opacity: 0.12;
+  filter: blur(4px);
+  pointer-events: none;
+  z-index: 0;
+  animation: float-star 7s ease-in-out infinite alternate;
+}
+
+.star-glow::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(185, 28, 28, 0.4) 0%, transparent 70%);
+  filter: blur(15px);
+  z-index: -1;
+}
+
+@keyframes float-star {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.95);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(-20px) rotate(8deg) scale(1.05);
+    opacity: 0.18;
   }
 }
