@@ -3,36 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nur Aqila Saffia | Software Engineer Portfolio</title>
+  <title>Nur Aqila Saffia | Software Engineer</title>
   
-  <!-- Link to the main style.css -->
+  <!-- Custom clean style sheet -->
   <link rel="stylesheet" href="style.css">
   
-  <!-- FontAwesome CDN for high-quality developer icons (GitHub, LinkedIn, Database, Network, etc.) -->
+  <!-- FontAwesome CDN for minimalist developer icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- SEO Meta Tags for Recruiter visibility -->
-  <meta name="description" content="Nur Aqila Saffia - Software Engineer specializing in Laravel, Flutter, and Network Operations. Explore my certifications (CCNA, CCNP) and developer projects.">
-  <meta name="keywords" content="Software Engineer, Laravel, Flutter, Network Engineer, CCNA, CCNP, IT Portfolio, Aqila Saffia">
+  <meta name="description" content="Nur Aqila Saffia - Software Engineer specializing in Laravel, Flutter, and Computer Networking. Profile suitable for recruiter review.">
 </head>
 <body>
 
   <!-- 
-    =========================================
-    NAVBAR / HEADER
-    =========================================
-    LEARNING NOTE: The <header> tag is semantic HTML5. We use "glass" and "navbar" 
-    classes to style it as a floating blur bar.
+    ======================================================
+    NAVIGATION HEADER
+    ======================================================
   -->
   <header>
-    <nav class="navbar glass">
+    <nav class="navbar">
       <a href="#home" class="logo">
-        AqilaSaffia<span class="logo-dot">.</span>
+        AqilaSaffia<span>.</span>
       </a>
       
-      <!-- Desktop Navigation links -->
       <ul class="nav-links" id="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -41,194 +36,168 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       
-      <!-- Hamburger toggle button for responsive mobile view -->
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
         <i class="fa-solid fa-bars"></i>
       </button>
     </nav>
   </header>
 
-  <main>
-    
-    <!-- 
-      =========================================
-      HERO SECTION
-      =========================================
-    -->
-    <section id="home" class="hero">
-      <div class="hero-container">
+  <!-- 
+    ======================================================
+    BENTO HERO SECTION
+    ======================================================
+  -->
+  <main id="home">
+    <section class="hero-bento">
+      <div class="bento-grid">
         
-        <!-- Left: Intro text & Call to action buttons -->
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
-            Open for Software & Network Engineer Roles
+        <!-- Bento Card 1: Main Welcome Panel (Span 3 Cols, Row 2) -->
+        <div class="bento-card col-3 row-2 hero-intro-card">
+          <div>
+            <span class="typed-wrapper">
+              <span id="typed-text"></span><span class="typing-cursor">|</span>
+            </span>
+            <h1>Hi, I'm Nur Aqila Saffia<span>.</span></h1>
+            <p>
+              Software Engineer with 5 months of professional experience developing production-ready web and mobile applications using Laravel, PHP, Flutter, MySQL, REST APIs, and Git. Experienced in developing LHDN-compliant e-Invoicing systems, POS systems, QR Ordering platforms, mobile applications, database management, and production deployment.
+            </p>
           </div>
-          <h1>Nur Aqila Saffia</h1>
           
-          <!-- This subtitle will be animated by JavaScript script.js typing effect -->
-          <div class="hero-subtitle">
-            <span id="typed-text" class="gradient-text"></span><span class="typing-cursor">|</span>
-          </div>
-          
-          <p class="hero-description">
-            Software Engineer with 5 months of professional experience developing production-ready web and mobile applications using Laravel, PHP, Flutter, MySQL, REST APIs, and Git. Experienced in developing LHDN-compliant e-Invoicing systems, POS systems, QR Ordering platforms, mobile applications, database management, and production deployment.
-          </p>
-          
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">
-              <i class="fa-solid fa-code"></i> View Projects
+          <div class="hero-buttons" style="margin-top: 2rem;">
+            <a href="#projects" class="btn-minimal btn-fill">
+              View Projects <i class="fa-solid fa-arrow-right"></i>
             </a>
-            <!-- Resume Download Button (Points to resume PDF file) -->
-            <a href="Aqila_Saffia_Resume.pdf" download="Nur_Aqila_Saffia_Resume.pdf" class="btn btn-secondary" id="resume-download-btn">
-              <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+            <a href="#contact" class="btn-minimal btn-outline">
+              Contact Me
+            </a>
+            <a href="Aqila_Saffia_Resume.pdf" download="Nur_Aqila_Saffia_Resume.pdf" class="btn-minimal btn-outline">
+              <i class="fa-solid fa-download"></i> Resume PDF
             </a>
           </div>
         </div>
-        
-        <!-- Right: CSS SVG Visual Avatar representation (A sleek IDE terminal mockup) -->
-        <div class="hero-visual reveal">
-          <div class="avatar-wrapper">
-            <div class="avatar-inner">
-              <!-- Inline SVG displaying a modern code structure (high performance, responsive) -->
-              <svg class="avatar-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="40" r="14" stroke="currentColor" stroke-width="2.5" />
-                <path d="M26 78 C26 62, 74 62, 74 78" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
-                <!-- Floating code elements representing developer skills -->
-                <path d="M15 30 L22 35 L15 40" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-code" />
-                <path d="M85 30 L78 35 L85 40" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-code" />
-                <rect x="35" y="60" width="30" height="6" rx="3" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" />
-              </svg>
+
+        <!-- Bento Card 2: Interactive Code terminal (Span 1 Col, Row 2) -->
+        <div class="bento-card col-1 row-2 code-window-card">
+          <div class="window-header">
+            <div class="window-dots">
+              <span class="dot-red"></span>
+              <span class="dot-yellow"></span>
+              <span class="dot-green"></span>
             </div>
+            <span class="window-title">bio.dart</span>
+          </div>
+          <div class="code-content">
+<span class="keyword">class</span> <span class="variable">Developer</span> {
+  <span class="keyword">final</span> String name = 
+    <span class="string">"Nur Aqila Saffia"</span>;
+  <span class="keyword">final</span> String role = 
+    <span class="string">"Software Engineer"</span>;
+  <span class="keyword">final</span> int expMonths = <span class="variable">5</span>;
+  
+  <span class="keyword">final</span> List&lt;String&gt; stack = [
+    <span class="string">"Laravel"</span>, 
+    <span class="string">"Flutter"</span>, 
+    <span class="string">"MySQL"</span>,
+    <span class="string">"REST APIs"</span>
+  ];
+  
+  <span class="keyword">final</span> bool available = <span class="keyword">true</span>;
+  
+  <span class="comment">// Open to MNC recruiter</span>
+  <span class="comment">// review immediately</span>
+}</div>
+        </div>
+
+        <!-- Bento Card 3: Status Details (Span 2 Cols) -->
+        <div class="bento-card col-2 bento-info-card">
+          <div class="info-badge">
+            <span class="status-dot"></span>
+            Available for Immediate Hire
+          </div>
+          <div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Current Location</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">Puchong, Selangor, Malaysia</p>
           </div>
         </div>
-        
+
+        <!-- Bento Card 4: Metrics (Span 2 Cols) -->
+        <div class="bento-card col-2" style="flex-direction: row; align-items: center; justify-content: space-around;">
+          <div style="text-align: center;">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Months Experience</div>
+          </div>
+          <div style="height: 50px; width: 1px; background-color: var(--border-thin);"></div>
+          <div style="text-align: center;">
+            <div class="stat-number">6</div>
+            <div class="stat-label">Production Projects</div>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- 
-      =========================================
+      ======================================================
       ABOUT ME SECTION
-      =========================================
+      ======================================================
     -->
-    <section id="about" class="reveal">
-      <div class="section-header">
-        <span class="section-subtitle">Who I Am</span>
-        <h2 class="section-title">About Me</h2>
+    <section id="about">
+      <div class="section-head">
+        <span class="section-tag">01 / Profile</span>
+        <h2>About Me</h2>
       </div>
       
-      <div class="about-grid">
-        <div class="about-details">
-          <h3>Passionate Software Engineer & Network Enthusiast</h3>
-          <p>
-            I am a Software Engineer based in Selangor, Malaysia. I love bridging the gap between web applications and network infrastructures. With practical experience developing POS backends, LHDN e-Invoicing compliance platforms, and mobile apps, I understand how software communicates efficiently across systems.
-          </p>
-          <p>
-            I hold a Bachelor's Degree in Computer Science with a specialization in Computer Networking. My technical focus ranges from building secure APIs to configuring high-performance corporate networks and simulating SIEM data pipelines.
-          </p>
-          
-          <!-- Key summary metrics for recruiters -->
-          <div class="about-highlights">
-            <div class="highlight-card glass">
-              <div class="highlight-num gradient-text">5+</div>
-              <div class="highlight-label">Months Experience</div>
-            </div>
-            <div class="highlight-card glass">
-              <div class="highlight-num gradient-text">6+</div>
-              <div class="highlight-label">Projects Completed</div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Info facts grid list -->
-        <div class="about-info-card glass" style="padding: 2.5rem; border-radius: var(--radius-md);">
-          <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">Profile Info</h3>
-          <ul class="about-info-list">
-            <li>
-              <span class="info-label">Name:</span>
-              <span class="info-val">Nur Aqila Saffia Binti Suhardi</span>
-            </li>
-            <li>
-              <span class="info-label">Location:</span>
-              <span class="info-val">Puchong, Selangor, Malaysia</span>
-            </li>
-            <li>
-              <span class="info-label">Email:</span>
-              <span class="info-val">aqilasaffia@gmail.com</span>
-            </li>
-            <li>
-              <span class="info-label">Degree:</span>
-              <span class="info-val">B.Cs (Hons.) Computer Networking</span>
-            </li>
-            <li>
-              <span class="info-label">Availability:</span>
-              <span class="info-val" style="color: #10b981; font-weight: 600;">Immediate Hire</span>
-            </li>
-          </ul>
-        </div>
+      <div style="max-width: 800px; color: var(--text-secondary); font-size: 1.05rem; display: flex; flex-direction: column; gap: 1.5rem;">
+        <p>
+          I am a Software Engineer based in Selangor. I specialize in building robust backend APIs using PHP (Laravel) and crafting smooth mobile ordering architectures using Flutter (Dart). I hold a Bachelor's Degree in Computer Science with a focus on Computer Networking, giving me a solid understanding of how systems communicate, load-balance, and scale securely.
+        </p>
+        <p>
+          From implementing electronic invoicing solutions matching LHDN validation criteria to optimizing inventory transactions in POS networks, I design software with performance and reliability in mind.
+        </p>
       </div>
     </section>
 
     <!-- 
-      =========================================
-      WORK EXPERIENCE SECTION
-      =========================================
+      ======================================================
+      EXPERIENCE TIMELINE
+      ======================================================
     -->
-    <section id="experience" class="reveal">
-      <div class="section-header">
-        <span class="section-subtitle">My Career Timeline</span>
-        <h2 class="section-title">Work Experience</h2>
+    <section id="experience">
+      <div class="section-head">
+        <span class="section-tag">02 / Timeline</span>
+        <h2>Work Experience</h2>
       </div>
       
-      <div class="timeline">
+      <div class="experience-layout">
         
-        <!-- Timeline Item 1 -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content glass">
-            <span class="timeline-date">February 2026 - Present</span>
+        <!-- Role 1: VMAX -->
+        <div class="exp-row">
+          <div class="exp-time">Feb 2026 — Present</div>
+          <div class="exp-details">
             <h3>Software Engineer</h3>
-            <span class="timeline-subtitle">Vmax Concept Group SDN BHD (Full-time)</span>
-            <p>
-              Leading software development activities focusing on backend operations, payments, and accounting APIs:
-            </p>
-            <ul style="padding-left: 1.25rem; color: var(--text-secondary); margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-              <li><strong>LHDN e-Invoicing:</strong> Built and deployed a compliant electronic invoicing platform integrated with the LHDN API using Laravel, processing live JSON payloads securely.</li>
-              <li><strong>POS & QR Ordering System:</strong> Developed robust POS backends and interactive web ordering pages, integrating payment gateways (Sandbox) for digital payments.</li>
-              <li><strong>VShop Mobile App:</strong> Built and optimized the VShop mobile ordering system using Flutter to streamline table order flows.</li>
-              <li><strong>cPanel DevOps:</strong> Managed SQL databases and cPanel server deployments to maintain high application uptime.</li>
+            <span class="exp-company">VMAX Concept Group Sdn Bhd</span>
+            <ul>
+              <li>Developed and integrated LHDN-compliant e-Invoicing platforms with backend Laravel systems.</li>
+              <li>Engineered robust POS inventory engines and secure payment gateway API connections.</li>
+              <li>Built and optimized customer QR web ordering apps and payment validation pipelines.</li>
+              <li>Engineered and optimized the VShop mobile ordering application using Flutter.</li>
+              <li>Managed local database structures and handled server deployment configurations.</li>
             </ul>
-            <div class="timeline-tags">
-              <span>Laravel</span>
-              <span>Flutter</span>
-              <span>MySQL</span>
-              <span>LHDN API</span>
-              <span>cPanel</span>
-            </div>
           </div>
         </div>
 
-        <!-- Timeline Item 2 -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content glass">
-            <span class="timeline-date">September 2025 - December 2025</span>
+        <!-- Role 2: SUK -->
+        <div class="exp-row">
+          <div class="exp-time">Sep 2025 — Dec 2025</div>
+          <div class="exp-details">
             <h3>Network Operation Intern</h3>
-            <span class="timeline-subtitle">Setiausaha Kerajaan Terengganu (SUK)</span>
-            <p>
-              Managed state data center infrastructure and handled operational network issues:
-            </p>
-            <ul style="padding-left: 1.25rem; color: var(--text-secondary); margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-              <li>Maintained Terengganu Data Center servers, network switches, and critical infrastructure, logging health metrics on monitoring dashboards.</li>
-              <li>Troubleshot active routing and switching devices to restore connectivity for daily government office operations.</li>
-              <li>Compiled documentation on performance indicators to support system audits.</li>
+            <span class="exp-company">Office of the State Secretary Terengganu (SUK)</span>
+            <ul>
+              <li>Performed daily health checks and preventive maintenance at the Terengganu Data Center.</li>
+              <li>Troubleshot router configurations and localized routing path anomalies.</li>
+              <li>Monitored active network throughput metrics using cloud management interfaces.</li>
+              <li>Compiled deployment maps and documentation of network layout assets.</li>
             </ul>
-            <div class="timeline-tags">
-              <span>Data Center</span>
-              <span>Switches & Routers</span>
-              <span>Network Monitoring</span>
-              <span>Troubleshooting</span>
-            </div>
           </div>
         </div>
         
@@ -236,129 +205,52 @@
     </section>
 
     <!-- 
-      =========================================
-      TECHNICAL SKILLS SECTION
-      =========================================
+      ======================================================
+      TECHNICAL SKILLS
+      ======================================================
     -->
-    <section id="skills" class="reveal">
-      <div class="section-header">
-        <span class="section-subtitle">What I Excel At</span>
-        <h2 class="section-title">Technical Skills</h2>
+    <section id="skills">
+      <div class="section-head">
+        <span class="section-tag">03 / Capabilities</span>
+        <h2>Technical Skills</h2>
       </div>
       
-      <div class="skills-grid">
+      <div class="skills-container">
         
-        <!-- Skill Card 1: Programming Languages -->
-        <div class="skill-card glass">
-          <div class="skill-header">
-            <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
-            <h3>Languages</h3>
-          </div>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Dart & Flutter</span>
-                <span class="skill-percent">90%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="90%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">PHP (Laravel)</span>
-                <span class="skill-percent">85%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="85%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">MySQL Database</span>
-                <span class="skill-percent">85%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="85%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">C / C++</span>
-                <span class="skill-percent">80%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="80%"></div></div>
-            </div>
+        <!-- Category 1: Languages -->
+        <div class="skills-box">
+          <h3><i class="fa-solid fa-code"></i> Programming</h3>
+          <div class="skills-chips">
+            <span class="skill-chip">PHP</span>
+            <span class="skill-chip">Dart</span>
+            <span class="skill-chip">MySQL</span>
+            <span class="skill-chip">Java</span>
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">C / C++</span>
           </div>
         </div>
 
-        <!-- Skill Card 2: Networking & Systems -->
-        <div class="skill-card glass">
-          <div class="skill-header">
-            <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
-            <h3>Networking & IoT</h3>
-          </div>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Cisco IOS Routing & Switching</span>
-                <span class="skill-percent">90%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="90%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">ESP32 & Arduino (IoT)</span>
-                <span class="skill-percent">85%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="85%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">GNS3 Network Simulation</span>
-                <span class="skill-percent">85%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="85%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Wireshark Analysis</span>
-                <span class="skill-percent">75%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="75%"></div></div>
-            </div>
+        <!-- Category 2: Frameworks -->
+        <div class="skills-box">
+          <h3><i class="fa-solid fa-cubes"></i> Frameworks</h3>
+          <div class="skills-chips">
+            <span class="skill-chip">Laravel</span>
+            <span class="skill-chip">Flutter</span>
+            <span class="skill-chip">REST APIs</span>
+            <span class="skill-chip">Bootstrap</span>
           </div>
         </div>
 
-        <!-- Skill Card 3: Frameworks & Developer Tools -->
-        <div class="skill-card glass">
-          <div class="skill-header">
-            <div class="skill-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-            <h3>Tools & DevOps</h3>
-          </div>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Git Version Control</span>
-                <span class="skill-percent">85%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="85%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">cPanel Deployment</span>
-                <span class="skill-percent">80%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="80%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">VS Code / Android Studio</span>
-                <span class="skill-percent">90%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="90%"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Elastic Stack (SIEM)</span>
-                <span class="skill-percent">70%</span>
-              </div>
-              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="70%"></div></div>
-            </div>
+        <!-- Category 3: Tools -->
+        <div class="skills-box">
+          <h3><i class="fa-solid fa-wrench"></i> Developer Tools</h3>
+          <div class="skills-chips">
+            <span class="skill-chip">Git</span>
+            <span class="skill-chip">VS Code</span>
+            <span class="skill-chip">Cisco Packet Tracer</span>
+            <span class="skill-chip">GNS3</span>
+            <span class="skill-chip">Wireshark</span>
+            <span class="skill-chip">cPanel DevOps</span>
           </div>
         </div>
         
@@ -366,20 +258,20 @@
     </section>
 
     <!-- 
-      =========================================
-      FEATURED PROJECTS SECTION
-      =========================================
+      ======================================================
+      FEATURED PROJECTS
+      ======================================================
     -->
-    <section id="projects" class="reveal">
-      <div class="section-header">
-        <span class="section-subtitle">My Portfolio</span>
-        <h2 class="section-title">Featured Projects</h2>
+    <section id="projects">
+      <div class="section-head">
+        <span class="section-tag">04 / Portfolio</span>
+        <h2>Featured Projects</h2>
       </div>
       
-      <div class="projects-grid">
+      <div class="projects-gallery">
         
-        <!-- Project 1: LHDN e-Invoicing Platform -->
-        <div class="project-card-new glass">
+        <!-- Project 1: LHDN -->
+        <div class="project-card-new">
           <div class="project-image">
             <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -387,24 +279,21 @@
           </div>
           <div class="project-body">
             <h3>LHDN e-Invoicing Platform</h3>
-            <p>
-              Built and deployed a compliant electronic invoicing platform integrated with the LHDN API using Laravel, successfully processing live JSON payload transmissions.
-            </p>
+            <p>Built and deployed a compliant electronic invoicing platform integrated with the LHDN API using Laravel, processing live JSON payload transmissions.</p>
             <div class="project-tech-list">
               <span>Laravel</span>
               <span>PHP</span>
               <span>LHDN API</span>
-              <span>REST APIs</span>
               <span>MySQL</span>
             </div>
             <div class="project-links">
-              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 2: POS System -->
-        <div class="project-card-new glass">
+        <!-- Project 2: POS -->
+        <div class="project-card-new">
           <div class="project-image">
             <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
@@ -412,23 +301,20 @@
           </div>
           <div class="project-body">
             <h3>POS System</h3>
-            <p>
-              Developed a robust Point of Sale backend system using Laravel, implementing inventory tracking, transaction audits, and secure local database syncing.
-            </p>
+            <p>Developed a robust Point of Sale backend using Laravel, managing dynamic stock databases, invoice triggers, and cashier transaction audits.</p>
             <div class="project-tech-list">
               <span>Laravel</span>
               <span>PHP</span>
               <span>MySQL</span>
-              <span>Database Design</span>
             </div>
             <div class="project-links">
-              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 3: QR Ordering System -->
-        <div class="project-card-new glass">
+        <!-- Project 3: QR Ordering -->
+        <div class="project-card-new">
           <div class="project-image">
             <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path>
@@ -436,23 +322,21 @@
           </div>
           <div class="project-body">
             <h3>QR Ordering System</h3>
-            <p>
-              Developed an interactive QR web ordering client, integrating secure payment gateway sandbox APIs to handle real-time digital customer transactions.
-            </p>
+            <p>Developed an interactive customer QR web ordering interface, connecting payment gateway Sandbox environments to record digital purchases.</p>
             <div class="project-tech-list">
               <span>Laravel</span>
               <span>PHP</span>
+              <span>Payment Gateway</span>
               <span>REST APIs</span>
-              <span>Payment Gateways</span>
             </div>
             <div class="project-links">
-              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 4: Flutter VShop Mobile App -->
-        <div class="project-card-new glass">
+        <!-- Project 4: VShop App -->
+        <div class="project-card-new">
           <div class="project-image">
             <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
@@ -460,23 +344,20 @@
           </div>
           <div class="project-body">
             <h3>Flutter VShop Mobile App</h3>
-            <p>
-              Engineered and optimized the VShop mobile ordering application using Flutter to improve counter and table order processing performance.
-            </p>
+            <p>Optimized the layout and response time of the VShop Flutter mobile application to handle restaurant table checkout order transactions.</p>
             <div class="project-tech-list">
               <span>Flutter</span>
               <span>Dart</span>
               <span>REST APIs</span>
-              <span>State Management</span>
             </div>
             <div class="project-links">
-              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 5: Indoor Navigation using Flutter + ESP32 -->
-        <div class="project-card-new glass">
+        <!-- Project 5: Indoor Nav -->
+        <div class="project-card-new">
           <div class="project-image">
             <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
@@ -484,24 +365,22 @@
             </svg>
           </div>
           <div class="project-body">
-            <h3>Indoor Navigation (Flutter + ESP32 Beacons)</h3>
-            <p>
-              Developed an indoor navigation mobile application using Flutter, Firebase, and ESP32 iBeacon BLE transmitters for pathfinding inside Pasar Payang.
-            </p>
+            <h3>Indoor Navigation using Flutter + ESP32</h3>
+            <p>Developed an indoor pathfinding mobile app using Flutter and ESP32 iBeacons to establish real-time navigation inside the Pasar Payang complex.</p>
             <div class="project-tech-list">
               <span>Flutter</span>
               <span>Firebase</span>
               <span>ESP32 iBeacon</span>
-              <span>BLE Beacons</span>
+              <span>BLE</span>
             </div>
             <div class="project-links">
-              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 6: Enterprise Network Design -->
-        <div class="project-card-new glass">
+        <!-- Project 6: Network Simulation -->
+        <div class="project-card-new">
           <div class="project-image">
             <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012 2h6a2 2 0 012 2v2M7 7h10"></path>
@@ -509,101 +388,64 @@
           </div>
           <div class="project-body">
             <h3>Enterprise Network Design</h3>
-            <p>
-              Designed and simulated a multi-layer enterprise network simulation using GNS3, emulating real-world routing, switching, and security ACL boundaries.
-            </p>
+            <p>Designed and simulated a multi-layer corporate network utilizing GNS3, setting Cisco IOS parameters, inter-VLAN routing, and security policies.</p>
             <div class="project-tech-list">
               <span>GNS3</span>
               <span>Cisco IOS</span>
               <span>Routing & Switching</span>
-              <span>ACLs</span>
             </div>
             <div class="project-links">
-              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Topology</a>
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source</a>
             </div>
           </div>
         </div>
 
       </div>
-      
-      <!-- Option to navigate to secondary projects.html page for more projects -->
-      <div style="text-align: center; margin-top: 3.5rem;">
-        <a href="projects.html" class="btn btn-secondary">
-          View Full Project Gallery <i class="fa-solid fa-arrow-right"></i>
+
+      <div style="text-align: center; margin-top: 4rem;">
+        <a href="projects.html" class="btn-minimal btn-outline">
+          View Full Archive Gallery <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
     </section>
 
     <!-- 
-      =========================================
+      ======================================================
       EDUCATION & CERTIFICATIONS
-      =========================================
+      ======================================================
     -->
-    <section id="education" class="reveal">
-      <div class="section-header">
-        <span class="section-subtitle">Academic Profile</span>
-        <h2 class="section-title">Education & Certifications</h2>
+    <section id="education">
+      <div class="section-head">
+        <span class="section-tag">05 / Education</span>
+        <h2>Education & Certifications</h2>
       </div>
       
-      <div class="edu-cert-container">
+      <div class="education-container">
         
-        <!-- Left Column: Education history -->
-        <div class="edu-section">
-          <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent-secondary);"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-          
-          <div class="edu-cert-card glass">
-            <span class="edu-cert-date">Oct 2022 - Dec 2025</span>
+        <div class="education-flow">
+          <div class="edu-item">
             <h3>Bachelor of Computer Science (Hons.) Computer Networking</h3>
-            <span class="edu-cert-institution">Universiti Teknologi MARA (UiTM) Shah Alam</span>
-            <p>Graduated with a major focus on routing, switching architectures, enterprise network administration, network security, and forensic systems.</p>
-            <span class="cert-badge" style="background: rgba(99, 102, 241, 0.1); color: var(--accent-primary); border-color: rgba(99, 102, 241, 0.2);">CGPA: 3.14</span>
-          </div>
-
-          <div class="edu-cert-card glass">
-            <span class="edu-cert-date">June 2020 - July 2022</span>
-            <h3>Physical Science Matriculation</h3>
-            <span class="edu-cert-institution">Kolej Matrikulasi Pahang - Gambang, Malaysia</span>
-            <p>Acquired strong analytical foundations in Mathematics, Physics, Chemistry, and introductory programming.</p>
-            <span class="cert-badge" style="background: rgba(99, 102, 241, 0.1); color: var(--accent-primary); border-color: rgba(99, 102, 241, 0.2);">CGPA: 3.58</span>
+            <span class="edu-org">Universiti Teknologi MARA (UiTM)</span>
+            <p>Specialized in enterprise data networks, core IP routing protocols, switching operations, infrastructure management, and forensic analysis.</p>
           </div>
         </div>
 
-        <!-- Right Column: Professional Certifications -->
-        <div class="cert-section">
-          <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent-secondary);"><i class="fa-solid fa-award"></i> Certifications</h3>
+        <div class="cert-list">
+          <h3 style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.5rem;">Cisco Academy Credentials</h3>
           
-          <div class="edu-cert-card glass">
-            <span class="edu-cert-date">September 2025</span>
-            <h3>CCNP Enterprise: Core Networking</h3>
-            <span class="edu-cert-institution">Cisco Networking Academy</span>
-            <span class="cert-badge"><i class="fa-solid fa-circle-check"></i> Certified</span>
+          <div class="cert-item">
+            <span class="cert-title">CCNP Enterprise: Core Networking</span>
+            <span class="cert-authority">Cisco</span>
           </div>
 
-          <div class="edu-cert-card glass">
-            <span class="edu-cert-date">March 2025</span>
-            <h3>CCNP Enterprise: Advanced Routing</h3>
-            <span class="edu-cert-institution">Cisco Networking Academy</span>
-            <span class="cert-badge"><i class="fa-solid fa-circle-check"></i> Certified</span>
+          <div class="cert-item">
+            <span class="cert-title">CCNP Enterprise: Advanced Routing</span>
+            <span class="cert-authority">Cisco</span>
           </div>
 
-          <div class="edu-cert-card glass">
-            <span class="edu-cert-date">July 2024</span>
-            <h3>CCNA: Introduction to Networks</h3>
-            <span class="edu-cert-institution">Cisco Networking Academy</span>
-            <span class="cert-badge"><i class="fa-solid fa-circle-check"></i> Certified</span>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <div class="edu-cert-card glass" style="padding: 1.25rem;">
-              <span class="edu-cert-date">Sep 2025</span>
-              <h4 style="font-size: 1rem; margin-top: 0.25rem;">Intro to Cybersecurity</h4>
-              <span class="cert-badge" style="font-size: 0.75rem;"><i class="fa-solid fa-circle-check"></i> Cisco</span>
-            </div>
-            <div class="edu-cert-card glass" style="padding: 1.25rem;">
-              <span class="edu-cert-date">May 2024</span>
-              <h4 style="font-size: 1rem; margin-top: 0.25rem;">Introduction to IoT</h4>
-              <span class="cert-badge" style="font-size: 0.75rem;"><i class="fa-solid fa-circle-check"></i> Cisco</span>
-            </div>
+          <div class="cert-item">
+            <span class="cert-title">CCNA: Introduction to Networks</span>
+            <span class="cert-authority">Cisco</span>
           </div>
         </div>
         
@@ -611,107 +453,83 @@
     </section>
 
     <!-- 
-      =========================================
-      CONTACT SECTION
-      =========================================
+      ======================================================
+      CONTACT
+      ======================================================
     -->
-    <section id="contact" class="reveal">
-      <div class="section-header">
-        <span class="section-subtitle">Get In Touch</span>
-        <h2 class="section-title">Contact Me</h2>
+    <section id="contact">
+      <div class="section-head">
+        <span class="section-tag">06 / Connect</span>
+        <h2>Contact Me</h2>
       </div>
       
-      <div class="contact-container">
+      <div class="contact-grid">
         
-        <!-- Social links & direct contact details -->
-        <div class="contact-info">
-          <h3>Let's collaborate on software or network engineering!</h3>
+        <div class="contact-card-box">
+          <h3>Let's build secure networks & robust software.</h3>
           <p>
-            Whether you are looking for an immediate hire, want to collaborate on a developer project, or just want to connect, feel free to reach out. I will get back to you as soon as possible.
+            I am available for recruitment or technical conversations. Feel free to use the contact form, email me directly, or connect on my professional networks.
           </p>
           
-          <div class="contact-details-list">
-            <div class="contact-detail-item">
-              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-              <div class="contact-detail-content">
-                <span>Email Address</span>
-                <a href="mailto:aqilasaffia@gmail.com">aqilasaffia@gmail.com</a>
-              </div>
+          <div class="contact-links-list">
+            <div class="contact-link-row">
+              <div class="contact-label-icon"><i class="fa-solid fa-envelope"></i></div>
+              <a href="mailto:aqilasaffia@gmail.com">aqilasaffia@gmail.com</a>
             </div>
-            <div class="contact-detail-item">
-              <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-              <div class="contact-detail-content">
-                <span>Phone / WhatsApp</span>
-                <a href="tel:+60189112908">(+60) 18-9112908</a>
-              </div>
+            <div class="contact-link-row">
+              <div class="contact-label-icon"><i class="fa-brands fa-github"></i></div>
+              <a href="https://github.com/aqilasaffia" target="_blank">github.com/aqilasaffia</a>
             </div>
-            <div class="contact-detail-item">
-              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-              <div class="contact-detail-content">
-                <span>Current Location</span>
-                <p>Puchong, Selangor, Malaysia</p>
-              </div>
+            <div class="contact-link-row">
+              <div class="contact-label-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <a href="https://www.linkedin.com/in/aqilasaffia" target="_blank">linkedin.com/in/aqilasaffia</a>
             </div>
-          </div>
-          
-          <div class="social-links">
-            <a href="https://github.com/aqilasaffia" target="_blank" class="social-btn" aria-label="GitHub">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/aqilasaffia" target="_blank" class="social-btn" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
           </div>
         </div>
-        
-        <!-- Form panel -->
-        <div class="contact-form-card glass">
+
+        <div class="contact-form-panel">
           <form id="contact-form">
             <div class="form-group">
               <label for="user-name">Your Name</label>
-              <input type="text" id="user-name" class="form-control" placeholder="e.g. John Doe" required>
+              <input type="text" id="user-name" class="form-field" placeholder="e.g. Recruiter" required>
             </div>
             <div class="form-group">
-              <label for="user-email">Your Email Address</label>
-              <input type="email" id="user-email" class="form-control" placeholder="e.g. john@example.com" required>
+              <label for="user-email">Email Address</label>
+              <input type="email" id="user-email" class="form-field" placeholder="e.g. contact@company.com" required>
             </div>
             <div class="form-group">
               <label for="message">Message Details</label>
-              <textarea id="message" class="form-control" placeholder="Write your message here..." required></textarea>
+              <textarea id="message" class="form-field" placeholder="Write details here..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
-              <i class="fa-solid fa-paper-plane"></i> Send Message
+            
+            <button type="submit" class="btn-minimal btn-fill" style="width: 100%; justify-content: center; margin-top: 1rem;">
+              Send Message
             </button>
-            <div class="form-message" id="form-message"></div>
+            
+            <div class="form-status" id="form-message"></div>
           </form>
         </div>
         
       </div>
     </section>
-
   </main>
 
   <!-- 
-    =========================================
+    ======================================================
     FOOTER
-    =========================================
+    ======================================================
   -->
   <footer>
-    <div class="footer-container">
-      <div class="footer-logo">
-        AqilaSaffia<span class="logo-dot">.</span>
+    <div class="footer-inner">
+      <div class="logo">
+        AqilaSaffia<span>.</span>
       </div>
       <div class="footer-copy">
-        &copy; 2026 Nur Aqila Saffia. Designed for recruiter review.
+        &copy; 2026 Nur Aqila Saffia. Built with vanilla HTML, CSS, and JS.
       </div>
-      <!-- Back to top action button -->
-      <button class="scroll-top-btn" id="scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll to top">
-        <i class="fa-solid fa-arrow-up"></i>
-      </button>
     </div>
   </footer>
 
-  <!-- Include our core custom script.js -->
   <script src="script.js"></script>
 </body>
 </html>
