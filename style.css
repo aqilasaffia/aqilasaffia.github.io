@@ -231,8 +231,8 @@ header {
 }
 
 .hero-badge {
-  background: rgba(6, 182, 212, 0.1);
-  border: 1px solid rgba(6, 182, 212, 0.2);
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.2);
   color: var(--accent-secondary);
   padding: 0.5rem 1rem;
   border-radius: 50px;
@@ -243,7 +243,6 @@ header {
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.05);
 }
 
 .hero-badge-dot {
@@ -251,7 +250,6 @@ header {
   height: 8px;
   background-color: var(--accent-secondary);
   border-radius: 50%;
-  animation: pulse-glow 2s infinite;
 }
 
 .hero-content h1 {
@@ -307,12 +305,10 @@ header {
   background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
   color: white;
   border: none;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
 }
 
 .btn-secondary {
@@ -343,7 +339,6 @@ header {
   background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
   animation: morph-blob 8s ease-in-out infinite alternate;
   padding: 6px;
-  box-shadow: 0 0 40px rgba(99, 102, 241, 0.2);
 }
 
 .avatar-inner {
@@ -522,8 +517,7 @@ section {
 
 .skill-card:hover {
   transform: translateY(-5px);
-  border-color: var(--border-glow);
-  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .skill-card:hover::before {
@@ -540,7 +534,7 @@ section {
 .skill-icon {
   font-size: 1.75rem;
   color: var(--accent-secondary);
-  background: rgba(6, 182, 212, 0.08);
+  background: rgba(37, 99, 235, 0.08);
   width: 45px;
   height: 45px;
   border-radius: var(--radius-sm);
@@ -636,7 +630,6 @@ section {
   background: var(--bg-primary);
   border: 3px solid var(--accent-secondary);
   z-index: 2;
-  box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
   transition: var(--transition-fast);
 }
 
@@ -721,8 +714,7 @@ section {
 
 .project-card-new:hover {
   transform: translateY(-8px);
-  border-color: var(--border-glow);
-  box-shadow: 0 15px 35px rgba(6, 182, 212, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .project-image {
@@ -1005,7 +997,6 @@ section {
 .form-control:focus {
   border-color: var(--accent-secondary);
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.1);
 }
 
 textarea.form-control {
