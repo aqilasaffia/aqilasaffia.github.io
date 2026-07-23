@@ -3,50 +3,342 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects | Aqila Saffia</title>
+  <title>Projects Gallery | Nur Aqila Saffia</title>
+  
+  <!-- Link to the main style.css -->
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome CDN for developer icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Specific projects page styles */
+    .filter-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 0.6rem 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+    
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+      color: white;
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
+    }
+    
+    /* Project gallery items animation */
+    .project-card-new {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                  box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                  opacity 0.4s ease, 
+                  visibility 0.4s;
+    }
+    
+    .project-card-new.hidden {
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+    }
+  </style>
 </head>
 <body>
-  <!-- NAVBAR -->
+
+  <!-- 
+    =========================================
+    NAVBAR / HEADER
+    =========================================
+  -->
   <header>
-    <nav class="navbar">
-      <h1>Aqila Saffia</h1>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="projects.html" class="active">Projects</a>
-      </div>
+    <nav class="navbar glass">
+      <a href="index.html#home" class="logo">
+        AqilaSaffia<span class="logo-dot">.</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#projects" class="active">Projects</a></li>
+        <li><a href="index.html#education">Education & Certs</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </nav>
   </header>
 
-  <!-- PROJECTS SECTION -->
-  <main>
-    <section class="projects-section">
-      <h2>My Projects</h2>
-      <div class="projects-container">
-        <div class="project-card">
-          <img src="images/esp32.png" alt="ESP32 Project">
-          <h3>ESP32 Motion Detection</h3>
-          <p>ESP32 + PIR sensor detects motion and sends alerts. IoT project for smart monitoring.</p>
+  <!-- 
+    =========================================
+    PROJECTS GALLERY SECTION
+    =========================================
+  -->
+  <main style="padding-top: 100px; min-height: 80vh;">
+    <section>
+      <div class="section-header" style="margin-bottom: 2.5rem;">
+        <span class="section-subtitle">Full Portfolio Archive</span>
+        <h2 class="section-title">My Projects Gallery</h2>
+      </div>
+      
+      <!-- 
+        LEARNING NOTE: Interactive Filter System
+        The buttons below have custom data-filter attributes. We will use JavaScript 
+        to listen to click events on these buttons, read the attribute value, 
+        and hide/show project cards based on their class matching the selected filter.
+      -->
+      <div class="filter-container reveal">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="software">Software Dev</button>
+        <button class="filter-btn" data-filter="networking">Networking & Security</button>
+        <button class="filter-btn" data-filter="iot">IoT & Hardware</button>
+      </div>
+
+      <div class="projects-grid reveal delay-1">
+        
+        <!-- Project 1: Indoor Navigation (Software, IoT) -->
+        <div class="project-card-new glass" data-category="software iot">
+          <div class="project-image">
+            <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+            </svg>
+          </div>
+          <div class="project-body">
+            <h3>Indoor Navigation in Pasar Payang</h3>
+            <p>
+              My Final Year Project. Developed an indoor navigation mobile application using Flutter, Firebase, and ESP32 iBeacon BLE transmitters. Evaluated location accuracy in complex indoor markets where standard GPS signals fail.
+            </p>
+            <div class="project-tech-list">
+              <span>Flutter</span>
+              <span>Firebase</span>
+              <span>ESP32 iBeacon</span>
+              <span>BLE Beacons</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+            </div>
+          </div>
         </div>
-        <div class="project-card">
-          <img src="images/indoor_nav.png" alt="Indoor Navigation App">
-          <h3>Indoor Navigation App</h3>
-          <p>Flutter + Firebase app tracks zones inside a building, like Food_zone and Souvenir_zone.</p>
+
+        <!-- Project 2: SIEM Dashboard (Networking) -->
+        <div class="project-card-new glass" data-category="networking">
+          <div class="project-image">
+            <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2"></path>
+            </svg>
+          </div>
+          <div class="project-body">
+            <h3>SIEM Dashboard with Elastic Stack</h3>
+            <p>
+              Configured a complete security incident and event management dashboard utilizing Elasticsearch and Kibana. Aggregated security logs from network interfaces to identify brute-force vectors and correlate network threat indicators in real time.
+            </p>
+            <div class="project-tech-list">
+              <span>Elasticsearch</span>
+              <span>Kibana</span>
+              <span>Log Analysis</span>
+              <span>Threat Hunting</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+            </div>
+          </div>
         </div>
-        <div class="project-card">
-          <img src="images/motor_vantage.png" alt="Motor Vantage">
-          <h3>Motor Vantage for Disability</h3>
-          <p>Rain sensor + LCD + motion alert helps disabled motor users drive safely.</p>
+
+        <!-- Project 3: GNS3 simulation (Networking) -->
+        <div class="project-card-new glass" data-category="networking">
+          <div class="project-image">
+            <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+          </div>
+          <div class="project-body">
+            <h3>Enterprise Network Simulation</h3>
+            <p>
+              Designed and simulated a multi-layer corporate network utilizing GNS3. Integrated robust Layer-2 switching parameters, dynamic VLAN distribution, IP subnet allocations, and GNS3 simulated firewall routers.
+            </p>
+            <div class="project-tech-list">
+              <span>GNS3</span>
+              <span>Cisco IOS</span>
+              <span>Routing Protocols</span>
+              <span>Firewall ACLs</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Topology</a>
+            </div>
+          </div>
         </div>
+
+        <!-- Project 4: Digital Forensic (Networking) -->
+        <div class="project-card-new glass" data-category="networking">
+          <div class="project-image">
+            <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01"></path>
+            </svg>
+          </div>
+          <div class="project-body">
+            <h3>Digital Forensics Analysis & Recovery</h3>
+            <p>
+              Collected, analyzed, and preserved digital forensic evidence following proper judicial procedures to ensure integrity. Performed hex forensics and data carver operations to recover deleted and corrupted files.
+            </p>
+            <div class="project-tech-list">
+              <span>HxD Hex Editor</span>
+              <span>Autopsy</span>
+              <span>Data Recovery</span>
+              <span>Incident Response</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: IoT Surveillance Camera (IoT) -->
+        <div class="project-card-new glass" data-category="iot">
+          <div class="project-image">
+            <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <div class="project-body">
+            <h3>IoT Surveillance Camera</h3>
+            <p>
+              Designed and developed a smart security camera system using Arduino and ESP32-CAM modules. Embedded custom motion-trigger software that initiates automatic snapshot delivery, providing real-time alerts.
+            </p>
+            <div class="project-tech-list">
+              <span>Arduino IDE</span>
+              <span>ESP32-CAM</span>
+              <span>Motion Sensors</span>
+              <span>IoT Automation</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Motor Vantage for Disability (IoT, Software) -->
+        <div class="project-card-new glass" data-category="software iot">
+          <div class="project-image">
+            <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <div class="project-body">
+            <h3>Motor Vantage for Disability</h3>
+            <p>
+              An assistive driving aid for motorcyclists with disabilities. Built using rain sensors, responsive LCD interfaces, and motion alert indicators to automate safety warnings and optimize driver awareness.
+            </p>
+            <div class="project-tech-list">
+              <span>Embedded C</span>
+              <span>Arduino</span>
+              <span>Sensors</span>
+              <span>Assistive Tech</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 4rem;">
+        <a href="index.html" class="btn btn-primary">
+          <i class="fa-solid fa-arrow-left"></i> Back to Main Page
+        </a>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- 
+    =========================================
+    FOOTER
+    =========================================
+  -->
   <footer>
-    <p>© 2025 Aqila Saffia. All rights reserved.</p>
+    <div class="footer-container">
+      <div class="footer-logo">
+        AqilaSaffia<span class="logo-dot">.</span>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Nur Aqila Saffia. Designed for recruiter review.
+      </div>
+      <button class="scroll-top-btn" id="scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </div>
   </footer>
+
+  <!-- 
+    JAVASCRIPT FOR FILTERING LOGIC
+    This script listens to clicks on buttons, reads the filter value,
+    and toggles a CSS display rule (.hidden) on matching project cards.
+  -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // Mobile Toggle menu helper
+      const navToggle = document.getElementById('nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = navToggle.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+          icon.className = 'fa-solid fa-xmark';
+        } else {
+          icon.className = 'fa-solid fa-bars';
+        }
+      });
+      
+      // Filter functionality
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card-new');
+      
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active class from all buttons, and add it to the clicked one
+          filterButtons.forEach(button => button.classList.remove('active'));
+          btn.classList.add('active');
+          
+          const filterValue = btn.getAttribute('data-filter');
+          
+          projectCards.forEach(card => {
+            const categories = card.getAttribute('data-category').split(' ');
+            
+            if (filterValue === 'all' || categories.includes(filterValue)) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+        });
+      });
+      
+      // Basic entry animations trigger on page load
+      const reveals = document.querySelectorAll('.reveal');
+      setTimeout(() => {
+        reveals.forEach(el => el.classList.add('active'));
+      }, 100);
+      
+    });
+  </script>
 </body>
 </html>
-

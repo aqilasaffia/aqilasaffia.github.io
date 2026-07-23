@@ -1,39 +1,644 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Aqila Saffia | IT Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nur Aqila Saffia | Software Engineer Portfolio</title>
+  
+  <!-- Link to the main style.css -->
   <link rel="stylesheet" href="style.css">
-
+  
+  <!-- FontAwesome CDN for high-quality developer icons (GitHub, LinkedIn, Database, Network, etc.) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- SEO Meta Tags for Recruiter visibility -->
+  <meta name="description" content="Nur Aqila Saffia - Software Engineer specializing in Laravel, Flutter, and Network Operations. Explore my certifications (CCNA, CCNP) and developer projects.">
+  <meta name="keywords" content="Software Engineer, Laravel, Flutter, Network Engineer, CCNA, CCNP, IT Portfolio, Aqila Saffia">
 </head>
 <body>
-  <h1>Hi, I'm Aqila Saffia 👋</h1>
-  <p>Fresh Graduate in Information Technology</p>
-  <a href="projects.html">Projects</a>
-</body>
 
-  <h2>Skills</h2>
-  <ul>
-    <li>IT Support</li>
-    <li>Flutter (Basic)</li>
-    <li>Laravel (Basic)</li>
-    <li>Networking (Cisco Packet Tracer)</li>
-  </ul>
+  <!-- 
+    =========================================
+    NAVBAR / HEADER
+    =========================================
+    LEARNING NOTE: The <header> tag is semantic HTML5. We use "glass" and "navbar" 
+    classes to style it as a floating blur bar.
+  -->
+  <header>
+    <nav class="navbar glass">
+      <a href="#home" class="logo">
+        AqilaSaffia<span class="logo-dot">.</span>
+      </a>
+      
+      <!-- Desktop Navigation links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education & Certs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      
+      <!-- Hamburger toggle button for responsive mobile view -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+  </header>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>Indoor Navigation App (Flutter + BLE)</li>
-    <li>ESP32 Child Tracking System</li>
-    <li>Enterprise Network Design (Packet Tracer)</li>
-  </ul>
-  <nav>
-    <a href="#about">About Me</a>
-    <a href="projects.html">Projects</a>
-    <a href="#contact">Contact</a>
-</nav>
+  <main>
+    
+    <!-- 
+      =========================================
+      HERO SECTION
+      =========================================
+    -->
+    <section id="home" class="hero">
+      <div class="hero-container">
+        
+        <!-- Left: Intro text & Call to action buttons -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Open for Software & Network Engineer Roles
+          </div>
+          <h1>Nur Aqila Saffia</h1>
+          
+          <!-- This subtitle will be animated by JavaScript script.js typing effect -->
+          <div class="hero-subtitle">
+            <span id="typed-text" class="gradient-text"></span><span class="typing-cursor">|</span>
+          </div>
+          
+          <p class="hero-description">
+            Software Engineer with professional experience developing production-ready web and mobile applications using <strong>Laravel</strong>, <strong>Flutter</strong>, and <strong>MySQL</strong>, backed by a strong academic foundation in <strong>Computer Networking</strong>.
+          </p>
+          
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-code"></i> View Projects
+            </a>
+            <!-- Resume Download Button (Points to resume PDF file) -->
+            <a href="Aqila_Saffia_Resume.pdf" download="Nur_Aqila_Saffia_Resume.pdf" class="btn btn-secondary" id="resume-download-btn">
+              <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+            </a>
+          </div>
+        </div>
+        
+        <!-- Right: CSS SVG Visual Avatar representation (A sleek IDE terminal mockup) -->
+        <div class="hero-visual reveal">
+          <div class="avatar-wrapper">
+            <div class="avatar-inner">
+              <!-- Inline SVG displaying a modern code structure (high performance, responsive) -->
+              <svg class="avatar-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="40" r="14" stroke="currentColor" stroke-width="2.5" />
+                <path d="M26 78 C26 62, 74 62, 74 78" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <!-- Floating code elements representing developer skills -->
+                <path d="M15 30 L22 35 L15 40" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-code" />
+                <path d="M85 30 L78 35 L85 40" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accent-code" />
+                <rect x="35" y="60" width="30" height="6" rx="3" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
 
+    <!-- 
+      =========================================
+      ABOUT ME SECTION
+      =========================================
+    -->
+    <section id="about" class="reveal">
+      <div class="section-header">
+        <span class="section-subtitle">Who I Am</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      
+      <div class="about-grid">
+        <div class="about-details">
+          <h3>Passionate Software Engineer & Network Enthusiast</h3>
+          <p>
+            I am a Software Engineer based in Selangor, Malaysia. I love bridging the gap between web applications and network infrastructures. With practical experience developing POS backends, LHDN e-Invoicing compliance platforms, and mobile apps, I understand how software communicates efficiently across systems.
+          </p>
+          <p>
+            I hold a Bachelor's Degree in Computer Science with a specialization in Computer Networking. My technical focus ranges from building secure APIs to configuring high-performance corporate networks and simulating SIEM data pipelines.
+          </p>
+          
+          <!-- Key summary metrics for recruiters -->
+          <div class="about-highlights">
+            <div class="highlight-card glass">
+              <div class="highlight-num gradient-text">5+</div>
+              <div class="highlight-label">Months Experience</div>
+            </div>
+            <div class="highlight-card glass">
+              <div class="highlight-num gradient-text">6+</div>
+              <div class="highlight-label">Projects Completed</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Info facts grid list -->
+        <div class="about-info-card glass" style="padding: 2.5rem; border-radius: var(--radius-md);">
+          <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">Profile Info</h3>
+          <ul class="about-info-list">
+            <li>
+              <span class="info-label">Name:</span>
+              <span class="info-val">Nur Aqila Saffia Binti Suhardi</span>
+            </li>
+            <li>
+              <span class="info-label">Location:</span>
+              <span class="info-val">Puchong, Selangor, Malaysia</span>
+            </li>
+            <li>
+              <span class="info-label">Email:</span>
+              <span class="info-val">aqilasaffia@gmail.com</span>
+            </li>
+            <li>
+              <span class="info-label">Degree:</span>
+              <span class="info-val">B.Cs (Hons.) Computer Networking</span>
+            </li>
+            <li>
+              <span class="info-label">Availability:</span>
+              <span class="info-val" style="color: #10b981; font-weight: 600;">Immediate Hire</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <h2>Contact</h2>
-  <p>Email: aqilasaffia@gmail.com</p>
-  <p>LinkedIn: linkedin.com/in/yourname</p>
+    <!-- 
+      =========================================
+      WORK EXPERIENCE SECTION
+      =========================================
+    -->
+    <section id="experience" class="reveal">
+      <div class="section-header">
+        <span class="section-subtitle">My Career Timeline</span>
+        <h2 class="section-title">Work Experience</h2>
+      </div>
+      
+      <div class="timeline">
+        
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass">
+            <span class="timeline-date">February 2026 - Present</span>
+            <h3>Software Engineer</h3>
+            <span class="timeline-subtitle">Vmax Concept Group SDN BHD (Full-time)</span>
+            <p>
+              Leading software development activities focusing on backend operations, payments, and accounting APIs:
+            </p>
+            <ul style="padding-left: 1.25rem; color: var(--text-secondary); margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              <li><strong>LHDN e-Invoicing:</strong> Built and deployed a compliant electronic invoicing platform integrated with the LHDN API using Laravel, processing live JSON payloads securely.</li>
+              <li><strong>POS & QR Ordering System:</strong> Developed robust POS backends and interactive web ordering pages, integrating payment gateways (Sandbox) for digital payments.</li>
+              <li><strong>VShop Mobile App:</strong> Built and optimized the VShop mobile ordering system using Flutter to streamline table order flows.</li>
+              <li><strong>cPanel DevOps:</strong> Managed SQL databases and cPanel server deployments to maintain high application uptime.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Laravel</span>
+              <span>Flutter</span>
+              <span>MySQL</span>
+              <span>LHDN API</span>
+              <span>cPanel</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass">
+            <span class="timeline-date">September 2025 - December 2025</span>
+            <h3>Network Operation Intern</h3>
+            <span class="timeline-subtitle">Setiausaha Kerajaan Terengganu (SUK)</span>
+            <p>
+              Managed state data center infrastructure and handled operational network issues:
+            </p>
+            <ul style="padding-left: 1.25rem; color: var(--text-secondary); margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              <li>Maintained Terengganu Data Center servers, network switches, and critical infrastructure, logging health metrics on monitoring dashboards.</li>
+              <li>Troubleshot active routing and switching devices to restore connectivity for daily government office operations.</li>
+              <li>Compiled documentation on performance indicators to support system audits.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Data Center</span>
+              <span>Switches & Routers</span>
+              <span>Network Monitoring</span>
+              <span>Troubleshooting</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- 
+      =========================================
+      TECHNICAL SKILLS SECTION
+      =========================================
+    -->
+    <section id="skills" class="reveal">
+      <div class="section-header">
+        <span class="section-subtitle">What I Excel At</span>
+        <h2 class="section-title">Technical Skills</h2>
+      </div>
+      
+      <div class="skills-grid">
+        
+        <!-- Skill Card 1: Programming Languages -->
+        <div class="skill-card glass">
+          <div class="skill-header">
+            <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Dart & Flutter</span>
+                <span class="skill-percent">90%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">PHP (Laravel)</span>
+                <span class="skill-percent">85%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">MySQL Database</span>
+                <span class="skill-percent">85%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">C / C++</span>
+                <span class="skill-percent">80%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="80%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Card 2: Networking & Systems -->
+        <div class="skill-card glass">
+          <div class="skill-header">
+            <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
+            <h3>Networking & IoT</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Cisco IOS Routing & Switching</span>
+                <span class="skill-percent">90%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">ESP32 & Arduino (IoT)</span>
+                <span class="skill-percent">85%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">GNS3 Network Simulation</span>
+                <span class="skill-percent">85%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Wireshark Analysis</span>
+                <span class="skill-percent">75%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="75%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Card 3: Frameworks & Developer Tools -->
+        <div class="skill-card glass">
+          <div class="skill-header">
+            <div class="skill-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <h3>Tools & DevOps</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Git Version Control</span>
+                <span class="skill-percent">85%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">cPanel Deployment</span>
+                <span class="skill-percent">80%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">VS Code / Android Studio</span>
+                <span class="skill-percent">90%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Elastic Stack (SIEM)</span>
+                <span class="skill-percent">70%</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" data-percent="70%"></div></div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- 
+      =========================================
+      FEATURED PROJECTS SECTION
+      =========================================
+    -->
+    <section id="projects" class="reveal">
+      <div class="section-header">
+        <span class="section-subtitle">My Portfolio</span>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
+      
+      <div class="projects-grid">
+        
+        <!-- Project Card 1: Indoor Navigation -->
+        <div class="project-card-new glass">
+          <div class="project-image">
+            <!-- Sleek SVG representation of an indoor navigation app -->
+            <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+            </svg>
+          </div>
+          <div class="project-body">
+            <h3>Indoor Navigation in Pasar Payang</h3>
+            <p>
+              My Final Year Project. Developed an indoor navigation mobile application using Flutter, Firebase, and ESP32 iBeacon BLE transmitters. Provides high-precision pathfinding inside indoor zones where GPS signals fail.
+            </p>
+            <div class="project-tech-list">
+              <span>Flutter</span>
+              <span>Firebase</span>
+              <span>ESP32 iBeacon</span>
+              <span>BLE</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 2: SIEM Dashboard -->
+        <div class="project-card-new glass">
+          <div class="project-image">
+            <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2"></path>
+            </svg>
+          </div>
+          <div class="project-body">
+            <h3>SIEM Dashboard with Elastic Stack</h3>
+            <p>
+              Configured a complete security incident and event management dashboard utilizing Elasticsearch and Kibana. Aggregated security logs from network interfaces to identify brute-force vectors and correlate network threat indicators in real time.
+            </p>
+            <div class="project-tech-list">
+              <span>Elasticsearch</span>
+              <span>Kibana</span>
+              <span>SIEM Log Analysis</span>
+              <span>Threat Intel</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 3: Enterprise Network Design -->
+        <div class="project-card-new glass">
+          <div class="project-image">
+            <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+          </div>
+          <div class="project-body">
+            <h3>Enterprise Network Simulation</h3>
+            <p>
+              Designed and simulated a complex multi-layer corporate network utilizing GNS3. Integrated robust layer-2 switching, inter-VLAN routing parameters, and enterprise-level firewall ACL protocols to emulate corporate office connectivity.
+            </p>
+            <div class="project-tech-list">
+              <span>GNS3</span>
+              <span>Routing Protocols</span>
+              <span>Cisco IOS</span>
+              <span>ACLs</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Option to navigate to secondary projects.html page for more projects -->
+      <div style="text-align: center; margin-top: 3.5rem;">
+        <a href="projects.html" class="btn btn-secondary">
+          View Full Project Gallery <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- 
+      =========================================
+      EDUCATION & CERTIFICATIONS
+      =========================================
+    -->
+    <section id="education" class="reveal">
+      <div class="section-header">
+        <span class="section-subtitle">Academic Profile</span>
+        <h2 class="section-title">Education & Certifications</h2>
+      </div>
+      
+      <div class="edu-cert-container">
+        
+        <!-- Left Column: Education history -->
+        <div class="edu-section">
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent-secondary);"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+          
+          <div class="edu-cert-card glass">
+            <span class="edu-cert-date">Oct 2022 - Dec 2025</span>
+            <h3>Bachelor of Computer Science (Hons.) Computer Networking</h3>
+            <span class="edu-cert-institution">Universiti Teknologi MARA (UiTM) Shah Alam</span>
+            <p>Graduated with a major focus on routing, switching architectures, enterprise network administration, network security, and forensic systems.</p>
+            <span class="cert-badge" style="background: rgba(99, 102, 241, 0.1); color: var(--accent-primary); border-color: rgba(99, 102, 241, 0.2);">CGPA: 3.14</span>
+          </div>
+
+          <div class="edu-cert-card glass">
+            <span class="edu-cert-date">June 2020 - July 2022</span>
+            <h3>Physical Science Matriculation</h3>
+            <span class="edu-cert-institution">Kolej Matrikulasi Pahang - Gambang, Malaysia</span>
+            <p>Acquired strong analytical foundations in Mathematics, Physics, Chemistry, and introductory programming.</p>
+            <span class="cert-badge" style="background: rgba(99, 102, 241, 0.1); color: var(--accent-primary); border-color: rgba(99, 102, 241, 0.2);">CGPA: 3.58</span>
+          </div>
+        </div>
+
+        <!-- Right Column: Professional Certifications -->
+        <div class="cert-section">
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent-secondary);"><i class="fa-solid fa-award"></i> Certifications</h3>
+          
+          <div class="edu-cert-card glass">
+            <span class="edu-cert-date">September 2025</span>
+            <h3>CCNP Enterprise: Core Networking</h3>
+            <span class="edu-cert-institution">Cisco Networking Academy</span>
+            <span class="cert-badge"><i class="fa-solid fa-circle-check"></i> Certified</span>
+          </div>
+
+          <div class="edu-cert-card glass">
+            <span class="edu-cert-date">March 2025</span>
+            <h3>CCNP Enterprise: Advanced Routing</h3>
+            <span class="edu-cert-institution">Cisco Networking Academy</span>
+            <span class="cert-badge"><i class="fa-solid fa-circle-check"></i> Certified</span>
+          </div>
+
+          <div class="edu-cert-card glass">
+            <span class="edu-cert-date">July 2024</span>
+            <h3>CCNA: Introduction to Networks</h3>
+            <span class="edu-cert-institution">Cisco Networking Academy</span>
+            <span class="cert-badge"><i class="fa-solid fa-circle-check"></i> Certified</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="edu-cert-card glass" style="padding: 1.25rem;">
+              <span class="edu-cert-date">Sep 2025</span>
+              <h4 style="font-size: 1rem; margin-top: 0.25rem;">Intro to Cybersecurity</h4>
+              <span class="cert-badge" style="font-size: 0.75rem;"><i class="fa-solid fa-circle-check"></i> Cisco</span>
+            </div>
+            <div class="edu-cert-card glass" style="padding: 1.25rem;">
+              <span class="edu-cert-date">May 2024</span>
+              <h4 style="font-size: 1rem; margin-top: 0.25rem;">Introduction to IoT</h4>
+              <span class="cert-badge" style="font-size: 0.75rem;"><i class="fa-solid fa-circle-check"></i> Cisco</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- 
+      =========================================
+      CONTACT SECTION
+      =========================================
+    -->
+    <section id="contact" class="reveal">
+      <div class="section-header">
+        <span class="section-subtitle">Get In Touch</span>
+        <h2 class="section-title">Contact Me</h2>
+      </div>
+      
+      <div class="contact-container">
+        
+        <!-- Social links & direct contact details -->
+        <div class="contact-info">
+          <h3>Let's collaborate on software or network engineering!</h3>
+          <p>
+            Whether you are looking for an immediate hire, want to collaborate on a developer project, or just want to connect, feel free to reach out. I will get back to you as soon as possible.
+          </p>
+          
+          <div class="contact-details-list">
+            <div class="contact-detail-item">
+              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-detail-content">
+                <span>Email Address</span>
+                <a href="mailto:aqilasaffia@gmail.com">aqilasaffia@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="contact-detail-content">
+                <span>Phone / WhatsApp</span>
+                <a href="tel:+60189112908">(+60) 18-9112908</a>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-detail-content">
+                <span>Current Location</span>
+                <p>Puchong, Selangor, Malaysia</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <a href="https://github.com/aqilasaffia" target="_blank" class="social-btn" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/aqilasaffia" target="_blank" class="social-btn" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Form panel -->
+        <div class="contact-form-card glass">
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="user-name">Your Name</label>
+              <input type="text" id="user-name" class="form-control" placeholder="e.g. John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="user-email">Your Email Address</label>
+              <input type="email" id="user-email" class="form-control" placeholder="e.g. john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message Details</label>
+              <textarea id="message" class="form-control" placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+            <div class="form-message" id="form-message"></div>
+          </form>
+        </div>
+        
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 
+    =========================================
+    FOOTER
+    =========================================
+  -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        AqilaSaffia<span class="logo-dot">.</span>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Nur Aqila Saffia. Designed for recruiter review.
+      </div>
+      <!-- Back to top action button -->
+      <button class="scroll-top-btn" id="scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </div>
+  </footer>
+
+  <!-- Include our core custom script.js -->
+  <script src="script.js"></script>
 </body>
 </html>
