@@ -649,6 +649,35 @@ footer {
 
 /* 
   =========================================
+  PROFILE PHOTO STYLING
+  =========================================
+*/
+.profile-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-stark);
+  padding-bottom: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid var(--border-stark);
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: var(--transition-stark);
+}
+
+.profile-photo:hover {
+  filter: grayscale(0%);
+  border-color: var(--text-white);
+}
+
+/* 
+  =========================================
   RESPONSIVE SCREEN LAYOUTS
   =========================================
 */
