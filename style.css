@@ -1,35 +1,53 @@
 /* 
-  ======================================================
-  SKEUOMORPHIC MANILA FILE-FOLDER PORTFOLIO
-  ======================================================
-  Inspired by physical office folders, paperclips, and scrapbooks.
-  Uses realistic backgrounds, drop shadows, tab switching, and 
-  typewriter/handwritten Google Fonts.
+  =========================================
+  MODERN SOFTWARE ENGINEER PORTFOLIO STYLES
+  =========================================
+  This stylesheet defines the entire layout, color palette, typography, 
+  and animation system for the portfolio.
+  
+  LEARNING NOTE: CSS Custom Properties (Variables)
+  We use the :root pseudo-class to declare variables. This lets us define
+  our color scheme in one place and reuse it throughout. If we ever want 
+  to change the theme color, we only need to edit it here!
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Caveat:wght@600;700&family=Special+Elite&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
 
 :root {
-  /* Physical folder colors */
-  --color-manila: #eedfa5;       /* Manila tan color */
-  --color-manila-dark: #d5c386;  /* Shade for tabs and highlights */
-  --color-paper: #faf6eb;        /* Lined/warm paper sheet */
-  --color-ink: #202020;          /* Charcoal typewriter ink */
-  --color-margin: #e11d48;       /* Notebook margin red line */
-  --color-binder-lines: #cbd5e1; /* Notebook blue lined paper */
+  /* Color Palette (Black & Dark Blue Theme) */
+  --bg-primary: #03050a;       /* Solid obsidian off-black */
+  --bg-secondary: #070b16;     /* Deepest navy/charcoal */
+  --bg-card: #0d1326;          /* Dark blue-slate card background */
+  --bg-card-glass: rgba(13, 19, 38, 0.5); /* Semi-transparent background for glassmorphism */
   
-  --font-typewriter: 'Courier Prime', monospace;
-  --font-ink-stamp: 'Special Elite', system-ui;
-  --font-handwritten: 'Caveat', cursive;
-  --font-clean: 'Plus Jakarta Sans', sans-serif;
+  /* Accent Colors (Gradients are created with these) */
+  --accent-primary: #1e40af;   /* Dark Royal Blue */
+  --accent-secondary: #3b82f6; /* Cobalt Blue */
+  --accent-glow: rgba(59, 130, 246, 0.15); /* Light glow shadow */
   
-  --transition-page: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Text Colors */
+  --text-main: #f8fafc;        /* High-contrast off-white */
+  --text-secondary: #cbd5e1;   /* Medium-contrast light gray */
+  --text-muted: #64748b;       /* Low-contrast slate gray */
+  
+  /* Border & Radius */
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(59, 130, 246, 0.3);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Custom bezier curve for smooth elastic motion */
 }
 
 /* 
-  ======================================================
-  GLOBAL BASE
-  ======================================================
+  =========================================
+  BASE RESET & GLOBAL STYLES
+  =========================================
+  LEARNING NOTE: The universal selector (*) combined with box-sizing: border-box 
+  ensures padding and borders do not add to an element's total width/height.
 */
 * {
   margin: 0;
@@ -37,662 +55,1166 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth; /* Enables smooth native scrolling when clicking anchor tags */
+  scroll-padding-top: 80px; /* Offset to prevent navbar from covering section titles on scroll */
+}
+
 body {
-  min-height: 100vh;
-  /* Beautiful full-bleed nature background matching the green field in your screenshot */
-  background: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-  background-size: cover;
-  font-family: var(--font-clean);
-  color: var(--color-ink);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 1.5rem;
-  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scrollbars from elements animation off-screen */
 }
 
-/* Soft dark overlay on background so folder stands out */
-body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 23, 42, 0.35);
-  z-index: 0;
-}
-
-/* 
-  ======================================================
-  MAIN FILE FOLDER CONTAINER
-  ======================================================
-*/
-.folder-container {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  max-width: 1050px;
-  min-height: 680px;
-  background-color: var(--color-manila);
-  border-radius: 12px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 
-              0 0 0 1px rgba(0, 0, 0, 0.1),
-              inset 0 2px 3px rgba(255, 255, 255, 0.3);
-  display: flex;
-  flex-direction: column;
-  padding: 2.5rem 1.5rem 1.5rem; /* Margins for sheets inside */
-  margin-top: 2rem;
-}
-
-/* Folder tab dividers at the top */
-.folder-tabs {
-  position: absolute;
-  top: -38px;
-  left: 30px;
-  display: flex;
-  gap: 4px;
-  list-style: none;
-  z-index: 1;
-}
-
-.folder-tab-item {
-  font-family: var(--font-typewriter);
-  font-size: 0.8rem;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
   font-weight: 700;
-  text-transform: uppercase;
-  background-color: var(--color-manila-dark);
-  color: rgba(0, 0, 0, 0.6);
-  padding: 10px 20px;
-  border-radius: 8px 8px 0 0;
-  cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-bottom: none;
-  transition: all 0.2s ease;
-  position: relative;
+  letter-spacing: -0.02em;
 }
 
-.folder-tab-item:hover {
-  background-color: var(--color-manila);
-  color: var(--color-ink);
-  transform: translateY(-2px);
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
 }
 
-.folder-tab-item.active {
-  background-color: var(--color-manila);
-  color: var(--color-ink);
-  z-index: 3;
-  padding-bottom: 12px;
-  height: 40px;
-  transform: translateY(0);
-}
-
-/* Tab labels for visual folder index divider look */
-.folder-tab-item::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--color-manila);
-  display: none;
-}
-
-.folder-tab-item.active::after {
+img {
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 
-/* 
-  ======================================================
-  INNER PAPER SHEETS
-  ======================================================
-*/
-.folder-inner-sheet {
-  flex-grow: 1;
-  background-color: var(--color-paper);
-  border-radius: 6px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15),
-              0 1px 2px rgba(0, 0, 0, 0.1);
-  padding: 3rem;
-  position: relative;
+/* Utility class to hide element visually but keep for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
-/* Lined notebook paper lines mockup */
-.lined-paper-bg {
-  position: absolute;
+/* 
+  =========================================
+  GLASSMORPHISM UTILITIES
+  =========================================
+  Glassmorphism combines semi-transparent backgrounds with a backdrop-blur.
+*/
+.glass {
+  background: var(--bg-card-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  border: 1px solid var(--border-color);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* 
+  =========================================
+  NAVBAR STYLING
+  =========================================
+*/
+header {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-image: linear-gradient(var(--color-binder-lines) 1px, transparent 1px);
-  background-size: 100% 32px; /* 32px row height */
-  opacity: 0.25;
-  pointer-events: none;
-  z-index: 1;
+  z-index: 1000;
 }
 
-/* Left margin red line */
-.lined-paper-margin {
-  position: absolute;
-  top: 0;
-  left: 70px;
-  width: 1px;
-  height: 100%;
-  background-color: var(--color-margin);
-  opacity: 0.4;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* 
-  ======================================================
-  PAGES FLIPPING LOGIC
-  ======================================================
-*/
-.folder-page {
-  display: none;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity var(--transition-page), transform var(--transition-page);
-  z-index: 5;
-  position: relative;
-  flex-grow: 1;
-}
-
-.folder-page.active {
+.navbar {
   display: flex;
-  flex-direction: column;
-  opacity: 1;
-  transform: translateY(0);
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  margin-top: 0.5rem;
+  transition: var(--transition-normal);
 }
 
-/* 
-  ======================================================
-  PAPERCLIPPED POLAROID PROFILE PHOTO
-  ======================================================
-*/
-.paperclip-photo {
-  position: absolute;
-  top: 1.5rem;
-  right: 2rem;
-  width: 190px;
-  background: white;
-  padding: 12px 12px 24px 12px;
-  box-shadow: 2px 8px 20px rgba(0, 0, 0, 0.25);
-  transform: rotate(5deg);
-  z-index: 20;
-  transition: transform 0.3s ease;
-  border: 1px solid rgba(0,0,0,0.06);
-}
-
-.paperclip-photo:hover {
-  transform: rotate(0deg) scale(1.05);
-}
-
-.paperclip-photo img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border: 1px solid #ddd;
-}
-
-/* Realistic SVG Paperclip overlay */
-.paperclip-icon {
-  position: absolute;
-  top: -15px;
-  left: 30px;
-  width: 32px;
-  height: 55px;
-  z-index: 25;
-  filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.3));
-  pointer-events: none;
-}
-
-/* 
-  ======================================================
-  TYPOGRAPHY CONTENT SPECIFICS
-  ======================================================
-*/
-.title-script {
-  font-family: var(--font-handwritten);
-  font-size: 3.5rem;
-  color: var(--color-margin);
-  line-height: 0.8;
-  margin-bottom: 0.5rem;
-}
-
-.title-ink {
-  font-family: var(--font-ink-stamp);
-  font-size: 2.75rem;
-  text-transform: uppercase;
-  color: var(--color-ink);
-  line-height: 1.1;
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
   letter-spacing: -1px;
 }
 
-.typewriter-text {
-  font-family: var(--font-typewriter);
-  font-size: 0.95rem;
-  color: #1a1a1a;
-  line-height: 1.7;
+.logo-dot {
+  color: var(--accent-secondary);
 }
 
-/* Styled handwritten notes scattered */
-.handwritten-note {
-  font-family: var(--font-handwritten);
-  font-size: 1.6rem;
-  color: #1d4ed8; /* Blue ink pen */
-  transform: rotate(-2deg);
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
+  transition: var(--transition-fast);
+}
+
+.nav-links a:hover {
+  color: var(--text-main);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* Mobile Toggle Hamburger */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-main);
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 /* 
-  ======================================================
-  EXPERIENCE / TIMELINE (Folder style sheets)
-  ======================================================
+  =========================================
+  HERO SECTION STYLING
+  =========================================
 */
-.exp-sheet-container {
+.hero {
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 1rem;
+  align-items: center;
+  padding: 8rem 2rem 4rem;
+  position: relative;
+  background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 40%);
 }
 
-.exp-sheet {
-  border-left: 2px dashed rgba(0, 0, 0, 0.15);
-  padding-left: 2rem;
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-badge {
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  color: var(--accent-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-secondary);
+  border-radius: 50%;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  min-height: 2.8rem; /* Keeps layout stable during typing */
+}
+
+/* JS Typing Animation Support styles */
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  background-color: var(--accent-secondary);
+  margin-left: 4px;
+  animation: blink 0.8s infinite;
+}
+
+.hero-description {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* Custom buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Interactive SVG Hero Illustration (CSS Avatar replacements) */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 
-.exp-sheet::before {
-  content: '';
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: var(--color-margin);
-  border-radius: 50%;
-  left: -6px;
-  top: 5px;
+.avatar-wrapper {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Organic moving shape */
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+  animation: morph-blob 8s ease-in-out infinite alternate;
+  padding: 6px;
 }
 
-.exp-title {
-  font-family: var(--font-ink-stamp);
-  font-size: 1.35rem;
+.avatar-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--bg-primary);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Profile Image styling inside morphing container */
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  transition: var(--transition-fast);
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
+/* 
+  =========================================
+  SECTION GENERAL STYLES
+  =========================================
+*/
+section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  color: var(--accent-secondary);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
+  border-radius: 2px;
+}
+
+/* 
+  =========================================
+  ABOUT ME SECTION
+  =========================================
+*/
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-details h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-details p {
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.highlight-card {
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.highlight-num {
+  font-size: 2.25rem;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  line-height: 1;
   margin-bottom: 0.25rem;
 }
 
-.exp-meta {
-  font-family: var(--font-typewriter);
+.highlight-label {
+  color: var(--text-muted);
   font-size: 0.85rem;
-  color: var(--color-margin);
-  font-weight: 700;
-  margin-bottom: 0.75rem;
+  font-weight: 500;
 }
 
-.exp-bullets {
-  font-family: var(--font-typewriter);
-  font-size: 0.85rem;
+.about-info-list {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.exp-bullets li {
-  position: relative;
-  padding-left: 1.25rem;
-  margin-bottom: 0.4rem;
+.about-info-list li {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
-.exp-bullets li::before {
-  content: '-';
-  position: absolute;
-  left: 0;
-  color: var(--color-margin);
+.info-label {
+  font-family: 'Fira Code', monospace;
+  color: var(--accent-secondary);
+  font-size: 0.9rem;
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.info-val {
+  color: var(--text-secondary);
 }
 
 /* 
-  ======================================================
-  SKILLS (Sticky notes style layout)
-  ======================================================
+  =========================================
+  TECHNICAL SKILLS (Categorized Cards)
+  =========================================
 */
-.skills-notes-grid {
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-top: 1.5rem;
 }
 
-.sticky-note {
-  background: #fef08a; /* Yellow sticky note */
-  box-shadow: 2px 5px 15px rgba(0,0,0,0.12);
-  padding: 1.5rem;
-  transform: rotate(-1deg);
-  border-radius: 2px;
-  min-height: 220px;
+.skill-card {
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
+  opacity: 0;
+  transition: var(--transition-fast);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.skill-icon {
+  font-size: 1.75rem;
+  color: var(--accent-secondary);
+  background: rgba(37, 99, 235, 0.08);
+  width: 45px;
+  height: 45px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-header h3 {
+  font-size: 1.25rem;
+}
+
+.skill-list {
   display: flex;
   flex-direction: column;
+  gap: 1.25rem;
 }
 
-.sticky-note:nth-child(2) {
-  background: #bfdbfe; /* Blue sticky note */
-  transform: rotate(1.5deg);
-}
-
-.sticky-note:nth-child(3) {
-  background: #fed7aa; /* Orange sticky note */
-  transform: rotate(-1.5deg);
-}
-
-.sticky-note h3 {
-  font-family: var(--font-handwritten);
-  font-size: 1.6rem;
-  color: #1e3a8a;
-  border-bottom: 1px dashed rgba(0,0,0,0.1);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.sticky-note ul {
-  font-family: var(--font-typewriter);
-  font-size: 0.85rem;
-  list-style: none;
+.skill-item {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.sticky-note li {
-  position: relative;
-  padding-left: 1rem;
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
 }
 
-.sticky-note li::before {
-  content: '*';
-  position: absolute;
-  left: 0;
-  color: var(--color-margin);
+.skill-name {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.skill-percent {
+  color: var(--accent-secondary);
+  font-family: 'Fira Code', monospace;
+}
+
+.skill-bar-bg {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
+  border-radius: 3px;
+  width: 0; /* Animated via JS */
+  transition: width 1.5s cubic-bezier(0.1, 1, 0.1, 1);
 }
 
 /* 
-  ======================================================
-  PROJECT CARDS (Scrapbook index tabs)
-  ======================================================
+  =========================================
+  WORK EXPERIENCE TIMELINE
+  =========================================
 */
-.projects-scrap-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin-top: 1rem;
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
-.scrap-card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 4px;
-  padding: 1.25rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-  transition: transform 0.2s ease;
-  min-height: 250px;
-  display: flex;
-  flex-direction: column;
+/* The vertical line in the middle/left of the timeline */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: var(--border-color);
+  top: 0;
+  bottom: 0;
+  left: 20px; /* Aligned to left on mobile, can be centered on large screen */
 }
 
-.scrap-card:hover {
-  transform: translateY(-3px) rotate(0.5deg);
+.timeline-item {
+  padding: 1.5rem 0 1.5rem 50px;
+  position: relative;
+  width: 100%;
 }
 
-.scrap-card h3 {
-  font-family: var(--font-ink-stamp);
-  font-size: 1.05rem;
+/* The timeline bubble dot */
+.timeline-dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  left: 13px;
+  top: 2rem;
+  background: var(--bg-primary);
+  border: 3px solid var(--accent-secondary);
+  z-index: 2;
+  transition: var(--transition-fast);
+}
+
+.timeline-item:hover .timeline-dot {
+  background: var(--accent-secondary);
+  transform: scale(1.2);
+}
+
+.timeline-content {
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  transition: var(--transition-normal);
+}
+
+.timeline-content:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
+}
+
+.timeline-date {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: var(--accent-secondary);
+  font-weight: 500;
+  display: block;
   margin-bottom: 0.5rem;
 }
 
-.scrap-card p {
-  font-family: var(--font-typewriter);
-  font-size: 0.78rem;
-  line-height: 1.6;
-  color: #4b5563;
-  margin-bottom: 1rem;
-  flex-grow: 1;
-}
-
-.scrap-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-bottom: 0.75rem;
-}
-
-.scrap-tech span {
-  font-family: var(--font-typewriter);
-  font-size: 0.65rem;
-  background-color: #f3f4f6;
-  padding: 0.15rem 0.4rem;
-  border-radius: 2px;
-}
-
-.scrap-link {
-  font-family: var(--font-typewriter);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--color-margin);
-}
-
-/* 
-  ======================================================
-  EDUCATION (Ring Binder Sheets)
-  ======================================================
-*/
-.edu-binder-container {
-  display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 2.5rem;
-  margin-top: 1rem;
-}
-
-.edu-sheet-card {
-  border-bottom: 1px dashed rgba(0,0,0,0.1);
-  padding-bottom: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.edu-sheet-card:last-child {
-  border-bottom: none;
-}
-
-.edu-sheet-card h3 {
-  font-family: var(--font-ink-stamp);
-  font-size: 1.2rem;
+.timeline-content h3 {
+  font-size: 1.35rem;
   margin-bottom: 0.25rem;
 }
 
-.edu-sheet-card span {
-  font-family: var(--font-typewriter);
-  font-size: 0.8rem;
-  color: var(--color-margin);
-  font-weight: 700;
+.timeline-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.timeline-content p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.timeline-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.timeline-tags span {
+  font-size: 0.75rem;
+  font-family: 'Fira Code', monospace;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+/* 
+  =========================================
+  FEATURED PROJECTS SECTION
+  =========================================
+*/
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.project-card-new {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card-new:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.project-image {
+  position: relative;
+  aspect-ratio: 16/9;
+  background-color: var(--bg-secondary);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Project graphic placeholder in case there are no images */
+.project-placeholder-svg {
+  width: 60px;
+  height: 60px;
+  color: var(--text-muted);
+  opacity: 0.4;
+  transition: var(--transition-normal);
+}
+
+.project-card-new:hover .project-placeholder-svg {
+  transform: scale(1.1);
+  color: var(--accent-secondary);
+  opacity: 0.8;
+}
+
+.project-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-body h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-body p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Pushes tags and links to the bottom */
+}
+
+.project-tech-list {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.project-tech-list span {
+  font-size: 0.75rem;
+  font-family: 'Fira Code', monospace;
+  background: rgba(6, 182, 212, 0.06);
+  color: var(--accent-secondary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.project-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.project-link:hover {
+  color: var(--accent-secondary);
+}
+
+/* 
+  =========================================
+  EDUCATION & CERTIFICATIONS
+  =========================================
+*/
+.edu-cert-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.edu-section, .cert-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.edu-cert-card {
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  position: relative;
+  transition: var(--transition-normal);
+}
+
+.edu-cert-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  color: var(--accent-secondary);
+  margin-bottom: 1rem;
+}
+
+.edu-cert-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.edu-cert-institution {
+  color: var(--accent-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
   display: block;
   margin-bottom: 0.75rem;
 }
 
-.edu-sheet-card p {
-  font-family: var(--font-typewriter);
+.edu-cert-date {
+  font-family: 'Fira Code', monospace;
   font-size: 0.85rem;
-  line-height: 1.6;
+  color: var(--text-muted);
 }
 
-.cert-stamp-box {
-  background-color: white;
-  border: 2px solid #b91c1c;
-  padding: 1.5rem;
-  transform: rotate(-3deg);
-  border-radius: 4px;
-}
-
-.cert-stamp-box h3 {
-  font-family: var(--font-ink-stamp);
-  color: #b91c1c;
-  font-size: 1rem;
-  text-align: center;
-  border-bottom: 2px solid #b91c1c;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.cert-stamp-list {
-  font-family: var(--font-typewriter);
-  font-size: 0.75rem;
-  list-style: none;
-  color: #b91c1c;
-}
-
-.cert-stamp-list li {
-  margin-bottom: 0.5rem;
-  display: flex;
+.cert-badge {
+  display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  margin-top: 1rem;
 }
 
 /* 
-  ======================================================
-  CONTACT (Office Mail Sheet)
-  ======================================================
+  =========================================
+  CONTACT SECTION & FORM
+  =========================================
 */
-.mail-layout {
+.contact-container {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 3rem;
-  margin-top: 1.5rem;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
 }
 
-.mail-info {
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-info p {
+  color: var(--text-secondary);
+}
+
+.contact-details-list {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.mail-info h3 {
-  font-family: var(--font-ink-stamp);
-  font-size: 1.25rem;
-}
-
-.mail-meta-list {
+.contact-detail-item {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  font-family: var(--font-typewriter);
-  font-size: 0.85rem;
-}
-
-.mail-meta-row {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px dashed rgba(0,0,0,0.1);
-  padding-bottom: 0.4rem;
-}
-
-.mail-meta-row span:first-child {
-  color: #6b7280;
-}
-
-.mail-meta-row a {
-  font-weight: 700;
-}
-
-.mail-meta-row a:hover {
-  color: var(--color-margin);
-}
-
-/* Office mail form elements */
-.mail-form {
-  display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 1.25rem;
 }
 
-.mail-form-group {
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--accent-secondary);
+  background: rgba(6, 182, 212, 0.06);
+  border: 1px solid var(--border-color);
+  transition: var(--transition-fast);
+}
+
+.contact-detail-item:hover .contact-icon {
+  background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.contact-detail-content span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.contact-detail-content a,
+.contact-detail-content p {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.contact-detail-content a:hover {
+  color: var(--accent-secondary);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.02);
+  transition: var(--transition-fast);
+}
+
+.social-btn:hover {
+  color: var(--text-main);
+  border-color: var(--accent-secondary);
+  background: rgba(6, 182, 212, 0.05);
+  transform: translateY(-3px);
+}
+
+/* Contact Form Grid styling */
+.contact-form-card {
+  padding: 2.5rem;
+  border-radius: var(--radius-md);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.5rem;
 }
 
-.mail-form-group label {
-  font-family: var(--font-typewriter);
-  font-size: 0.75rem;
-  font-weight: 700;
-}
-
-.mail-input {
-  background-color: rgba(0, 0, 0, 0.02);
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-  font-family: var(--font-typewriter);
+.form-group label {
   font-size: 0.9rem;
-  padding: 0.5rem 0.25rem;
-  outline: none;
-  color: var(--color-ink);
-  transition: border-bottom-color 0.2s;
+  font-weight: 500;
+  color: var(--text-secondary);
 }
 
-.mail-input:focus {
-  border-bottom-color: var(--color-margin);
-}
-
-textarea.mail-input {
-  min-height: 100px;
-  resize: vertical;
-}
-
-.btn-stamp {
-  font-family: var(--font-ink-stamp);
-  background-color: var(--color-ink);
-  color: var(--color-paper);
-  border: none;
-  padding: 12px;
+.form-control {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.2rem;
+  color: var(--text-main);
+  font-family: inherit;
   font-size: 0.95rem;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.2s;
+  outline: none;
+  transition: var(--transition-fast);
 }
 
-.btn-stamp:hover {
-  background-color: var(--color-margin);
+.form-control:focus {
+  border-color: var(--accent-secondary);
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.mail-status-box {
-  font-family: var(--font-typewriter);
-  font-size: 0.8rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px dashed var(--color-margin);
-  color: var(--color-margin);
-  display: none;
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
 }
 
-.mail-status-box.active {
+/* Contact Success Message styling */
+.form-message {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  display: none; /* Controlled by JS */
+}
+
+.form-message.success {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
   display: block;
 }
 
 /* 
-  ======================================================
-  RESPONSIVE FOLDER LAYOUT (Via Scale Control)
-  ======================================================
+  =========================================
+  FOOTER
+  =========================================
 */
-body {
-  transform-origin: top center;
-  transition: height 0.2s ease;
+footer {
+  border-top: 1px solid var(--border-color);
+  padding: 3rem 2rem;
+  background-color: #05080e;
 }
 
-.folder-container {
-  transition: transform 0.2s ease;
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-@media screen and (max-width: 1080px) {
-  body {
-    padding: 1.5rem 0;
-    align-items: flex-start;
+.footer-copy {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.footer-logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+/* Scroll to top button */
+.scroll-top-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.scroll-top-btn:hover {
+  background: var(--accent-secondary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* 
+  =========================================
+  ANIMATION DEFINITIONS (Keyframes)
+  =========================================
+*/
+@keyframes pulse-glow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 8px rgba(6, 182, 212, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(6, 182, 212, 0);
   }
 }
 
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes morph-blob {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  50% {
+    border-radius: 70% 30% 50% 50% / 50% 70% 30% 50%;
+  }
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
+/* Scroll reveal helper classes controlled by JS observer */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay modifiers for staggered reveals */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+
+/* 
+  =========================================
+  RESPONSIVE MEDIA QUERIES (Breakpoints)
+  =========================================
+*/
+
+/* Tablet Width (Large Screen Mobile / iPads) */
+@media screen and (max-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+  
+  .hero-badge {
+    justify-content: center;
+  }
+  
+  .hero-description {
+    margin: 0 auto 2.5rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .edu-cert-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* Mobile Devices (Smartphones) */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: var(--bg-primary);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    transition: var(--transition-normal);
+    border-top: 1px solid var(--border-color);
+    z-index: 999;
+  }
+  
+  .nav-links.active {
+    left: 0;
+  }
+  
+  .nav-toggle {
+    display: block; /* Show hamburger button */
+  }
+  
+  section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .timeline::after {
+    left: 15px;
+  }
+  
+  .timeline-item {
+    padding-left: 40px;
+  }
+  
+  .timeline-dot {
+    left: 8px;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}

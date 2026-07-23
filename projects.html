@@ -3,171 +3,329 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Registry Archive // Nur Aqila Saffia</title>
+  <title>Projects Gallery | Nur Aqila Saffia</title>
   
   <!-- Link to the main style.css -->
   <link rel="stylesheet" href="style.css">
   
-  <!-- FontAwesome CDN for high-quality developer icons -->
+  <!-- FontAwesome CDN for developer icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
-    /* Specific projects filtering inside scrapbook layout */
-    .filter-btn-scrap {
-      font-family: var(--font-typewriter);
-      font-size: 0.75rem;
-      background-color: var(--color-manila-dark);
-      color: rgba(0, 0, 0, 0.6);
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      padding: 8px 16px;
+    /* Specific projects page styles */
+    .filter-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 0.6rem 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 50px;
       cursor: pointer;
-      border-radius: 4px;
-      transition: all 0.2s ease;
+      transition: var(--transition-fast);
     }
     
-    .filter-btn-scrap:hover,
-    .filter-btn-scrap.active {
-      background-color: var(--color-ink);
-      color: var(--color-paper);
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+      color: white;
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
     }
     
-    /* Project cards filter toggle */
-    .scrap-card.hidden {
-      display: none !important;
+    /* Project gallery items animation */
+    .project-card-new {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                  box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                  opacity 0.4s ease, 
+                  visibility 0.4s;
+    }
+    
+    .project-card-new.hidden {
+      display: none;
+      opacity: 0;
+      visibility: hidden;
     }
   </style>
 </head>
 <body>
 
   <!-- 
-    ======================================================
-    THE ARCHIVE SKEUOMORPHIC FILE FOLDER
-    ======================================================
+    =========================================
+    NAVBAR / HEADER
+    =========================================
   -->
-  <div class="folder-container">
-    
-    <!-- Top Index Tab referencing back to home -->
-    <ul class="folder-tabs">
-      <li class="folder-tab-item active" onclick="window.location.href='index.html'">
-        <i class="fa-solid fa-arrow-left"></i> Return to Main File
-      </li>
-    </ul>
+  <header>
+    <nav class="navbar glass">
+      <a href="index.html#home" class="logo">
+        AqilaSaffia<span class="logo-dot">.</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#projects" class="active">Projects</a></li>
+        <li><a href="index.html#education">Education & Certs</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+  </header>
 
-    <!-- Inner Lined Sheet -->
-    <div class="folder-inner-sheet" style="min-height: 580px;">
-      <div class="lined-paper-bg"></div>
-      <div class="lined-paper-margin"></div>
-
-      <div style="padding-left: 2rem; max-width: 98%;">
-        <h1 class="title-ink" style="margin-bottom: 1.5rem;">Archive Registry // Full Index</h1>
-        
-        <!-- Category Filters -->
-        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
-          <button class="filter-btn-scrap active" data-filter="all">All [6]</button>
-          <button class="filter-btn-scrap" data-filter="software">Software [5]</button>
-          <button class="filter-btn-scrap" data-filter="networking">Networking [1]</button>
-          <button class="filter-btn-scrap" data-filter="iot">IoT & Hardware [2]</button>
-        </div>
-
-        <div class="projects-scrap-grid" id="scrapbook-grid" style="grid-template-columns: repeat(3, 1fr);">
-          
-          <!-- Proj 1 -->
-          <div class="scrap-card" data-category="software">
-            <h3>LHDN e-Invoicing</h3>
-            <p>Developed a secure electronic invoicing platform integrated with the LHDN API using Laravel to process live JSON payload transmissions.</p>
-            <div class="scrap-tech">
-              <span>Laravel</span>
-              <span>LHDN API</span>
-              <span>REST</span>
-              <span>MySQL</span>
-            </div>
-            <a href="#" class="scrap-link">Inspect Code</a>
-          </div>
-
-          <!-- Proj 2 -->
-          <div class="scrap-card" data-category="software">
-            <h3>POS System</h3>
-            <p>Built a robust Point of Sale backend engine using Laravel, implementing local sync parameters, inventory logs, and checkout checks.</p>
-            <div class="scrap-tech">
-              <span>Laravel</span>
-              <span>PHP</span>
-              <span>Database</span>
-            </div>
-            <a href="#" class="scrap-link">Inspect Code</a>
-          </div>
-
-          <!-- Proj 3 -->
-          <div class="scrap-card" data-category="software">
-            <h3>QR Ordering</h3>
-            <p>Developed an interactive QR web client ordering engine, integrating payment gateways (Sandbox) to handle customer transactions.</p>
-            <div class="scrap-tech">
-              <span>Laravel</span>
-              <span>APIs</span>
-              <span>Payments</span>
-            </div>
-            <a href="#" class="scrap-link">Inspect Code</a>
-          </div>
-
-          <!-- Proj 4 -->
-          <div class="scrap-card" data-category="software iot">
-            <h3>Flutter VShop</h3>
-            <p>Engineered and optimized the VShop mobile ordering system using Flutter to streamline table order flows and reduce processing delay.</p>
-            <div class="scrap-tech">
-              <span>Flutter</span>
-              <span>Dart</span>
-              <span>REST</span>
-            </div>
-            <a href="#" class="scrap-link">Inspect Code</a>
-          </div>
-
-          <!-- Proj 5 -->
-          <div class="scrap-card" data-category="software iot">
-            <h3>Indoor Navigation</h3>
-            <p>Built an indoor navigation mobile application using Flutter, Firebase, and ESP32 BLE beacons to track users inside Pasar Payang.</p>
-            <div class="scrap-tech">
-              <span>Flutter</span>
-              <span>ESP32</span>
-              <span>BLE</span>
-            </div>
-            <a href="#" class="scrap-link">Inspect Code</a>
-          </div>
-
-          <!-- Proj 6 -->
-          <div class="scrap-card" data-category="networking">
-            <h3>Enterprise Network</h3>
-            <p>Designed and simulated a multi-layer enterprise corporate network topology using GNS3, setting switches, VLANs, and router ACL lists.</p>
-            <div class="scrap-tech">
-              <span>GNS3</span>
-              <span>Cisco IOS</span>
-              <span>Routing</span>
-            </div>
-            <a href="#" class="scrap-link">Inspect Map</a>
-          </div>
-
-        </div>
+  <!-- 
+    =========================================
+    PROJECTS GALLERY SECTION
+    =========================================
+  -->
+  <main style="padding-top: 100px; min-height: 80vh;">
+    <section>
+      <div class="section-header" style="margin-bottom: 2.5rem;">
+        <span class="section-subtitle">Full Portfolio Archive</span>
+        <h2 class="section-title">My Projects Gallery</h2>
+      </div>
+      
+      <!-- 
+        LEARNING NOTE: Interactive Filter System
+        The buttons below have custom data-filter attributes. We will use JavaScript 
+        to listen to click events on these buttons, read the attribute value, 
+        and hide/show project cards based on their class matching the selected filter.
+      -->
+      <div class="filter-container reveal">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="software">Software Dev</button>
+        <button class="filter-btn" data-filter="networking">Networking & Security</button>
+        <button class="filter-btn" data-filter="iot">IoT & Hardware</button>
       </div>
 
+      <div class="projects-grid reveal delay-1">
+        
+        <!-- Project 1: LHDN e-Invoicing Platform (Software) -->
+        <div class="project-card-new glass" data-category="software">
+          <div class="project-image">
+            <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <div class="project-body">
+            <h3>LHDN e-Invoicing Platform</h3>
+            <p>
+              Built and deployed a compliant electronic invoicing platform integrated with the LHDN API using Laravel, successfully processing live JSON payload transmissions.
+            </p>
+            <div class="project-tech-list">
+              <span>Laravel</span>
+              <span>PHP</span>
+              <span>LHDN API</span>
+              <span>REST APIs</span>
+              <span>MySQL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: POS System (Software) -->
+        <div class="project-card-new glass" data-category="software">
+          <div class="project-image">
+            <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+            </svg>
+          </div>
+          <div class="project-body">
+            <h3>POS System</h3>
+            <p>
+              Developed a robust Point of Sale backend system using Laravel, implementing inventory tracking, transaction audits, and secure local database syncing.
+            </p>
+            <div class="project-tech-list">
+              <span>Laravel</span>
+              <span>PHP</span>
+              <span>MySQL</span>
+              <span>Database Design</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: QR Ordering System (Software) -->
+        <div class="project-card-new glass" data-category="software">
+          <div class="project-image">
+            <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path>
+            </svg>
+          </div>
+          <div class="project-body">
+            <h3>QR Ordering System</h3>
+            <p>
+              Developed an interactive QR web ordering client, integrating secure payment gateway sandbox APIs to handle real-time digital customer transactions.
+            </p>
+            <div class="project-tech-list">
+              <span>Laravel</span>
+              <span>PHP</span>
+              <span>REST APIs</span>
+              <span>Payment Gateways</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Flutter VShop Mobile App (Software, IoT) -->
+        <div class="project-card-new glass" data-category="software iot">
+          <div class="project-image">
+            <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <div class="project-body">
+            <h3>Flutter VShop Mobile App</h3>
+            <p>
+              Engineered and optimized the VShop mobile ordering application using Flutter to improve counter and table order processing performance.
+            </p>
+            <div class="project-tech-list">
+              <span>Flutter</span>
+              <span>Dart</span>
+              <span>REST APIs</span>
+              <span>State Management</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Indoor Navigation using Flutter + ESP32 (Software, IoT) -->
+        <div class="project-card-new glass" data-category="software iot">
+          <div class="project-image">
+            <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <div class="project-body">
+            <h3>Indoor Navigation (Flutter + ESP32 Beacons)</h3>
+            <p>
+              Developed an indoor navigation mobile application using Flutter, Firebase, and ESP32 iBeacon BLE transmitters for pathfinding inside Pasar Payang.
+            </p>
+            <div class="project-tech-list">
+              <span>Flutter</span>
+              <span>Firebase</span>
+              <span>ESP32 iBeacon</span>
+              <span>BLE Beacons</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Enterprise Network Design (Networking) -->
+        <div class="project-card-new glass" data-category="networking">
+          <div class="project-image">
+            <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012 2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+          </div>
+          <div class="project-body">
+            <h3>Enterprise Network Design</h3>
+            <p>
+              Designed and simulated a multi-layer enterprise network simulation using GNS3, emulating real-world routing, switching, and security ACL boundaries.
+            </p>
+            <div class="project-tech-list">
+              <span>GNS3</span>
+              <span>Cisco IOS</span>
+              <span>Routing & Switching</span>
+              <span>ACLs</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Topology</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 4rem;">
+        <a href="index.html" class="btn btn-primary">
+          <i class="fa-solid fa-arrow-left"></i> Back to Main Page
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 
+    =========================================
+    FOOTER
+    =========================================
+  -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        AqilaSaffia<span class="logo-dot">.</span>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Nur Aqila Saffia. Designed for recruiter review.
+      </div>
+      <button class="scroll-top-btn" id="scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
     </div>
+  </footer>
 
-  </div>
-
+  <!-- 
+    JAVASCRIPT FOR FILTERING LOGIC
+    This script listens to clicks on buttons, reads the filter value,
+    and toggles a CSS display rule (.hidden) on matching project cards.
+  -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Filtering mechanism
-      const filterButtons = document.querySelectorAll('.filter-btn-scrap');
-      const cards = document.querySelectorAll('.scrap-card');
+      
+      // Mobile Toggle menu helper
+      const navToggle = document.getElementById('nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = navToggle.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+          icon.className = 'fa-solid fa-xmark';
+        } else {
+          icon.className = 'fa-solid fa-bars';
+        }
+      });
+      
+      // Filter functionality
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card-new');
       
       filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-          // Remove active state
-          filterButtons.forEach(b => b.classList.remove('active'));
+          // Remove active class from all buttons, and add it to the clicked one
+          filterButtons.forEach(button => button.classList.remove('active'));
           btn.classList.add('active');
           
-          const filterVal = btn.getAttribute('data-filter');
+          const filterValue = btn.getAttribute('data-filter');
           
-          cards.forEach(card => {
+          projectCards.forEach(card => {
             const categories = card.getAttribute('data-category').split(' ');
-            if (filterVal === 'all' || categories.includes(filterVal)) {
+            
+            if (filterValue === 'all' || categories.includes(filterValue)) {
               card.classList.remove('hidden');
             } else {
               card.classList.add('hidden');
@@ -175,6 +333,13 @@
           });
         });
       });
+      
+      // Basic entry animations trigger on page load
+      const reveals = document.querySelectorAll('.reveal');
+      setTimeout(() => {
+        reveals.forEach(el => el.classList.add('active'));
+      }, 100);
+      
     });
   </script>
 </body>
