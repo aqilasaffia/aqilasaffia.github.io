@@ -1,54 +1,29 @@
-/* 
-  =========================================
-  MODERN SOFTWARE ENGINEER PORTFOLIO STYLES
-  =========================================
-  This stylesheet defines the entire layout, color palette, typography, 
-  and animation system for the portfolio.
-  
-  LEARNING NOTE: CSS Custom Properties (Variables)
-  We use the :root pseudo-class to declare variables. This lets us define
-  our color scheme in one place and reuse it throughout. If we ever want 
-  to change the theme color, we only need to edit it here!
-*/
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
 
 :root {
-  /* Color Palette (Light Minimalist Bold Red Theme) */
-  --bg-primary: #f4f4f5;       /* Light zinc/gray background */
-  --bg-secondary: #ececec;     /* Slightly darker light gray */
-  --bg-card: #ffffff;          /* Pure white card background */
-  --bg-card-glass: rgba(255, 255, 255, 0.75); /* Semi-transparent white card */
-  
-  /* Accent Colors (Bold Crimson Red - No glows) */
-  --accent-primary: #991b1b;   /* Dark Crimson Red */
-  --accent-secondary: #b91c1c; /* Solid Red */
+  --bg-primary: #f4f4f5;
+  --bg-secondary: #ececec;
+  --bg-card: #ffffff;
+  --bg-card-glass: rgba(255, 255, 255, 0.75);
+
+  --accent-primary: #991b1b;
+  --accent-secondary: #b91c1c;
   --accent-glow: rgba(185, 28, 28, 0.05);
-  
-  /* Text Colors */
-  --text-main: #09090b;        /* Deep zinc black */
-  --text-secondary: #27272a;   /* Slate black body text */
-  --text-muted: #71717a;       /* Low-contrast gray */
-  
-  /* Border & Radius */
+
+  --text-main: #09090b;
+  --text-secondary: #27272a;
+  --text-muted: #71717a;
+
   --border-color: rgba(0, 0, 0, 0.08);
   --border-glow: rgba(185, 28, 28, 0.25);
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
-  
-  /* Transitions */
+
   --transition-fast: 0.2s ease;
-  --transition-normal: 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Custom bezier curve for smooth elastic motion */
+  --transition-normal: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 
-  =========================================
-  BASE RESET & GLOBAL STYLES
-  =========================================
-  LEARNING NOTE: The universal selector (*) combined with box-sizing: border-box 
-  ensures padding and borders do not add to an element's total width/height.
-*/
 * {
   margin: 0;
   padding: 0;
@@ -56,8 +31,8 @@
 }
 
 html {
-  scroll-behavior: smooth; /* Enables smooth native scrolling when clicking anchor tags */
-  scroll-padding-top: 80px; /* Offset to prevent navbar from covering section titles on scroll */
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -65,7 +40,7 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-main);
   line-height: 1.6;
-  overflow-x: hidden; /* Prevent horizontal scrollbars from elements animation off-screen */
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -86,7 +61,6 @@ img {
   display: block;
 }
 
-/* Utility class to hide element visually but keep for screen readers */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -98,16 +72,10 @@ img {
   border: 0;
 }
 
-/* 
-  =========================================
-  GLASSMORPHISM UTILITIES
-  =========================================
-  Glassmorphism combines semi-transparent backgrounds with a backdrop-blur.
-*/
 .glass {
   background: var(--bg-card-glass);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
 }
 
@@ -119,11 +87,6 @@ img {
   display: inline-block;
 }
 
-/* 
-  =========================================
-  NAVBAR STYLING
-  =========================================
-*/
 header {
   position: fixed;
   top: 0;
@@ -195,7 +158,6 @@ header {
   font-weight: 600;
 }
 
-/* Mobile Toggle Hamburger */
 .nav-toggle {
   display: none;
   background: none;
@@ -205,11 +167,6 @@ header {
   cursor: pointer;
 }
 
-/* 
-  =========================================
-  HERO SECTION STYLING
-  =========================================
-*/
 .hero {
   min-height: 100vh;
   display: flex;
@@ -263,10 +220,9 @@ header {
   font-weight: 500;
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
-  min-height: 2.8rem; /* Keeps layout stable during typing */
+  min-height: 2.8rem;
 }
 
-/* JS Typing Animation Support styles */
 .typing-cursor {
   display: inline-block;
   width: 3px;
@@ -288,7 +244,6 @@ header {
   flex-wrap: wrap;
 }
 
-/* Custom buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -323,7 +278,6 @@ header {
   transform: translateY(-2px);
 }
 
-/* Interactive SVG Hero Illustration (CSS Avatar replacements) */
 .hero-visual {
   display: flex;
   justify-content: center;
@@ -335,7 +289,7 @@ header {
   position: relative;
   width: 320px;
   height: 320px;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Organic moving shape */
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
   animation: morph-blob 8s ease-in-out infinite alternate;
   padding: 6px;
@@ -353,7 +307,6 @@ header {
   position: relative;
 }
 
-/* Profile Image styling inside morphing container */
 .profile-pic {
   width: 100%;
   height: 100%;
@@ -366,11 +319,6 @@ header {
   transform: scale(1.05);
 }
 
-/* 
-  =========================================
-  SECTION GENERAL STYLES
-  =========================================
-*/
 section {
   padding: 6rem 2rem;
   max-width: 1200px;
@@ -408,11 +356,6 @@ section {
   margin-top: 1rem;
 }
 
-/* 
-  =========================================
-  ABOUT ME SECTION
-  =========================================
-*/
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -482,11 +425,6 @@ section {
   color: var(--text-secondary);
 }
 
-/* 
-  =========================================
-  TECHNICAL SKILLS (Categorized Cards)
-  =========================================
-*/
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -584,15 +522,10 @@ section {
   height: 100%;
   background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
   border-radius: 3px;
-  width: 0; /* Animated via JS */
+  width: 0;
   transition: width 1.5s cubic-bezier(0.1, 1, 0.1, 1);
 }
 
-/* 
-  =========================================
-  WORK EXPERIENCE TIMELINE
-  =========================================
-*/
 .timeline {
   position: relative;
   max-width: 800px;
@@ -600,7 +533,6 @@ section {
   padding: 2rem 0;
 }
 
-/* The vertical line in the middle/left of the timeline */
 .timeline::after {
   content: '';
   position: absolute;
@@ -608,7 +540,7 @@ section {
   background: var(--border-color);
   top: 0;
   bottom: 0;
-  left: 20px; /* Aligned to left on mobile, can be centered on large screen */
+  left: 20px;
 }
 
 .timeline-item {
@@ -617,7 +549,6 @@ section {
   width: 100%;
 }
 
-/* The timeline bubble dot */
 .timeline-dot {
   position: absolute;
   width: 16px;
@@ -690,11 +621,6 @@ section {
   border: 1px solid var(--border-color);
 }
 
-/* 
-  =========================================
-  FEATURED PROJECTS SECTION
-  =========================================
-*/
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -726,7 +652,6 @@ section {
   border-bottom: 1px solid var(--border-color);
 }
 
-/* Project graphic placeholder in case there are no images */
 .project-placeholder-svg {
   width: 60px;
   height: 60px;
@@ -757,7 +682,7 @@ section {
   color: var(--text-secondary);
   font-size: 0.95rem;
   margin-bottom: 1.5rem;
-  flex-grow: 1; /* Pushes tags and links to the bottom */
+  flex-grow: 1;
 }
 
 .project-tech-list {
@@ -795,11 +720,6 @@ section {
   color: var(--accent-secondary);
 }
 
-/* 
-  =========================================
-  EDUCATION & CERTIFICATIONS
-  =========================================
-*/
 .edu-cert-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -863,11 +783,6 @@ section {
   margin-top: 1rem;
 }
 
-/* 
-  =========================================
-  CONTACT SECTION & FORM
-  =========================================
-*/
 .contact-container {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
@@ -961,7 +876,6 @@ section {
   transform: translateY(-3px);
 }
 
-/* Contact Form Grid styling */
 .contact-form-card {
   padding: 2.5rem;
   border-radius: var(--radius-md);
@@ -1002,13 +916,12 @@ textarea.form-control {
   min-height: 120px;
 }
 
-/* Contact Success Message styling */
 .form-message {
   margin-top: 1rem;
   padding: 0.75rem 1rem;
   border-radius: var(--radius-sm);
   font-size: 0.9rem;
-  display: none; /* Controlled by JS */
+  display: none;
 }
 
 .form-message.success {
@@ -1018,11 +931,6 @@ textarea.form-control {
   display: block;
 }
 
-/* 
-  =========================================
-  FOOTER
-  =========================================
-*/
 footer {
   border-top: 1px solid var(--border-color);
   padding: 3rem 2rem;
@@ -1049,7 +957,6 @@ footer {
   font-weight: 800;
 }
 
-/* Scroll to top button */
 .scroll-top-btn {
   width: 40px;
   height: 40px;
@@ -1070,11 +977,6 @@ footer {
   transform: translateY(-3px);
 }
 
-/* 
-  =========================================
-  ANIMATION DEFINITIONS (Keyframes)
-  =========================================
-*/
 @keyframes pulse-glow {
   0% {
     transform: scale(1);
@@ -1106,7 +1008,6 @@ footer {
   }
 }
 
-/* Scroll reveal helper classes controlled by JS observer */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -1118,59 +1019,50 @@ footer {
   transform: translateY(0);
 }
 
-/* Delay modifiers for staggered reveals */
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
 
-/* 
-  =========================================
-  RESPONSIVE MEDIA QUERIES (Breakpoints)
-  =========================================
-*/
-
-/* Tablet Width (Large Screen Mobile / iPads) */
 @media screen and (max-width: 992px) {
   .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 3rem;
   }
-  
+
   .hero-badge {
     justify-content: center;
   }
-  
+
   .hero-description {
     margin: 0 auto 2.5rem;
   }
-  
+
   .hero-buttons {
     justify-content: center;
   }
-  
+
   .about-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .edu-cert-container {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .contact-container {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 }
 
-/* Mobile Devices (Smartphones) */
 @media screen and (max-width: 768px) {
   .navbar {
     padding: 1rem 1.5rem;
   }
-  
+
   .nav-links {
     position: fixed;
     top: 80px;
@@ -1186,43 +1078,37 @@ footer {
     border-top: 1px solid var(--border-color);
     z-index: 999;
   }
-  
+
   .nav-links.active {
     left: 0;
   }
-  
+
   .nav-toggle {
-    display: block; /* Show hamburger button */
+    display: block;
   }
-  
+
   section {
     padding: 4rem 1.5rem;
   }
-  
+
   .timeline::after {
     left: 15px;
   }
-  
+
   .timeline-item {
     padding-left: 40px;
   }
-  
+
   .timeline-dot {
     left: 8px;
   }
-  
+
   .footer-container {
     flex-direction: column;
     text-align: center;
   }
 }
 
-/* 
-  =========================================
-  BLURRY 4-POINTED STAR DECORATION
-  =========================================
-  Mimics the retro-minimalist design sparkles from your screenshot reference.
-*/
 .star-glow {
   position: absolute;
   top: 25%;

@@ -4,15 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects Gallery | Nur Aqila Saffia</title>
-  
-  <!-- Link to the main style.css -->
   <link rel="stylesheet" href="style.css">
-  
-  <!-- FontAwesome CDN for developer icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
   <style>
-    /* Specific projects page styles */
+
     .filter-container {
       display: flex;
       justify-content: center;
@@ -20,7 +15,7 @@
       margin-bottom: 3rem;
       flex-wrap: wrap;
     }
-    
+
     .filter-btn {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--border-color);
@@ -32,7 +27,7 @@
       cursor: pointer;
       transition: var(--transition-fast);
     }
-    
+
     .filter-btn:hover,
     .filter-btn.active {
       background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
@@ -41,15 +36,14 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
     }
-    
-    /* Project gallery items animation */
+
     .project-card-new {
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                  box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                  opacity 0.4s ease, 
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity 0.4s ease,
                   visibility 0.4s;
     }
-    
+
     .project-card-new.hidden {
       display: none;
       opacity: 0;
@@ -59,17 +53,11 @@
 </head>
 <body>
 
-  <!-- 
-    =========================================
-    NAVBAR / HEADER
-    =========================================
-  -->
   <header>
     <nav class="navbar glass">
       <a href="index.html#home" class="logo">
         AqilaSaffia<span class="logo-dot">.</span>
       </a>
-      
       <ul class="nav-links">
         <li><a href="index.html#home">Home</a></li>
         <li><a href="index.html#about">About</a></li>
@@ -79,41 +67,25 @@
         <li><a href="index.html#education">Education & Certs</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
-      
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
         <i class="fa-solid fa-bars"></i>
       </button>
     </nav>
   </header>
 
-  <!-- 
-    =========================================
-    PROJECTS GALLERY SECTION
-    =========================================
-  -->
   <main style="padding-top: 100px; min-height: 80vh;">
     <section>
       <div class="section-header" style="margin-bottom: 2.5rem;">
         <span class="section-subtitle">Full Portfolio Archive</span>
         <h2 class="section-title">My Projects Gallery</h2>
       </div>
-      
-      <!-- 
-        LEARNING NOTE: Interactive Filter System
-        The buttons below have custom data-filter attributes. We will use JavaScript 
-        to listen to click events on these buttons, read the attribute value, 
-        and hide/show project cards based on their class matching the selected filter.
-      -->
       <div class="filter-container reveal">
         <button class="filter-btn active" data-filter="all">All Projects</button>
         <button class="filter-btn" data-filter="software">Software Dev</button>
         <button class="filter-btn" data-filter="networking">Networking & Security</button>
         <button class="filter-btn" data-filter="iot">IoT & Hardware</button>
       </div>
-
       <div class="projects-grid reveal delay-1">
-        
-        <!-- Project 1: LHDN e-Invoicing Platform (Software) -->
         <div class="project-card-new glass" data-category="software">
           <div class="project-image">
             <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -137,8 +109,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Project 2: POS System (Software) -->
         <div class="project-card-new glass" data-category="software">
           <div class="project-image">
             <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -161,8 +131,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Project 3: QR Ordering System (Software) -->
         <div class="project-card-new glass" data-category="software">
           <div class="project-image">
             <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -185,8 +153,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Project 4: Flutter VShop Mobile App (Software, IoT) -->
         <div class="project-card-new glass" data-category="software iot">
           <div class="project-image">
             <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -209,8 +175,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Project 5: Indoor Navigation using Flutter + ESP32 (Software, IoT) -->
         <div class="project-card-new glass" data-category="software iot">
           <div class="project-image">
             <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -234,8 +198,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Project 6: Enterprise Network Design (Networking) -->
         <div class="project-card-new glass" data-category="networking">
           <div class="project-image">
             <svg class="project-placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -258,9 +220,7 @@
             </div>
           </div>
         </div>
-
       </div>
-
       <div style="text-align: center; margin-top: 4rem;">
         <a href="index.html" class="btn btn-primary">
           <i class="fa-solid fa-arrow-left"></i> Back to Main Page
@@ -269,37 +229,24 @@
     </section>
   </main>
 
-  <!-- 
-    =========================================
-    FOOTER
-    =========================================
-  -->
   <footer>
     <div class="footer-container">
       <div class="footer-logo">
         AqilaSaffia<span class="logo-dot">.</span>
       </div>
       <div class="footer-copy">
-        &copy; 2026 Nur Aqila Saffia. Designed for recruiter review.
+        &copy; 2026 Nur Aqila Saffia.
       </div>
       <button class="scroll-top-btn" id="scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll to top">
         <i class="fa-solid fa-arrow-up"></i>
       </button>
     </div>
   </footer>
-
-  <!-- 
-    JAVASCRIPT FOR FILTERING LOGIC
-    This script listens to clicks on buttons, reads the filter value,
-    and toggles a CSS display rule (.hidden) on matching project cards.
-  -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      
-      // Mobile Toggle menu helper
       const navToggle = document.getElementById('nav-toggle');
       const navLinks = document.querySelector('.nav-links');
-      
+
       navToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         const icon = navToggle.querySelector('i');
@@ -309,22 +256,20 @@
           icon.className = 'fa-solid fa-bars';
         }
       });
-      
-      // Filter functionality
+
       const filterButtons = document.querySelectorAll('.filter-btn');
       const projectCards = document.querySelectorAll('.project-card-new');
-      
+
       filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-          // Remove active class from all buttons, and add it to the clicked one
           filterButtons.forEach(button => button.classList.remove('active'));
           btn.classList.add('active');
-          
+
           const filterValue = btn.getAttribute('data-filter');
-          
+
           projectCards.forEach(card => {
             const categories = card.getAttribute('data-category').split(' ');
-            
+
             if (filterValue === 'all' || categories.includes(filterValue)) {
               card.classList.remove('hidden');
             } else {
@@ -333,13 +278,12 @@
           });
         });
       });
-      
-      // Basic entry animations trigger on page load
+
       const reveals = document.querySelectorAll('.reveal');
       setTimeout(() => {
         reveals.forEach(el => el.classList.add('active'));
       }, 100);
-      
+
     });
   </script>
 </body>
