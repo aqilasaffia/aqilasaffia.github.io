@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nur Aqila Saffia — Portfolio</title>
-  <meta name="description" content="Nur Aqila Saffia, software engineer in Selangor. Laravel and Flutter systems for POS, e-invoicing and ordering, with a background in Cisco networking and IoT.">
+  <meta name="description" content="Nur Aqila Saffia, software engineer in Selangor. Flutter and Laravel systems for POS, LHDN e-invoicing and NFC cards, with a background in Cisco networking and IoT.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap">
@@ -43,21 +43,25 @@
   <section class="section about" id="about">
     <h2 class="title">About</h2>
     <div class="about-body">
-      <p class="lead">Software engineer in Puchong, Selangor. I studied computer networking, then moved into building the systems shops actually run on: POS, e-invoicing and ordering.</p>
-      <p class="muted">Having done both sides means I'm comfortable going from a Laravel controller to a switch config when something breaks.</p>
+      <p class="lead">I'm a software engineer at Vmax Concept Group. I build the systems that restaurants and small businesses run on every day: a POS with cashier, customer and QR ordering apps, a middleware that sends e-invoices to LHDN, and an NFC business card app.</p>
+      <p>I didn't start in software. My degree at UiTM was in computer networking, and my internship was at the Terengganu state data centre, keeping servers, switches and routers running for government offices. That background still shapes how I work. I think about where an app will be deployed, what the network looks like, and what happens when something goes down.</p>
+      <p>At Vmax I work across the whole cycle: gathering requirements, building features in Flutter and Laravel, testing, deploying to cPanel and writing the documentation. A lot of it is integration work, like payment gateways, the LHDN API, NFC and OCR, and making separate systems talk to each other reliably.</p>
+      <p>Outside of work I've built a SIEM dashboard on Elastic Stack, an ESP32-CAM surveillance system, and an indoor navigation app for Pasar Payang as my final year project.</p>
       <dl class="facts">
         <div><dt>Based in</dt><dd>Puchong, Selangor</dd></div>
-        <div><dt>Degree</dt><dd>B.Sc. Computer Networking, UiTM</dd></div>
         <div><dt>Now</dt><dd>Software Engineer, Vmax</dd></div>
-        <div><dt>CV</dt><dd><a href="Aqila_Saffia_Resume.pdf">Download PDF</a></dd></div>
+        <div><dt>Education</dt><dd>B.Sc. Computer Networking, UiTM</dd></div>
+        <div><dt>Languages</dt><dd>English, Malay</dd></div>
+        <div><dt>Open to</dt><dd>Software &amp; network roles</dd></div>
+        <div><dt>CV</dt><dd><a href="NurAqilaSaffia_Resume.pdf" target="_blank" rel="noopener">Download PDF</a></dd></div>
       </dl>
     </div>
   </section>
 
   <div class="marquee strip" aria-hidden="true">
     <div class="marquee-track">
-      <span>Laravel</span><span>Flutter</span><span>MySQL</span><span>REST API</span><span>Cisco</span><span>GNS3</span><span>ESP32</span><span>Git</span>
-      <span>Laravel</span><span>Flutter</span><span>MySQL</span><span>REST API</span><span>Cisco</span><span>GNS3</span><span>ESP32</span><span>Git</span>
+      <span>Flutter</span><span>Laravel</span><span>PHP</span><span>MySQL</span><span>REST API</span><span>Java</span><span>Firebase</span><span>Cisco</span><span>ESP32</span><span>Elastic Stack</span>
+      <span>Flutter</span><span>Laravel</span><span>PHP</span><span>MySQL</span><span>REST API</span><span>Java</span><span>Firebase</span><span>Cisco</span><span>ESP32</span><span>Elastic Stack</span>
     </div>
   </div>
 
@@ -71,11 +75,10 @@
         <p class="muted">Vmax Concept Group Sdn Bhd</p>
       </div>
       <ul>
-        <li><strong>e-Invoice</strong>Built and shipped the LHDN-compliant invoicing platform in Laravel.</li>
-        <li><strong>POS &amp; cashier</strong>PHP back end plus a Flutter cashier app with Bluetooth thermal printing.</li>
-        <li><strong>Ordering</strong>QR table ordering site and the VShop mobile app.</li>
-        <li><strong>VCard</strong>Digital business cards with QR redirects and scan analytics.</li>
-        <li><strong>Servers</strong>MySQL databases and cPanel deployments for the apps above.</li>
+        <li><strong>e-Invoicing</strong>Laravel REST middleware for LHDN e-Invoice compliance. Cut manual invoice processing time by 65%, with a 99.5% successful submission rate.</li>
+        <li><strong>POS system</strong>Full-stack restaurant system with admin cashier, customer ordering and QR ordering apps. Flutter, PHP, MySQL and KiplePay sandbox payments.</li>
+        <li><strong>NFC card</strong>Flutter NFC business card with wallet-style tap to share. Uses Google ML Kit OCR and Gemma to pull contact details from cards at 95% accuracy.</li>
+        <li><strong>Delivery</strong>Requirements, testing, bug verification, deployment and technical docs in an Agile team.</li>
       </ul>
     </article>
 
@@ -84,41 +87,150 @@
         <span class="date">Sep — Dec 2025</span>
         <h3>Network Operations Intern</h3>
         <p class="muted">Setiausaha Kerajaan Terengganu (SUK)</p>
+        <figure class="job-photo">
+          <img src="images/intern/wisma-darul-iman.webp" alt="Wisma Darul Iman, Kuala Terengganu">
+          <figcaption>Wisma Darul Iman, Kuala Terengganu</figcaption>
+        </figure>
+        <button class="task-btn" type="button" data-dialog="suk-tasks">See my tasks</button>
       </div>
       <ul>
-        <li><strong>Data centre</strong>Looked after the state data centre: servers, switches and monitoring dashboards.</li>
-        <li><strong>Support</strong>Troubleshot routing and switching faults for government offices.</li>
-        <li><strong>Reports</strong>Wrote up performance reports for audits.</li>
+        <li><strong>Maintenance</strong>Preventive maintenance on servers, switches, routers and data centre infrastructure.</li>
+        <li><strong>Troubleshooting</strong>Configured and fixed network devices to resolve connectivity issues for government offices.</li>
+        <li><strong>Help desk</strong>Logged and tracked hardware, software and network complaints in SPA-ICT until they were resolved.</li>
+        <li><strong>Monitoring</strong>Tracked and documented network performance for management reports.</li>
       </ul>
     </article>
+  </section>
+
+  <dialog class="tasks" id="suk-tasks" aria-labelledby="suk-tasks-title">
+    <div class="tasks-head">
+      <div>
+        <span class="date">Sep — Dec 2025 · Terengganu</span>
+        <h3 id="suk-tasks-title">Internship at SUK</h3>
+      </div>
+      <button class="tasks-close" type="button" aria-label="Close">&times;</button>
+    </div>
+
+    <div class="task-grid">
+      <article class="task">
+        <div class="task-media"><div class="stack"></div><span class="mark">Help desk</span></div>
+        <span class="date">Sep — Dec 2025</span>
+        <h4>IT help desk support</h4>
+        <p>Handled IT support using the SPA-ICT system. I received, logged and tracked complaints about hardware, software and network connectivity, helped troubleshoot user issues, worked with the technical teams on cases, and kept case statuses up to date until they were closed.</p>
+      </article>
+
+      <article class="task">
+        <div class="task-media"><div class="stack"></div><span class="mark">Rack</span></div>
+        <span class="date">Sep — Dec 2025</span>
+        <h4>Data centre maintenance</h4>
+        <p>Preventive maintenance on servers, switches, routers and other data centre equipment to keep the state network available.</p>
+      </article>
+
+      <article class="task">
+        <div class="task-media"><div class="stack"></div><span class="mark">Wi-Fi</span></div>
+        <span class="date">Nov 2025</span>
+        <h4>Access point replacement</h4>
+        <p>Helped staff replace old access points with new ones, checked that devices were connecting properly, and monitored network stability after the changeover.</p>
+      </article>
+
+      <article class="task">
+        <div class="task-media"><div class="stack"></div><span class="mark">Award</span></div>
+        <span class="date">Nov 2025</span>
+        <h4>Persada Inovasi Negeri Terengganu</h4>
+        <p>Helped the team set up and run their exhibition booth for a staff monitoring and task-tracking system. I prepared demo materials and explained the system to visitors. The project won the Digitalisation Award with a 4-star rating.</p>
+      </article>
+
+      <article class="task">
+        <div class="task-media"><div class="stack"><img src="images/intern/burp-1.webp" alt="Presenting a reflected XSS finding found with Burp Suite"><img src="images/intern/burp-2.webp" alt="Burp Suite live audit running on a lab PC"><img src="images/intern/burp-3.webp" alt="Burp Suite training session in the computer lab"><img src="images/intern/burp-4.webp" alt="Inspecting web requests during the training"></div><span class="mark">Burp</span></div>
+        <span class="date">Nov 2025 · 2 days</span>
+        <h4>Burp Suite training</h4>
+        <p>Hands-on web security testing with Burp Suite: intercepting and changing HTTP requests, and spotting SQL injection, XSS and weak authentication. I found a reflected XSS vulnerability, confirmed it with Burp Repeater, and presented the finding to the class.</p>
+      </article>
+
+      <article class="task">
+        <div class="task-media"><div class="stack"></div><span class="mark">NOC</span></div>
+        <span class="date">Sep — Dec 2025</span>
+        <h4>Network monitoring &amp; reports</h4>
+        <p>Monitored network devices and performance, fixed connectivity problems, and documented the numbers for management reporting.</p>
+      </article>
+    </div>
+  </dialog>
+
+  <section class="section skills" id="skills">
+    <div class="section-head">
+      <h2 class="title">Skills</h2>
+      <span class="link-note">What I work with</span>
+    </div>
+    <div class="skill-list">
+      <div class="skill-row">
+        <span class="skill-no">01</span>
+        <h3>Languages</h3>
+        <ul><li>PHP</li><li>Dart</li><li>SQL</li><li>JavaScript</li><li>Java</li><li>Python</li><li>C / C++</li></ul>
+      </div>
+      <div class="skill-row">
+        <span class="skill-no">02</span>
+        <h3>Frameworks</h3>
+        <ul><li>Flutter</li><li>Laravel</li></ul>
+      </div>
+      <div class="skill-row">
+        <span class="skill-no">03</span>
+        <h3>Databases</h3>
+        <ul><li>MySQL</li><li>Firebase Realtime DB</li><li>Database design</li></ul>
+      </div>
+      <div class="skill-row">
+        <span class="skill-no">04</span>
+        <h3>Integrations</h3>
+        <ul><li>REST APIs</li><li>Payment gateways</li><li>LHDN MyInvois</li><li>NFC</li><li>Google ML Kit</li></ul>
+      </div>
+      <div class="skill-row">
+        <span class="skill-no">05</span>
+        <h3>Networking</h3>
+        <ul><li>Cisco IOS</li><li>Routing &amp; switching</li><li>GNS3</li><li>Data centre ops</li></ul>
+      </div>
+      <div class="skill-row">
+        <span class="skill-no">06</span>
+        <h3>Security</h3>
+        <ul><li>Elastic Stack SIEM</li><li>Burp Suite</li><li>Autopsy</li><li>HxD</li></ul>
+      </div>
+      <div class="skill-row">
+        <span class="skill-no">07</span>
+        <h3>IoT</h3>
+        <ul><li>ESP32</li><li>ESP32-CAM</li><li>Arduino</li><li>BLE iBeacon</li></ul>
+      </div>
+      <div class="skill-row">
+        <span class="skill-no">08</span>
+        <h3>Tools</h3>
+        <ul><li>Git &amp; GitHub</li><li>cPanel</li><li>Agile</li><li>Technical docs</li></ul>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="work">
     <div class="section-head">
       <h2 class="title">Project</h2>
-      <a href="projects.html" class="link">See all 8</a>
+      <a href="projects.html" class="link">See all 9</a>
     </div>
 
     <div class="grid">
       <article class="card">
-        <div class="cover"><span class="tag">Laravel</span><span class="mark">eInvoice</span></div>
-        <h3>Vmax e-Invoice</h3>
-        <p>E-invoicing platform connected to LHDN MyInvois. Submits and tracks live JSON/XML invoices.</p>
+        <div class="cover"><span class="tag">Laravel</span><span class="mark">LHDN</span></div>
+        <h3>e-Invoicing Middleware</h3>
+        <p>REST API that automates LHDN e-Invoice submissions. 65% less manual processing, 99.5% success rate.</p>
       </article>
       <article class="card">
         <div class="cover cover-light"><span class="tag">Flutter</span><span class="mark">POS</span></div>
-        <h3>Vmax Cashier App</h3>
-        <p>Tablet app for cashiers with offline bill queue, barcode scanning and Bluetooth receipt printing.</p>
+        <h3>Restaurant Management System</h3>
+        <p>Admin cashier, customer ordering and QR ordering apps on one PHP/MySQL back end, with KiplePay payments.</p>
       </article>
       <article class="card">
-        <div class="cover"><span class="tag">Flutter</span><span class="mark">VShop</span></div>
-        <h3>Vmax VShop</h3>
-        <p>Mobile ordering app for counter and table orders, menu updates and order notifications.</p>
+        <div class="cover"><span class="tag">Flutter</span><span class="mark">NFC</span></div>
+        <h3>NFC Digital Business Card</h3>
+        <p>Tap-to-share business card app. OCR and Gemma read contact details from printed cards at 95% accuracy.</p>
       </article>
       <article class="card">
         <div class="cover cover-light"><span class="tag">ESP32</span><span class="mark">BLE</span></div>
         <h3>Indoor Navigation</h3>
-        <p>Flutter app that guides visitors around Pasar Payang using ESP32 iBeacons and Firebase. <a href="https://github.com/aqilasaffia/Indoor-Navigation-Application-using-ESP32" target="_blank" rel="noopener">Code</a></p>
+        <p>Final year project. Flutter app that guides visitors around Pasar Payang using ESP32 iBeacons and Firebase. <a href="https://github.com/aqilasaffia/Indoor-Navigation-Application-using-ESP32" target="_blank" rel="noopener">Code</a></p>
       </article>
     </div>
   </section>
@@ -129,11 +241,11 @@
       <div>
         <div class="entry">
           <span class="date">2022 — 2025</span>
-          <div><h4>B.Sc. (Hons.) Computer Science, Computer Networking</h4><p class="muted">UiTM Shah Alam</p></div>
+          <div><h4>B.Sc. (Hons.) Computer Science, Computer Networking</h4><p class="muted">Universiti Teknologi MARA, Shah Alam</p></div>
         </div>
         <div class="entry">
           <span class="date">2020 — 2022</span>
-          <div><h4>Physical Science Matriculation</h4><p class="muted">Kolej Matrikulasi Pahang</p></div>
+          <div><h4>Physical Science</h4><p class="muted">Kolej Matrikulasi Pahang, Gambang</p></div>
         </div>
       </div>
       <div>
@@ -142,16 +254,24 @@
           <div><h4>CCNP Enterprise: Core Networking</h4><p class="muted">Cisco Networking Academy</p></div>
         </div>
         <div class="entry">
+          <span class="date">Sep 2025</span>
+          <div><h4>Introduction to Cybersecurity</h4><p class="muted">Cisco Networking Academy</p></div>
+        </div>
+        <div class="entry">
           <span class="date">Mar 2025</span>
           <div><h4>CCNP Enterprise: Advanced Routing</h4><p class="muted">Cisco Networking Academy</p></div>
+        </div>
+        <div class="entry">
+          <span class="date">Jul 2024</span>
+          <div><h4>CCNAv7: Switching, Routing and Wireless Essentials</h4><p class="muted">Cisco Networking Academy</p></div>
         </div>
         <div class="entry">
           <span class="date">Jul 2024</span>
           <div><h4>CCNA: Introduction to Networks</h4><p class="muted">Cisco Networking Academy</p></div>
         </div>
         <div class="entry">
-          <span class="date">2024 — 2025</span>
-          <div><h4>Intro to Cybersecurity, Intro to IoT</h4><p class="muted">Cisco</p></div>
+          <span class="date">May 2024</span>
+          <div><h4>Introduction to IoT</h4><p class="muted">Cisco Networking Academy</p></div>
         </div>
       </div>
     </div>
