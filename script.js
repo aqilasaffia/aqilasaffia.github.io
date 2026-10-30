@@ -1,23 +1,6 @@
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
-const filters = document.querySelectorAll('.filters button');
-const cards = document.querySelectorAll('.card[data-tags]');
-
-function applyFilter(tag) {
-  filters.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === tag));
-  cards.forEach(card => {
-    card.hidden = tag !== 'all' && !card.dataset.tags.split(' ').includes(tag);
-  });
-}
-
-if (filters.length) {
-  filters.forEach(btn => btn.addEventListener('click', () => applyFilter(btn.dataset.filter)));
-
-  const fromHash = location.hash.slice(1);
-  if ([...filters].some(btn => btn.dataset.filter === fromHash)) applyFilter(fromHash);
-}
-
 document.querySelectorAll('[data-dialog]').forEach(btn => {
   const dialog = document.getElementById(btn.dataset.dialog);
   if (!dialog) return;
@@ -38,6 +21,7 @@ document.querySelectorAll('.stack').forEach(stack => {
   let order = cards.slice();
   let busy = false;
 
+  const caption = media.closest('figure')?.querySelector('figcaption');
   const count = document.createElement('span');
   count.className = 'slide-count';
   media.append(count);
@@ -49,6 +33,7 @@ document.querySelectorAll('.stack').forEach(stack => {
       img.style.transform = '';
     });
     count.textContent = `${cards.indexOf(order[0]) + 1} / ${cards.length}`;
+    if (caption) caption.textContent = order[0].alt;
   };
 
   const next = (side = -1) => {
@@ -112,6 +97,40 @@ document.querySelectorAll('.stack').forEach(stack => {
 
   render();
 });
+
+const mockups = document.querySelectorAll('.mockups');
+
+if (mockups.length && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  let ticking = false;
+
+  const updateMockups = () => {
+    ticking = false;
+    mockups.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const distance = Math.abs(rect.top + rect.height / 2 - innerHeight / 2) / innerHeight;
+      const t = Math.min(Math.max((0.62 - distance) / 0.42, 0), 1);
+      el.style.setProperty('--open', (t * t * (3 - 2 * t)).toFixed(3));
+    });
+  };
+
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateMockups);
+  };
+
+  addEventListener('scroll', requestUpdate, { passive: true });
+  addEventListener('resize', requestUpdate);
+  updateMockups();
+}
+
+const nfcDemo = document.querySelector('.nfc-demo');
+
+if (nfcDemo) {
+  new IntersectionObserver(([entry]) => {
+    nfcDemo.classList.toggle('playing', entry.isIntersecting);
+  }, { threshold: 0.25 }).observe(nfcDemo);
+}
 
 const contactForm = document.getElementById('contact-form');
 

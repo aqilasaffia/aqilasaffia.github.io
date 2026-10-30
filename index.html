@@ -9,6 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
 </head>
 <body>
 
@@ -37,24 +45,15 @@
     <div class="hero-links">
       <a href="https://github.com/aqilasaffia" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/aqilasaffia" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="NurAqilaSaffia_Resume.pdf" target="_blank" rel="noopener">CV</a>
     </div>
   </section>
 
   <section class="section about" id="about">
     <h2 class="title">About</h2>
     <div class="about-body">
-      <p class="lead">I'm a software engineer at Vmax Concept Group. I build the systems that restaurants and small businesses run on every day: a POS with cashier, customer and QR ordering apps, a middleware that sends e-invoices to LHDN, and an NFC business card app.</p>
-      <p>I didn't start in software. My degree at UiTM was in computer networking, and my internship was at the Terengganu state data centre, keeping servers, switches and routers running for government offices. That background still shapes how I work. I think about where an app will be deployed, what the network looks like, and what happens when something goes down.</p>
-      <p>At Vmax I work across the whole cycle: gathering requirements, building features in Flutter and Laravel, testing, deploying to cPanel and writing the documentation. A lot of it is integration work, like payment gateways, the LHDN API, NFC and OCR, and making separate systems talk to each other reliably.</p>
-      <p>Outside of work I've built a SIEM dashboard on Elastic Stack, an ESP32-CAM surveillance system, and an indoor navigation app for Pasar Payang as my final year project.</p>
-      <dl class="facts">
-        <div><dt>Based in</dt><dd>Puchong, Selangor</dd></div>
-        <div><dt>Now</dt><dd>Software Engineer, Vmax</dd></div>
-        <div><dt>Education</dt><dd>B.Sc. Computer Networking, UiTM</dd></div>
-        <div><dt>Languages</dt><dd>English, Malay</dd></div>
-        <div><dt>Open to</dt><dd>Software &amp; network roles</dd></div>
-        <div><dt>CV</dt><dd><a href="NurAqilaSaffia_Resume.pdf" target="_blank" rel="noopener">Download PDF</a></dd></div>
-      </dl>
+      <p class="lead">I'm a software engineer at Vmax Concept Group, building the POS, e-invoicing and NFC systems businesses use every day.</p>
+      <p>I studied computer networking at UiTM and interned at the Terengganu state data centre, so I think about deployment and reliability as much as the code.</p>
     </div>
   </section>
 
@@ -74,12 +73,7 @@
         <h3>Software Engineer</h3>
         <p class="muted">Vmax Concept Group Sdn Bhd</p>
       </div>
-      <ul>
-        <li><strong>e-Invoicing</strong>Laravel REST middleware for LHDN e-Invoice compliance. Cut manual invoice processing time by 65%, with a 99.5% successful submission rate.</li>
-        <li><strong>POS system</strong>Full-stack restaurant system with admin cashier, customer ordering and QR ordering apps. Flutter, PHP, MySQL and KiplePay sandbox payments.</li>
-        <li><strong>NFC card</strong>Flutter NFC business card with wallet-style tap to share. Uses Google ML Kit OCR and Gemma to pull contact details from cards at 95% accuracy.</li>
-        <li><strong>Delivery</strong>Requirements, testing, bug verification, deployment and technical docs in an Agile team.</li>
-      </ul>
+      <p class="job-summary">Building business applications from requirements through deployment, using Flutter, Laravel, PHP and MySQL in an Agile team.</p>
     </article>
 
     <article class="job">
@@ -87,18 +81,21 @@
         <span class="date">Sep — Dec 2025</span>
         <h3>Network Operations Intern</h3>
         <p class="muted">Setiausaha Kerajaan Terengganu (SUK)</p>
-        <figure class="job-photo">
-          <img src="images/intern/wisma-darul-iman.webp" alt="Wisma Darul Iman, Kuala Terengganu">
-          <figcaption>Wisma Darul Iman, Kuala Terengganu</figcaption>
-        </figure>
+        <p class="job-summary">Supported the state data centre, network and IT help desk, and took part in security training and an award-winning innovation showcase.</p>
         <button class="task-btn" type="button" data-dialog="suk-tasks">See my tasks</button>
       </div>
-      <ul>
-        <li><strong>Maintenance</strong>Preventive maintenance on servers, switches, routers and data centre infrastructure.</li>
-        <li><strong>Troubleshooting</strong>Configured and fixed network devices to resolve connectivity issues for government offices.</li>
-        <li><strong>Help desk</strong>Logged and tracked hardware, software and network complaints in SPA-ICT until they were resolved.</li>
-        <li><strong>Monitoring</strong>Tracked and documented network performance for management reports.</li>
-      </ul>
+      <figure class="job-photo">
+        <div class="stack-frame">
+          <div class="stack">
+            <img src="images/intern/wisma-darul-iman.webp" alt="Wisma Darul Iman, Kuala Terengganu">
+            <img src="images/intern/burp-1.webp" alt="Presenting a reflected XSS finding at Burp Suite training">
+            <img src="images/intern/burp-2.webp" alt="Burp Suite live audit on a lab PC">
+            <img src="images/intern/burp-3.webp" alt="Burp Suite training session">
+            <img src="images/intern/burp-4.webp" alt="Inspecting web requests during training">
+          </div>
+        </div>
+        <figcaption></figcaption>
+      </figure>
     </article>
   </section>
 
@@ -111,50 +108,207 @@
       <button class="tasks-close" type="button" aria-label="Close">&times;</button>
     </div>
 
-    <div class="task-grid">
+    <div class="task-list">
       <article class="task">
-        <div class="task-media"><div class="stack"></div><span class="mark">Help desk</span></div>
         <span class="date">Sep — Dec 2025</span>
-        <h4>IT help desk support</h4>
-        <p>Handled IT support using the SPA-ICT system. I received, logged and tracked complaints about hardware, software and network connectivity, helped troubleshoot user issues, worked with the technical teams on cases, and kept case statuses up to date until they were closed.</p>
+        <div>
+          <h4>IT help desk support</h4>
+          <p>Handled IT support using the SPA-ICT system. I received, logged and tracked complaints about hardware, software and network connectivity, helped troubleshoot user issues, worked with the technical teams on cases, and kept case statuses up to date until they were closed.</p>
+        </div>
       </article>
 
       <article class="task">
-        <div class="task-media"><div class="stack"></div><span class="mark">Rack</span></div>
         <span class="date">Sep — Dec 2025</span>
-        <h4>Data centre maintenance</h4>
-        <p>Preventive maintenance on servers, switches, routers and other data centre equipment to keep the state network available.</p>
+        <div>
+          <h4>Data centre maintenance</h4>
+          <p>Preventive maintenance on servers, switches, routers and other data centre equipment to keep the state network available.</p>
+        </div>
       </article>
 
       <article class="task">
-        <div class="task-media"><div class="stack"></div><span class="mark">Wi-Fi</span></div>
         <span class="date">Nov 2025</span>
-        <h4>Access point replacement</h4>
-        <p>Helped staff replace old access points with new ones, checked that devices were connecting properly, and monitored network stability after the changeover.</p>
+        <div>
+          <h4>Access point replacement</h4>
+          <p>Helped staff replace old access points with new ones, checked that devices were connecting properly, and monitored network stability after the changeover.</p>
+        </div>
       </article>
 
       <article class="task">
-        <div class="task-media"><div class="stack"></div><span class="mark">Award</span></div>
         <span class="date">Nov 2025</span>
-        <h4>Persada Inovasi Negeri Terengganu</h4>
-        <p>Helped the team set up and run their exhibition booth for a staff monitoring and task-tracking system. I prepared demo materials and explained the system to visitors. The project won the Digitalisation Award with a 4-star rating.</p>
+        <div>
+          <h4>Persada Inovasi Negeri Terengganu</h4>
+          <p>Helped the team set up and run their exhibition booth for a staff monitoring and task-tracking system. I prepared demo materials and explained the system to visitors. The project won the Digitalisation Award with a 4-star rating.</p>
+        </div>
       </article>
 
       <article class="task">
-        <div class="task-media"><div class="stack"><img src="images/intern/burp-1.webp" alt="Presenting a reflected XSS finding found with Burp Suite"><img src="images/intern/burp-2.webp" alt="Burp Suite live audit running on a lab PC"><img src="images/intern/burp-3.webp" alt="Burp Suite training session in the computer lab"><img src="images/intern/burp-4.webp" alt="Inspecting web requests during the training"></div><span class="mark">Burp</span></div>
         <span class="date">Nov 2025 · 2 days</span>
-        <h4>Burp Suite training</h4>
-        <p>Hands-on web security testing with Burp Suite: intercepting and changing HTTP requests, and spotting SQL injection, XSS and weak authentication. I found a reflected XSS vulnerability, confirmed it with Burp Repeater, and presented the finding to the class.</p>
+        <div>
+          <h4>Burp Suite training</h4>
+          <p>Hands-on web security testing with Burp Suite: intercepting and changing HTTP requests, and spotting SQL injection, XSS and weak authentication. I found a reflected XSS vulnerability, confirmed it with Burp Repeater, and presented the finding to the class.</p>
+        </div>
       </article>
 
       <article class="task">
-        <div class="task-media"><div class="stack"></div><span class="mark">NOC</span></div>
         <span class="date">Sep — Dec 2025</span>
-        <h4>Network monitoring &amp; reports</h4>
-        <p>Monitored network devices and performance, fixed connectivity problems, and documented the numbers for management reporting.</p>
+        <div>
+          <h4>Network monitoring &amp; reports</h4>
+          <p>Monitored network devices and performance, fixed connectivity problems, and documented the numbers for management reporting.</p>
+        </div>
       </article>
     </div>
   </dialog>
+
+  <section class="section" id="work">
+    <div class="section-head">
+      <h2 class="title">Project</h2>
+    </div>
+
+    <article class="project">
+      <div class="project-media mockups">
+        <img class="phone phone-left" src="images/projects/einvoice-verified.webp" alt="Email confirming an e-Invoice has been verified">
+        <img class="phone phone-right" src="images/projects/einvoice-notice.webp" alt="LHDN MyInvois notification for a received e-Invoice">
+        <img class="phone phone-front" src="images/projects/einvoice-registration.webp" alt="e-Invoice customer registration form">
+      </div>
+      <div class="project-body">
+        <span class="date">Laravel · REST API · MySQL</span>
+        <h3>e-Invoicing Middleware</h3>
+        <dl>
+          <div><dt>Problem</dt><dd>Invoices had to be processed by hand to meet LHDN e-Invoice requirements.</dd></div>
+          <div><dt>What I did</dt><dd>Built a Laravel REST API middleware that automates compliant submissions to LHDN.</dd></div>
+          <div><dt>Result</dt><dd>Manual processing time down 65%, with a 99.5% successful submission rate.</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-media mockups mockups-pos">
+        <img class="phone phone-left" src="images/projects/pos-qr-ordering.webp" alt="QR table ordering menu on a phone">
+        <img class="phone phone-right" src="images/projects/pos-customer-app.webp" alt="Customer ordering app with wallet and loyalty points">
+        <img class="phone device-tablet" src="images/projects/pos-cashier.webp" alt="Admin cashier app showing table selection on a tablet">
+      </div>
+      <div class="project-body">
+        <span class="date">Flutter · PHP · MySQL</span>
+        <h3>Restaurant Management System</h3>
+        <dl>
+          <div><dt>Problem</dt><dd>A restaurant needs cashier, customer and table ordering working as one system.</dd></div>
+          <div><dt>What I did</dt><dd>Developed the admin cashier, customer ordering and QR ordering apps on a shared REST back end, with KiplePay sandbox payments.</dd></div>
+          <div><dt>Result</dt><dd>One full-stack POS ecosystem covering the counter and the customer.</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-media nfc-demo" role="img" aria-label="Animation of two phones tapping to share a profile, then AI reading the details from a printed business card">
+        <img class="nfc-app" src="images/projects/nfc-card.webp" alt="">
+        <div class="nfc-stage" aria-hidden="true">
+          <span class="nfc-step step-tap">01 Tap to share</span>
+          <span class="nfc-step step-scan">02 AI card scan</span>
+          <span class="nfc-ring"></span>
+          <span class="nfc-ring ring-two"></span>
+          <div class="nfc-phone">
+            <div class="nfc-profile">
+              <span class="nfc-avatar">AS</span>
+              <strong>Aqila Saffia</strong>
+              <small>Software Engineer</small>
+              <span class="nfc-save">Save contact</span>
+              <span class="nfc-link">Profile opened</span>
+            </div>
+          </div>
+          <div class="nfc-paper">
+            <strong>Sample Name</strong>
+            <small>Marketing Manager</small>
+            <small>+60 12-345 6789</small>
+            <small>hello@example.com</small>
+            <i class="nfc-scanline"></i>
+          </div>
+          <ul class="nfc-chips">
+            <li><b>Name</b>Sample Name</li>
+            <li><b>Phone</b>+60 12-345 6789</li>
+            <li><b>Email</b>hello@example.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-body">
+        <span class="date">Flutter · NFC · ML Kit · Gemma</span>
+        <h3>NFC Digital Business Card</h3>
+        <dl>
+          <div><dt>Problem</dt><dd>Contact details on printed cards have to be typed in manually.</dd></div>
+          <div><dt>What I did</dt><dd>Built wallet-style tap-to-share cards, with Google ML Kit OCR and Gemma to extract contact details automatically.</dd></div>
+          <div><dt>Result</dt><dd>95% data parsing accuracy.</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="project project-wide">
+      <div class="project-body">
+        <div class="wide-head">
+          <div>
+            <span class="date">Flutter · Firebase · ESP32</span>
+            <h3>Indoor Navigation</h3>
+            <div class="card-links"><a href="https://github.com/aqilasaffia/Indoor-Navigation-Application-using-ESP32" target="_blank" rel="noopener">Code</a><a href="https://www.instagram.com/p/DM0H9m1ScE9/" target="_blank" rel="noopener">Feature post</a></div>
+          </div>
+          <dl>
+            <div><dt>Problem</dt><dd>Pasar Payang's crowded, complex layout makes shops hard to find, and visitors can't see where they are once they start moving.</dd></div>
+            <div><dt>What I did</dt><dd>Built a Flutter app with ESP32 Bluetooth beacons and Firebase for zone detection, shop categories and pop-up notifications, plus a physical prototype of the market to demo it.</dd></div>
+            <div><dt>Result</dt><dd>My final year project, featured by FSKM UiTM.</dd></div>
+          </dl>
+        </div>
+      </div>
+      <div class="project-media mockups fyp-stage">
+        <a class="badge" href="https://www.instagram.com/p/DM0H9m1ScE9/" target="_blank" rel="noopener">Featured by FSKM UiTM</a>
+        <figure class="fyp-item fyp-poster">
+          <div class="device-tablet-frame"><img src="images/projects/fyp-poster.webp" alt="Final year project poster for the Pasar Payang indoor navigation system"></div>
+          <figcaption>Project poster</figcaption>
+        </figure>
+        <figure class="fyp-model">
+          <div class="fyp-3d" id="fyp-3d">
+            <img src="images/projects/fyp-prototype.webp" alt="Physical prototype of Pasar Payang with food, souvenir and jewellery zones">
+          </div>
+          <figcaption>3D model of my physical prototype. Drag to rotate.</figcaption>
+        </figure>
+        <figure class="fyp-item">
+          <img class="fyp-feed" src="images/projects/indoor-navigation-feed.webp" alt="Instagram post by FSKM UiTM featuring the project, shown on a phone">
+          <figcaption>FSKM UiTM feature</figcaption>
+        </figure>
+      </div>
+    </article>
+    <div class="mini">
+      <h3 class="mini-title">Mini projects</h3>
+      <ul class="mini-list">
+        <li>
+          <span class="date">Jun 2025</span>
+          <h4>Digital Forensics</h4>
+          <p>Collected and preserved digital evidence, and recovered deleted and corrupted files.</p>
+          <span class="mini-tech">Autopsy · HxD</span>
+        </li>
+        <li>
+          <span class="date">Nov 2024</span>
+          <h4>SIEM Dashboard</h4>
+          <p>Central log monitoring with brute-force detection and log correlation.</p>
+          <span class="mini-tech">Elastic Stack</span>
+        </li>
+        <li>
+          <span class="date">Jun 2024</span>
+          <h4>IoT Surveillance Camera</h4>
+          <p>Motion-triggered camera that captures images and alerts the homeowner.</p>
+          <span class="mini-tech">Arduino · ESP32-CAM</span>
+        </li>
+        <li>
+          <span class="date">Jan 2024</span>
+          <h4>Maze Runner Booking &amp; Billing</h4>
+          <p>Desktop booking app with input validation, tax calculation and receipt printing.</p>
+          <span class="mini-tech">Java Swing</span>
+        </li>
+        <li>
+          <span class="date">UiTM</span>
+          <h4>Enterprise Network Design</h4>
+          <p>Multi-layer network simulation with routing, switching and ACL boundaries.</p>
+          <span class="mini-tech">GNS3 · Cisco IOS</span>
+        </li>
+      </ul>
+    </div>
+  </section>
 
   <section class="section skills" id="skills">
     <div class="section-head">
@@ -205,36 +359,6 @@
     </div>
   </section>
 
-  <section class="section" id="work">
-    <div class="section-head">
-      <h2 class="title">Project</h2>
-      <a href="projects.html" class="link">See all 9</a>
-    </div>
-
-    <div class="grid">
-      <article class="card">
-        <div class="cover"><span class="tag">Laravel</span><span class="mark">LHDN</span></div>
-        <h3>e-Invoicing Middleware</h3>
-        <p>REST API that automates LHDN e-Invoice submissions. 65% less manual processing, 99.5% success rate.</p>
-      </article>
-      <article class="card">
-        <div class="cover cover-light"><span class="tag">Flutter</span><span class="mark">POS</span></div>
-        <h3>Restaurant Management System</h3>
-        <p>Admin cashier, customer ordering and QR ordering apps on one PHP/MySQL back end, with KiplePay payments.</p>
-      </article>
-      <article class="card">
-        <div class="cover"><span class="tag">Flutter</span><span class="mark">NFC</span></div>
-        <h3>NFC Digital Business Card</h3>
-        <p>Tap-to-share business card app. OCR and Gemma read contact details from printed cards at 95% accuracy.</p>
-      </article>
-      <article class="card">
-        <div class="cover cover-light"><span class="tag">ESP32</span><span class="mark">BLE</span></div>
-        <h3>Indoor Navigation</h3>
-        <p>Final year project. Flutter app that guides visitors around Pasar Payang using ESP32 iBeacons and Firebase. <a href="https://github.com/aqilasaffia/Indoor-Navigation-Application-using-ESP32" target="_blank" rel="noopener">Code</a></p>
-      </article>
-    </div>
-  </section>
-
   <section class="section" id="education">
     <h2 class="title">Education</h2>
     <div class="cols">
@@ -247,6 +371,17 @@
           <span class="date">2020 — 2022</span>
           <div><h4>Physical Science</h4><p class="muted">Kolej Matrikulasi Pahang, Gambang</p></div>
         </div>
+        <div class="entry">
+          <span class="date">2024 — 2025</span>
+          <div><h4>Dean's Award</h4><p class="muted">Session 2 2024/2025, Faculty of Computer &amp; Mathematical Sciences</p></div>
+        </div>
+        <figure class="job-photo award-photo">
+          <div class="stack-frame">
+            <div class="stack">
+              <img src="images/education/deans-award.webp" alt="Dean's Award certificate from UiTM">
+            </div>
+          </div>
+        </figure>
       </div>
       <div>
         <div class="entry">
@@ -309,5 +444,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script type="module" src="model.js"></script>
 </body>
 </html>
