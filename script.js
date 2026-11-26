@@ -130,6 +130,40 @@ document.querySelectorAll('.nfc-demo, .stock-demo').forEach(demo => {
   }, { threshold: 0.25 }).observe(demo);
 });
 
+const folderStage = document.getElementById('folder-stage');
+
+if (folderStage) {
+  const folder = folderStage.querySelector('.folder');
+  const detail = document.getElementById('folder-detail');
+  const cards = folderStage.querySelectorAll('.fcard');
+
+  folder.addEventListener('click', () => {
+    const open = folderStage.classList.toggle('open');
+    folder.classList.toggle('open', open);
+    folder.setAttribute('aria-expanded', open);
+    if (!open) {
+      cards.forEach(card => card.classList.remove('active'));
+      detail.innerHTML = '<p class="muted">Tap a card to see the project.</p>';
+    }
+  });
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      cards.forEach(other => other.classList.toggle('active', other === card));
+      const { title, text, tech, date } = card.dataset;
+      detail.innerHTML = '';
+      const heading = document.createElement('h4');
+      heading.textContent = title;
+      const meta = document.createElement('span');
+      meta.className = 'date';
+      meta.textContent = `${date} · ${tech}`;
+      const body = document.createElement('p');
+      body.textContent = text;
+      detail.append(heading, meta, body);
+    });
+  });
+}
+
 const contactForm = document.getElementById('contact-form');
 
 if (contactForm) {

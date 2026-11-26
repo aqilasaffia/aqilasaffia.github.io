@@ -1040,7 +1040,7 @@ body:has(dialog[open]) {
 
 .bk-ipad {
   z-index: 2;
-  width: 62cqw;
+  width: 50cqw;
   padding: 1.4cqw;
   background: #0b0b0b;
   border: 1px solid rgba(236, 225, 207, 0.45);
@@ -1054,7 +1054,7 @@ body:has(dialog[open]) {
 }
 
 .bk-phone {
-  width: 21cqw;
+  width: 19cqw;
   padding: 0.9cqw;
   background: #0b0b0b;
   border: 1px solid rgba(236, 225, 207, 0.45);
@@ -1067,11 +1067,11 @@ body:has(dialog[open]) {
 }
 
 .bk-left {
-  transform: translate(calc(-50% - var(--open) * 39cqw), -50%) rotate(calc(var(--open) * -4deg)) scale(calc(0.72 + var(--open) * 0.28));
+  transform: translate(calc(-50% - var(--open) * 35cqw), -50%) rotate(calc(var(--open) * -4deg)) scale(calc(0.72 + var(--open) * 0.28));
 }
 
 .bk-right {
-  transform: translate(calc(-50% + var(--open) * 39cqw), -50%) rotate(calc(var(--open) * 4deg)) scale(calc(0.72 + var(--open) * 0.28));
+  transform: translate(calc(-50% + var(--open) * 35cqw), -50%) rotate(calc(var(--open) * 4deg)) scale(calc(0.72 + var(--open) * 0.28));
 }
 
 .stock-demo *,
@@ -1369,6 +1369,175 @@ body:has(dialog[open]) {
   margin-bottom: 24px;
 }
 
+.folder-stage {
+  position: relative;
+  container-type: inline-size;
+  height: 46cqw;
+  max-height: 560px;
+  overflow: hidden;
+}
+
+.folder {
+  position: absolute;
+  left: 2cqw;
+  top: 14cqw;
+  z-index: 10;
+  width: 26cqw;
+  height: 20cqw;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--cream);
+}
+
+.folder-back {
+  position: absolute;
+  inset: 0;
+  background: #6f6a62;
+  border-radius: 0.8cqw;
+  clip-path: polygon(0 0, 38% 0, 44% 10%, 100% 10%, 100% 100%, 0 100%);
+}
+
+.folder-front {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80%;
+  z-index: 20;
+  background: #9a948a;
+  border-radius: 0.8cqw;
+  box-shadow: 0 -0.4cqw 1.2cqw rgba(0, 0, 0, 0.35);
+  transition: transform 0.4s ease;
+  transform-origin: bottom;
+}
+
+.folder.open .folder-front {
+  transform: perspective(60cqw) rotateX(-18deg);
+}
+
+.folder-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 1.2cqw);
+  font-size: max(12px, 1.2cqw);
+  text-align: center;
+}
+
+.folder-hint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 3.2cqw);
+  font-size: max(11px, 1cqw);
+  color: var(--muted);
+  text-align: center;
+  transition: opacity 0.3s;
+}
+
+.folder.open .folder-hint {
+  opacity: 0;
+}
+
+.fcard {
+  position: absolute;
+  left: 5cqw;
+  top: 13cqw;
+  z-index: calc(15 - var(--i));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 19cqw;
+  height: 24cqw;
+  padding: 1.6cqw;
+  border: 0;
+  border-radius: 1.4cqw;
+  box-shadow: 0 1cqw 2.4cqw rgba(0, 0, 0, 0.45);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(calc(var(--i) * 0.8cqw), 2cqw) rotate(calc(var(--i) * 2deg - 4deg)) scale(0.8);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s, box-shadow 0.2s;
+  transition-delay: calc(var(--i) * 0.05s);
+}
+
+.folder-stage.open .fcard {
+  z-index: calc(30 + var(--i));
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(var(--x), var(--y)) rotate(var(--r));
+}
+
+.folder-stage.open .fcard:hover,
+.folder-stage.open .fcard:focus-visible,
+.folder-stage.open .fcard.active {
+  z-index: 60;
+  box-shadow: 0 0 0 2px var(--cream), 0 1.4cqw 3cqw rgba(0, 0, 0, 0.6);
+  transform: translate(var(--x), calc(var(--y) - 2cqw)) rotate(calc(var(--r) * 0.4));
+}
+
+.fcard-no {
+  font-size: max(11px, 1cqw);
+  opacity: 0.7;
+}
+
+.fcard strong {
+  font-family: var(--display);
+  font-size: max(15px, 2.1cqw);
+  font-weight: 400;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.fcard small {
+  font-size: max(11px, 1cqw);
+  opacity: 0.8;
+}
+
+.card-dark {
+  background: #232220;
+  color: var(--cream);
+}
+
+.card-cream {
+  background: var(--cream);
+  color: var(--bg);
+}
+
+.card-teal {
+  background: #2aa39a;
+  color: #0e1a19;
+}
+
+.folder-detail {
+  min-height: 72px;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.folder-detail h4 {
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.folder-detail p {
+  max-width: 62ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fcard,
+  .folder-front {
+    transition: none;
+  }
+}
+
 .mini-list {
   list-style: none;
 }
@@ -1567,23 +1736,26 @@ body:has(dialog[open]) {
   }
 
   .project-media.bakery-stage {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 4;
   }
 
   .bk-ipad {
-    width: 74cqw;
+    top: 30%;
+    width: 92cqw;
   }
 
   .bk-phone {
-    width: 27cqw;
+    z-index: 3;
+    top: 72%;
+    width: 34cqw;
   }
 
   .bk-left {
-    transform: translate(calc(-50% - var(--open) * 34cqw), calc(-50% + var(--open) * 6cqw)) rotate(calc(var(--open) * -4deg)) scale(calc(0.7 + var(--open) * 0.3));
+    transform: translate(calc(-50% - var(--open) * 24cqw), calc(-50% + (1 - var(--open)) * -20cqw)) rotate(calc(var(--open) * -5deg)) scale(calc(0.7 + var(--open) * 0.3));
   }
 
   .bk-right {
-    transform: translate(calc(-50% + var(--open) * 34cqw), calc(-50% + var(--open) * 6cqw)) rotate(calc(var(--open) * 4deg)) scale(calc(0.7 + var(--open) * 0.3));
+    transform: translate(calc(-50% + var(--open) * 24cqw), calc(-50% + (1 - var(--open)) * -20cqw)) rotate(calc(var(--open) * 5deg)) scale(calc(0.7 + var(--open) * 0.3));
   }
 
   .project-media.fyp-stage {
@@ -1676,6 +1848,51 @@ body:has(dialog[open]) {
   .mini-list li {
     grid-template-columns: 1fr;
     gap: 4px;
+  }
+
+  .folder-stage {
+    height: 118cqw;
+    max-height: none;
+  }
+
+  .folder {
+    left: 50%;
+    top: 4cqw;
+    width: 46cqw;
+    height: 34cqw;
+    transform: translateX(-50%);
+  }
+
+  .folder-label {
+    font-size: 12px;
+  }
+
+  .folder-hint {
+    top: calc(100% + 22px);
+  }
+
+  .fcard {
+    left: 30cqw;
+    top: 8cqw;
+    width: 40cqw;
+    height: 30cqw;
+    padding: 3cqw;
+    border-radius: 3cqw;
+  }
+
+  .folder-stage.open .fcard {
+    transform: translate(calc(var(--mx) - 26cqw), var(--my)) rotate(var(--mr));
+  }
+
+  .folder-stage.open .fcard:hover,
+  .folder-stage.open .fcard:focus-visible,
+  .folder-stage.open .fcard.active {
+    transform: translate(calc(var(--mx) - 26cqw), calc(var(--my) - 2cqw)) rotate(0deg);
+  }
+
+  .folder-stage.open .folder {
+    transform: translateX(-50%) scale(0.55);
+    top: -6cqw;
   }
 
   .mini-tech {

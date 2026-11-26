@@ -80,7 +80,6 @@
       <div class="job-head">
         <span class="date">Aug 2026 — Now</span>
         <h3>Part-time Freelance Developer</h3>
-        <p class="muted">Pastellicious Bakery</p>
       </div>
       <p class="job-summary">Built and launched the bakery's POS and management system, now used in daily operations: a Laravel back end, a Flutter cashier app on tablet and iPad, an admin dashboard for sales, stock and staff, and an online catalogue for customer pre-orders.</p>
     </article>
@@ -359,38 +358,42 @@
     </article>
     <div class="mini">
       <h3 class="mini-title">Mini projects</h3>
-      <ul class="mini-list">
-        <li>
-          <span class="date">Jun 2025</span>
-          <h4>Digital Forensics</h4>
-          <p>Collected and preserved digital evidence, and recovered deleted and corrupted files.</p>
-          <span class="mini-tech">Autopsy · HxD</span>
-        </li>
-        <li>
-          <span class="date">Nov 2024</span>
-          <h4>SIEM Dashboard</h4>
-          <p>Central log monitoring with brute-force detection and log correlation.</p>
-          <span class="mini-tech">Elastic Stack</span>
-        </li>
-        <li>
-          <span class="date">Jun 2024</span>
-          <h4>IoT Surveillance Camera</h4>
-          <p>Motion-triggered camera that captures images and alerts the homeowner.</p>
-          <span class="mini-tech">Arduino · ESP32-CAM</span>
-        </li>
-        <li>
-          <span class="date">Jan 2024</span>
-          <h4>Maze Runner Booking &amp; Billing</h4>
-          <p>Desktop booking app with input validation, tax calculation and receipt printing.</p>
-          <span class="mini-tech">Java Swing</span>
-        </li>
-        <li>
-          <span class="date">UiTM</span>
-          <h4>Enterprise Network Design</h4>
-          <p>Multi-layer network simulation with routing, switching and ACL boundaries.</p>
-          <span class="mini-tech">GNS3 · Cisco IOS</span>
-        </li>
-      </ul>
+      <div class="folder-stage" id="folder-stage">
+        <button class="folder" type="button" aria-expanded="false" aria-controls="folder-detail">
+          <span class="folder-back"></span>
+          <span class="folder-front"></span>
+          <span class="folder-label">mini-projects 2024&ndash;2025</span>
+          <span class="folder-hint">Tap to open</span>
+        </button>
+        <button class="fcard card-dark" type="button" style="--i:0;--x:24cqw;--y:-6cqw;--r:-10deg;--mx:4cqw;--my:34cqw;--mr:-8deg" data-title="Digital Forensics" data-text="Collected and preserved digital evidence, and recovered deleted and corrupted files following forensic procedure." data-tech="Autopsy · HxD" data-date="Jun 2025">
+          <span class="fcard-no">01</span>
+          <strong>Digital Forensics</strong>
+          <small>Autopsy · HxD</small>
+        </button>
+        <button class="fcard card-cream" type="button" style="--i:1;--x:37cqw;--y:-10cqw;--r:0deg;--mx:40cqw;--my:30cqw;--mr:6deg" data-title="SIEM Dashboard" data-text="Central log monitoring with brute-force attack detection, log correlation and live dashboards." data-tech="Elastic Stack" data-date="Nov 2024">
+          <span class="fcard-no">02</span>
+          <strong>SIEM Dashboard</strong>
+          <small>Elastic Stack</small>
+        </button>
+        <button class="fcard card-teal" type="button" style="--i:2;--x:50cqw;--y:-6cqw;--r:10deg;--mx:6cqw;--my:62cqw;--mr:-4deg" data-title="IoT Surveillance Camera" data-text="Motion-triggered camera that captures images and sends an alert to the homeowner." data-tech="Arduino · ESP32-CAM" data-date="Jun 2024">
+          <span class="fcard-no">03</span>
+          <strong>IoT Surveillance Camera</strong>
+          <small>Arduino · ESP32-CAM</small>
+        </button>
+        <button class="fcard card-dark" type="button" style="--i:3;--x:61cqw;--y:1cqw;--r:15deg;--mx:42cqw;--my:58cqw;--mr:8deg" data-title="Maze Runner Booking &amp; Billing" data-text="Desktop booking app with input validation, tax calculation, receipt printing and unique purchase IDs." data-tech="Java Swing" data-date="Jan 2024">
+          <span class="fcard-no">04</span>
+          <strong>Maze Runner Booking &amp; Billing</strong>
+          <small>Java Swing</small>
+        </button>
+        <button class="fcard card-cream" type="button" style="--i:4;--x:71cqw;--y:8cqw;--r:24deg;--mx:22cqw;--my:86cqw;--mr:-2deg" data-title="Enterprise Network Design" data-text="Multi-layer enterprise network simulation with routing, switching and ACL security boundaries." data-tech="GNS3 · Cisco IOS" data-date="UiTM">
+          <span class="fcard-no">05</span>
+          <strong>Enterprise Network Design</strong>
+          <small>GNS3 · Cisco IOS</small>
+        </button>
+      </div>
+      <div class="folder-detail" id="folder-detail" aria-live="polite">
+        <p class="muted">Tap a card to see the project.</p>
+      </div>
     </div>
   </section>
 
