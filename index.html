@@ -79,7 +79,7 @@
     <article class="job">
       <div class="job-head">
         <span class="date">Aug 2026 — Now</span>
-        <h3>Freelance Developer</h3>
+        <h3>Part-time Freelance Developer</h3>
         <p class="muted">Pastellicious Bakery</p>
       </div>
       <p class="job-summary">Built and launched the bakery's POS and management system, now used in daily operations: a Laravel back end, a Flutter cashier app on tablet and iPad, an admin dashboard for sales, stock and staff, and an online catalogue for customer pre-orders.</p>
@@ -182,11 +182,15 @@
       <div class="project-body">
         <span class="date">Laravel · REST API · MySQL</span>
         <h3>e-Invoicing Middleware</h3>
-        <dl>
+        <p class="lede">Laravel middleware that submits e-Invoices to LHDN MyInvois automatically.</p>
+        <details class="more">
+          <summary>How I built it</summary>
+          <dl>
           <div><dt>Problem</dt><dd>Invoices had to be processed by hand to meet LHDN e-Invoice requirements.</dd></div>
           <div><dt>What I did</dt><dd>Built a Laravel REST API middleware that automates compliant submissions to LHDN.</dd></div>
           <div><dt>Result</dt><dd>Recurring submission failures fixed. Invoices now go through, confirmed by MyInvois verification emails.</dd></div>
         </dl>
+        </details>
       </div>
     </article>
 
@@ -199,11 +203,15 @@
       <div class="project-body">
         <span class="date">Flutter · PHP · MySQL</span>
         <h3>Restaurant Management System</h3>
-        <dl>
+        <p class="lede">Three connected apps for restaurants: cashier, QR table ordering and a customer app.</p>
+        <details class="more">
+          <summary>How I built it</summary>
+          <dl>
           <div><dt>Problem</dt><dd>A restaurant needs cashier, customer and table ordering working as one system.</dd></div>
           <div><dt>What I did</dt><dd>Developed the admin cashier, customer ordering and QR ordering apps on a shared REST back end, with KiplePay sandbox payments.</dd></div>
           <div><dt>Result</dt><dd>One full-stack POS ecosystem covering the counter and the customer.</dd></div>
         </dl>
+        </details>
       </div>
     </article>
 
@@ -241,11 +249,15 @@
       <div class="project-body">
         <span class="date">Flutter · NFC · ML Kit · Gemma</span>
         <h3>NFC Digital Business Card</h3>
-        <dl>
+        <p class="lede">Tap-to-share business cards, with AI that reads printed cards for you.</p>
+        <details class="more">
+          <summary>How I built it</summary>
+          <dl>
           <div><dt>Problem</dt><dd>Contact details on printed cards have to be typed in manually.</dd></div>
           <div><dt>What I did</dt><dd>Built wallet-style tap-to-share cards, with Google ML Kit OCR and Gemma to extract contact details automatically.</dd></div>
           <div><dt>Result</dt><dd>Contact details are read from printed cards automatically, tested with real business cards.</dd></div>
         </dl>
+        </details>
       </div>
     </article>
 
@@ -253,15 +265,18 @@
       <div class="project-body">
         <div class="wide-head">
           <div>
-            <span class="date">Freelance · Flutter · Laravel · MySQL</span>
+            <span class="date">Part-time freelance · Flutter · Laravel · MySQL</span>
             <h3>Pastellicious Bakery POS</h3>
+        <p class="lede">The POS, stock and sales dashboard a bakery runs on every day.</p>
+            <ul class="chips"><li>Staff PIN login</li><li>Stock top-up</li><li>Sales targets</li><li>Cash &amp; QR</li><li>Pre-orders</li><li>Online catalogue</li></ul>
           </div>
+          <details class="more">
+          <summary>How I built it</summary>
           <dl>
             <div><dt>Problem</dt><dd>A growing bakery needed one system for the counter, the stock and the business side, instead of tracking sales and stock by hand.</dd></div>
             <div><dt>What I did</dt><dd>Built and launched a Laravel back end, a Flutter cashier app for tablet and iPad, and a mobile-friendly web app to manage stock and monitor the shop.</dd></div>
             <div><dt>Result</dt><dd>In daily use at the bakery.</dd></div>
           </dl>
-        </div>
         <div class="feature-cols">
           <div>
             <h4>Cashier</h4>
@@ -276,6 +291,9 @@
             <ul><li>Store open and opening staff</li><li>Today's sales against target</li><li>Cash and QR breakdown, sales by time</li><li>Pre-order reminders</li><li>Staff accounts and PIN reset</li><li>Online catalogue with pre-orders and customer feedback</li></ul>
           </div>
         </div>
+        </details>
+        </div>
+        
       </div>
       <div class="project-media mockups bakery-stage">
         <figure class="bk-device bk-phone bk-left">
@@ -308,13 +326,17 @@
           <div>
             <span class="date">Flutter · Firebase · ESP32</span>
             <h3>Indoor Navigation</h3>
+        <p class="lede">Bluetooth navigation for Pasar Payang, where GPS can't help. Featured by FSKM UiTM.</p>
             <div class="card-links"><a href="https://github.com/aqilasaffia/Indoor-Navigation-Application-using-ESP32" target="_blank" rel="noopener">Code</a><a href="https://www.instagram.com/p/DM0H9m1ScE9/" target="_blank" rel="noopener">Feature post</a></div>
           </div>
+          <details class="more">
+          <summary>How I built it</summary>
           <dl>
             <div><dt>Problem</dt><dd>Pasar Payang's crowded, complex layout makes shops hard to find, and visitors can't see where they are once they start moving.</dd></div>
             <div><dt>What I did</dt><dd>Built a Flutter app with ESP32 Bluetooth beacons and Firebase for zone detection, shop categories and pop-up notifications, plus a physical prototype of the market to demo it.</dd></div>
             <div><dt>Result</dt><dd>My final year project, featured by FSKM UiTM.</dd></div>
           </dl>
+        </details>
         </div>
       </div>
       <div class="project-media mockups fyp-stage">

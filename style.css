@@ -480,7 +480,7 @@ body:has(dialog[open]) {
   grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1.2fr);
   align-items: center;
   gap: 24px;
-  padding: 22px 20px;
+  padding: 12px 20px;
   margin: 0 -20px;
   border-top: 1px solid var(--line);
   transition: background 0.3s ease, color 0.3s ease;
@@ -494,7 +494,7 @@ body:has(dialog[open]) {
 
 .skill-row h3 {
   font-family: var(--display);
-  font-size: clamp(40px, 6vw, 88px);
+  font-size: clamp(30px, 3.6vw, 52px);
   text-transform: uppercase;
   line-height: 0.95;
   transition: transform 0.4s ease;
@@ -557,7 +557,7 @@ body:has(dialog[open]) {
   grid-template-columns: 1.15fr 1fr;
   align-items: center;
   gap: 64px;
-  padding: 56px 0;
+  padding: 44px 0;
   border-top: 1px solid var(--line);
 }
 
@@ -942,13 +942,6 @@ body:has(dialog[open]) {
   order: 0;
 }
 
-.wide-head {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 48px;
-  margin-bottom: 40px;
-}
-
 .project-media.fyp-stage {
   display: grid;
   grid-template-columns: 1fr 2.3fr 0.72fr;
@@ -1269,11 +1262,81 @@ body:has(dialog[open]) {
   visibility: hidden;
 }
 
+.lede {
+  font-size: 17px;
+  line-height: 1.45;
+  margin: -12px 0 18px;
+  max-width: 44ch;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin-bottom: 18px;
+}
+
+.chips li {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 13px;
+  font-size: 13px;
+}
+
+.more {
+  margin-top: 4px;
+}
+
+.more summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 500;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+
+.more summary::-webkit-details-marker {
+  display: none;
+}
+
+.more summary::after {
+  content: "+";
+  font-size: 16px;
+  line-height: 1;
+}
+
+.more[open] summary::after {
+  content: "\2212";
+}
+
+.more summary:hover {
+  color: var(--muted);
+}
+
+.more[open] > dl,
+.more[open] > .feature-cols {
+  margin-top: 20px;
+}
+
+.wide-head {
+  display: block;
+  margin-bottom: 32px;
+}
+
 .project-body h3 {
   font-family: var(--display);
   font-size: clamp(36px, 4.4vw, 64px);
   text-transform: uppercase;
   margin-bottom: 24px;
+}
+
+.feature-cols {
+  margin-bottom: 0;
 }
 
 .project-body dl > div {
