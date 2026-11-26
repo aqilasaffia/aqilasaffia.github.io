@@ -7,7 +7,7 @@
   <meta name="description" content="Nur Aqila Saffia, software engineer in Selangor. Flutter and Laravel systems for POS, LHDN e-invoicing and NFC cards, with a background in Cisco networking and IoT.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;500;600;700;800&family=Silkscreen:wght@400;700&display=swap">
   <link rel="stylesheet" href="style.css">
   <script type="importmap">
     {
@@ -20,32 +20,40 @@
 </head>
 <body>
 
-  <section class="hero">
-    <nav class="hero-nav">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#work">Project</a>
-      <a href="#contact">Contact</a>
+  <header class="topnav">
+    <nav class="nav-links">
+      <a href="#experience" class="nav-hide">Experience</a>
+      <a href="#work">Projects</a>
+      <a href="NurAqilaSaffia_Resume.pdf" target="_blank" rel="noopener">Resume</a>
     </nav>
+    <a href="#contact" class="nav-cta">Let's connect</a>
+  </header>
 
-    <div class="marquee hero-marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Portfolio</span><span>Portfolio</span><span>Portfolio</span><span>Portfolio</span>
-      </div>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="hero-kicker">Software</p>
+      <h1 class="hero-title" aria-label="Nur Aqila Saffia, Software Engineer">Engineer</h1>
+      <p class="hero-sub">Building the apps businesses run on every day, from POS to e-invoicing.</p>
     </div>
-    <h1 class="sr-only">Nur Aqila Saffia — Portfolio</h1>
 
-    <img class="hero-photo" src="images/profile.webp" alt="Nur Aqila Saffia">
+    <div class="hero-fan">
+      <a class="fan-card fit-cover" href="#work" style="--i:0;--y:14px;--card:#6b5d4f"><img src="images/projects/fyp-prototype.webp" alt="Indoor navigation prototype"></a>
+      <a class="fan-card fit-contain" href="#work" style="--i:1;--y:4px;--card:#1f3b4d"><img src="images/projects/einvoice-registration.webp" alt="e-Invoice registration screen"></a>
+      <a class="fan-card fit-contain" href="#work" style="--i:2;--y:0px;--card:#2c3e57"><img src="images/projects/pos-cashier.webp" alt="Restaurant POS cashier app"></a>
+      <a class="fan-card fit-contain" href="#work" style="--i:3;--y:-2px;--card:#b9c2bd"><img src="images/projects/nfc-card.webp" alt="NFC business card app"></a>
+      <a class="fan-card fit-top" href="#work" style="--i:4;--y:0px;--card:#e4e4e8"><img src="images/projects/bakery-dashboard.webp" alt="Bakery sales dashboard"></a>
+      <a class="fan-card fit-top" href="#work" style="--i:5;--y:4px;--card:#f4f4f6"><img src="images/projects/bakery-stock.webp" alt="Bakery stock screen"></a>
+      <a class="fan-card fit-contain" href="#work" style="--i:6;--y:14px;--card:linear-gradient(140deg, #e5484d, #8b7dff)"><img src="images/projects/indoor-navigation-feed.webp" alt="FSKM UiTM feature post"></a>
+    </div>
 
-    <div class="hero-name">
-      <p>Nur Aqila Saffia Binti Suhardi</p>
-      <p class="muted">Software Engineer</p>
+    <div class="hero-me">
+      <img src="images/profile.webp" alt="Nur Aqila Saffia">
+      <p class="hero-bubble" data-lines="Hi, welcome to my portfolio!|I build POS, e-invoicing and NFC apps.|Scroll down to see my work."><span class="sr-only">Hi, welcome to my portfolio!</span><span class="bubble-text" aria-hidden="true">Hi, welcome to my portfolio!</span></p>
     </div>
 
     <div class="hero-links">
-      <a href="https://github.com/aqilasaffia" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/aqilasaffia" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="NurAqilaSaffia_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a href="https://github.com/aqilasaffia" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
+      <a href="https://www.linkedin.com/in/aqilasaffia" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></a>
     </div>
   </section>
 
@@ -66,33 +74,41 @@
 
   <section class="section" id="experience">
     <h2 class="title">Experience</h2>
-
-    <article class="job">
-      <div class="job-head">
-        <span class="date">Feb 2026 — Now</span>
-        <h3>Software Engineer</h3>
-        <p class="muted">Vmax Concept Group Sdn Bhd</p>
-      </div>
-      <p class="job-summary">Building business applications from requirements through deployment, using Flutter, Laravel, PHP and MySQL in an Agile team.</p>
-    </article>
-
-    <article class="job">
-      <div class="job-head">
-        <span class="date">Aug 2026 — Now</span>
-        <h3>Part-time Freelance Developer</h3>
-      </div>
-      <p class="job-summary">Built and launched the bakery's POS and management system, now used in daily operations: a Laravel back end, a Flutter cashier app on tablet and iPad, an admin dashboard for sales, stock and staff, and an online catalogue for customer pre-orders.</p>
-    </article>
-
-    <article class="job">
-      <div class="job-head">
-        <span class="date">Sep — Dec 2025</span>
-        <h3>Network Operations Intern</h3>
-        <p class="muted">Setiausaha Kerajaan Terengganu (SUK)</p>
-        <p class="job-summary">Supported the state data centre, network and IT help desk, and took part in security training and an award-winning innovation showcase.</p>
-        <button class="task-btn" type="button" data-dialog="suk-tasks">See my tasks</button>
-      </div>
-      <figure class="job-photo">
+    <ol class="timeline" id="timeline" style="--p:1">
+      <li class="tl-item">
+        <span class="tl-year">2026</span>
+        <span class="tl-dot"></span>
+        <div class="tl-body">
+          <span class="date">Feb 2026 — Now · Full-time</span>
+          <h3>Software Engineer</h3>
+          <p class="muted">Vmax Concept Group Sdn Bhd</p>
+          <p class="job-summary">Building business apps from requirements to deployment: LHDN e-invoicing, a restaurant POS and an NFC card app.</p>
+          <ul class="chips chips-sm"><li>Flutter</li><li>Laravel</li><li>PHP</li><li>MySQL</li></ul>
+        </div>
+      </li>
+      <li class="tl-item">
+        <span class="tl-year"></span>
+        <span class="tl-dot"></span>
+        <div class="tl-body">
+          <span class="date">Aug 2026 — Now · Part-time</span>
+          <h3>Freelance Developer</h3>
+          <p class="muted">Independent</p>
+          <p class="job-summary">Built and launched a bakery's POS, stock and sales dashboard, now used in daily operations.</p>
+          <ul class="chips chips-sm"><li>Flutter</li><li>Laravel</li><li>iPad</li></ul>
+        </div>
+      </li>
+      <li class="tl-item">
+        <span class="tl-year">2025</span>
+        <span class="tl-dot"></span>
+        <div class="tl-body tl-body-photo">
+          <div>
+            <span class="date">Sep — Dec 2025 · Internship</span>
+            <h3>Network Operations Intern</h3>
+            <p class="muted">Setiausaha Kerajaan Terengganu (SUK)</p>
+            <p class="job-summary">Data centre, network and IT help desk support, plus security training and an award-winning innovation showcase.</p>
+            <button class="task-btn" type="button" data-dialog="suk-tasks">See my tasks</button>
+          </div>
+          <figure class="job-photo">
         <div class="stack-frame">
           <div class="stack">
             <img src="images/intern/wisma-darul-iman.webp" alt="Wisma Darul Iman, Kuala Terengganu">
@@ -104,7 +120,9 @@
         </div>
         <figcaption></figcaption>
       </figure>
-    </article>
+        </div>
+      </li>
+    </ol>
   </section>
 
   <dialog class="tasks" id="suk-tasks" aria-labelledby="suk-tasks-title">
@@ -215,7 +233,7 @@
     </article>
 
     <article class="project">
-      <div class="project-media nfc-demo" role="img" aria-label="Animation of two phones tapping to share a profile, then AI reading the details from a printed business card">
+      <div class="project-media nfc-demo" role="img" aria-label="Animation: tapping two phones opens the shared contact page, then AI reads the details from a sample printed business card">
         <img class="nfc-app" src="images/projects/nfc-card.webp" alt="">
         <div class="nfc-stage" aria-hidden="true">
           <span class="nfc-step step-tap">01 Tap to share</span>
@@ -223,25 +241,27 @@
           <span class="nfc-ring"></span>
           <span class="nfc-ring ring-two"></span>
           <div class="nfc-phone">
-            <div class="nfc-profile">
-              <span class="nfc-avatar">AS</span>
-              <strong>Aqila Saffia</strong>
-              <small>Software Engineer</small>
-              <span class="nfc-save">Save contact</span>
-              <span class="nfc-link">Profile opened</span>
-            </div>
+            <div class="nfc-screen"><img class="nfc-shot" src="images/projects/nfc-shared.webp" alt=""></div>
           </div>
           <div class="nfc-paper">
-            <strong>Sample Name</strong>
-            <small>Marketing Manager</small>
-            <small>+60 12-345 6789</small>
-            <small>hello@example.com</small>
+            <div class="bc-top">
+              <span class="bc-logo">N</span>
+              <span class="bc-company">Northwind<br>Studio</span>
+            </div>
+            <div class="bc-person">
+              <strong>Nadia Hassan</strong>
+              <small>Marketing Manager</small>
+            </div>
+            <div class="bc-contact">
+              <small>+60 12-345 6789</small>
+              <small>nadia@northwind.studio</small>
+            </div>
             <i class="nfc-scanline"></i>
           </div>
           <ul class="nfc-chips">
-            <li><b>Name</b>Sample Name</li>
+            <li><b>Name</b>Nadia Hassan</li>
             <li><b>Phone</b>+60 12-345 6789</li>
-            <li><b>Email</b>hello@example.com</li>
+            <li><b>Email</b>nadia@northwind.studio</li>
           </ul>
         </div>
       </div>
@@ -391,111 +411,101 @@
           <small>GNS3 · Cisco IOS</small>
         </button>
       </div>
-      <div class="folder-detail" id="folder-detail" aria-live="polite">
-        <p class="muted">Tap a card to see the project.</p>
-      </div>
+      <div class="folder-detail" id="folder-detail" aria-live="polite"></div>
     </div>
   </section>
 
   <section class="section skills" id="skills">
-    <div class="section-head">
-      <h2 class="title">Skills</h2>
-      <span class="link-note">What I work with</span>
-    </div>
-    <div class="skill-list">
-      <div class="skill-row">
-        <span class="skill-no">01</span>
+    <h2 class="title">Skills</h2>
+    <div class="deck">
+      <div class="turntable" aria-hidden="true">
+        <div class="platter">
+          <div class="record" style="--label:#e5484d">
+            <span class="record-label"><b>Languages</b><small>Side A</small></span>
+          </div>
+        </div>
+        <span class="tonearm"><i></i></span>
+        <span class="knob"></span>
+      </div>
+      <div class="tracklist" aria-live="polite">
+        <span class="date">Now playing</span>
         <h3>Languages</h3>
-        <ul><li>PHP</li><li>Dart</li><li>SQL</li><li>JavaScript</li><li>Java</li><li>Python</li><li>C / C++</li></ul>
+        <ol><li><span>01</span>PHP</li><li><span>02</span>Dart</li><li><span>03</span>SQL</li><li><span>04</span>JavaScript</li><li><span>05</span>Java</li><li><span>06</span>Python</li><li><span>07</span>C / C++</li></ol>
       </div>
-      <div class="skill-row">
-        <span class="skill-no">02</span>
-        <h3>Frameworks</h3>
-        <ul><li>Flutter</li><li>Laravel</li></ul>
-      </div>
-      <div class="skill-row">
-        <span class="skill-no">03</span>
-        <h3>Databases</h3>
-        <ul><li>MySQL</li><li>Firebase Realtime DB</li><li>Database design</li></ul>
-      </div>
-      <div class="skill-row">
-        <span class="skill-no">04</span>
-        <h3>Integrations</h3>
-        <ul><li>REST APIs</li><li>Payment gateways</li><li>LHDN MyInvois</li><li>NFC</li><li>Google ML Kit</li></ul>
-      </div>
-      <div class="skill-row">
-        <span class="skill-no">05</span>
-        <h3>Networking</h3>
-        <ul><li>Cisco IOS</li><li>Routing &amp; switching</li><li>GNS3</li><li>Data centre ops</li></ul>
-      </div>
-      <div class="skill-row">
-        <span class="skill-no">06</span>
-        <h3>Security</h3>
-        <ul><li>Elastic Stack SIEM</li><li>Burp Suite</li><li>Autopsy</li><li>HxD</li></ul>
-      </div>
-      <div class="skill-row">
-        <span class="skill-no">07</span>
-        <h3>IoT</h3>
-        <ul><li>ESP32</li><li>ESP32-CAM</li><li>Arduino</li><li>BLE iBeacon</li></ul>
-      </div>
-      <div class="skill-row">
-        <span class="skill-no">08</span>
-        <h3>Tools</h3>
-        <ul><li>Git &amp; GitHub</li><li>cPanel</li><li>Agile</li><li>Technical docs</li></ul>
-      </div>
+    </div>
+    <div class="crate" role="tablist" aria-label="Skill categories">
+        <button class="disc active" type="button" role="tab" aria-selected="true" style="--label:#e5484d" data-name="Languages" data-skills="PHP|Dart|SQL|JavaScript|Java|Python|C / C++">
+          <span class="disc-vinyl"><span class="disc-label"></span></span>
+          <span class="disc-name">Languages</span>
+        </button>
+        <button class="disc" type="button" role="tab" aria-selected="false" style="--label:#1a8cff" data-name="Frameworks" data-skills="Flutter|Laravel">
+          <span class="disc-vinyl"><span class="disc-label"></span></span>
+          <span class="disc-name">Frameworks</span>
+        </button>
+        <button class="disc" type="button" role="tab" aria-selected="false" style="--label:#f2b33d" data-name="Databases" data-skills="MySQL|Firebase Realtime DB|Database design">
+          <span class="disc-vinyl"><span class="disc-label"></span></span>
+          <span class="disc-name">Databases</span>
+        </button>
+        <button class="disc" type="button" role="tab" aria-selected="false" style="--label:#2aa39a" data-name="Integrations" data-skills="REST APIs|Payment gateways|LHDN MyInvois|NFC|Google ML Kit">
+          <span class="disc-vinyl"><span class="disc-label"></span></span>
+          <span class="disc-name">Integrations</span>
+        </button>
+        <button class="disc" type="button" role="tab" aria-selected="false" style="--label:#8b7dff" data-name="Networking" data-skills="Cisco IOS|Routing &amp; switching|GNS3|Data centre ops">
+          <span class="disc-vinyl"><span class="disc-label"></span></span>
+          <span class="disc-name">Networking</span>
+        </button>
+        <button class="disc" type="button" role="tab" aria-selected="false" style="--label:#5b5b5b" data-name="Security" data-skills="Elastic Stack SIEM|Burp Suite|Autopsy|HxD">
+          <span class="disc-vinyl"><span class="disc-label"></span></span>
+          <span class="disc-name">Security</span>
+        </button>
+        <button class="disc" type="button" role="tab" aria-selected="false" style="--label:#ff8a3d" data-name="IoT" data-skills="ESP32|ESP32-CAM|Arduino|BLE iBeacon">
+          <span class="disc-vinyl"><span class="disc-label"></span></span>
+          <span class="disc-name">IoT</span>
+        </button>
+        <button class="disc" type="button" role="tab" aria-selected="false" style="--label:#d17ad9" data-name="Tools" data-skills="Git &amp; GitHub|cPanel|Agile|Technical docs">
+          <span class="disc-vinyl"><span class="disc-label"></span></span>
+          <span class="disc-name">Tools</span>
+        </button>
     </div>
   </section>
 
   <section class="section" id="education">
     <h2 class="title">Education</h2>
-    <div class="cols">
-      <div>
-        <div class="entry">
-          <span class="date">2022 — 2025</span>
-          <div><h4>B.Sc. (Hons.) Computer Science, Computer Networking</h4><p class="muted">Universiti Teknologi MARA, Shah Alam</p></div>
-        </div>
-        <div class="entry">
-          <span class="date">2020 — 2022</span>
-          <div><h4>Physical Science</h4><p class="muted">Kolej Matrikulasi Pahang, Gambang</p></div>
-        </div>
-        <div class="entry">
-          <span class="date">2024 — 2025</span>
-          <div><h4>Dean's Award</h4><p class="muted">Session 2 2024/2025, Faculty of Computer &amp; Mathematical Sciences</p></div>
-        </div>
-        <figure class="job-photo award-photo">
-          <div class="stack-frame">
-            <div class="stack">
-              <img src="images/education/deans-award.webp" alt="Dean's Award certificate from UiTM">
-            </div>
-          </div>
-        </figure>
+    <div class="journey" id="journey" style="--p:1">
+      <div class="journey-track" aria-hidden="true">
+        <span class="journey-fill"></span>
+        <span class="journey-walker"><img src="images/face.webp" alt=""></span>
       </div>
-      <div>
-        <div class="entry">
-          <span class="date">Sep 2025</span>
-          <div><h4>CCNP Enterprise: Core Networking</h4><p class="muted">Cisco Networking Academy</p></div>
-        </div>
-        <div class="entry">
-          <span class="date">Sep 2025</span>
-          <div><h4>Introduction to Cybersecurity</h4><p class="muted">Cisco Networking Academy</p></div>
-        </div>
-        <div class="entry">
-          <span class="date">Mar 2025</span>
-          <div><h4>CCNP Enterprise: Advanced Routing</h4><p class="muted">Cisco Networking Academy</p></div>
-        </div>
-        <div class="entry">
-          <span class="date">Jul 2024</span>
-          <div><h4>CCNAv7: Switching, Routing and Wireless Essentials</h4><p class="muted">Cisco Networking Academy</p></div>
-        </div>
-        <div class="entry">
-          <span class="date">Jul 2024</span>
-          <div><h4>CCNA: Introduction to Networks</h4><p class="muted">Cisco Networking Academy</p></div>
-        </div>
-        <div class="entry">
-          <span class="date">May 2024</span>
-          <div><h4>Introduction to IoT</h4><p class="muted">Cisco Networking Academy</p></div>
-        </div>
-      </div>
+      <ol class="journey-stops">
+        <li class="stop">
+          <span class="stop-dot"></span>
+          <span class="date">2020</span>
+          <h4>Kolej Matrikulasi Pahang</h4>
+          <p class="muted">Physical Science</p>
+        </li>
+        <li class="stop">
+          <span class="stop-dot"></span>
+          <span class="date">2022</span>
+          <h4>UiTM Shah Alam</h4>
+          <p class="muted">B.Sc. (Hons.) Computer Science, Computer Networking</p>
+        </li>
+        <li class="stop">
+          <span class="stop-dot"></span>
+          <span class="date">2025</span>
+          <h4>Dean's Award</h4>
+          <p class="muted">Session 2, 2024/2025</p>
+        </li>
+        <li class="stop">
+          <span class="stop-dot"></span>
+          <span class="date">2025</span>
+          <h4>Graduated</h4>
+          <p class="muted">Final year project featured by FSKM UiTM</p>
+        </li>
+      </ol>
+    </div>
+    <div class="cert-row">
+      <h4>Cisco certifications</h4>
+      <ul class="chips"><li>CCNP Enterprise: Core Networking</li><li>CCNP Enterprise: Advanced Routing</li><li>CCNAv7: Switching, Routing and Wireless Essentials</li><li>CCNA: Introduction to Networks</li><li>Introduction to Cybersecurity</li><li>Introduction to IoT</li></ul>
     </div>
   </section>
 

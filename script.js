@@ -143,7 +143,7 @@ if (folderStage) {
     folder.setAttribute('aria-expanded', open);
     if (!open) {
       cards.forEach(card => card.classList.remove('active'));
-      detail.innerHTML = '<p class="muted">Tap a card to see the project.</p>';
+      detail.replaceChildren();
     }
   });
 
@@ -162,6 +162,155 @@ if (folderStage) {
       detail.append(heading, meta, body);
     });
   });
+}
+
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (!reduceMotion) {
+  const titles = document.querySelectorAll('.title');
+  let titleTicking = false;
+
+  const scaleTitles = () => {
+    titleTicking = false;
+    titles.forEach(title => {
+      const top = title.getBoundingClientRect().top;
+      const progress = Math.min(Math.max((innerHeight - top) / (innerHeight * 0.55), 0), 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      title.style.transform = `scale(${1 + (1 - eased) * 1.6})`;
+      title.style.opacity = 0.25 + eased * 0.75;
+    });
+  };
+
+  addEventListener('scroll', () => {
+    if (titleTicking) return;
+    titleTicking = true;
+    requestAnimationFrame(scaleTitles);
+  }, { passive: true });
+  scaleTitles();
+
+  const typeTargets = document.querySelectorAll('.hero-sub, .about-body p, .job-summary, .lede');
+
+  const typeOut = el => {
+    const text = el.dataset.text;
+    const visible = el.querySelector('[aria-hidden]');
+    const step = Math.max(1, Math.ceil(text.length / 70));
+    let shown = 0;
+    el.classList.add('typing');
+    const tick = () => {
+      shown = Math.min(text.length, shown + step);
+      visible.textContent = text.slice(0, shown);
+      if (shown < text.length) setTimeout(tick, 14);
+      else el.classList.remove('typing');
+    };
+    tick();
+  };
+
+  const typeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      typeObserver.unobserve(entry.target);
+      typeOut(entry.target);
+    });
+  }, { threshold: 0.6 });
+
+  typeTargets.forEach(el => {
+    if (el.children.length) return;
+    el.dataset.text = el.textContent.trim();
+    el.style.minHeight = `${el.offsetHeight}px`;
+    el.textContent = '';
+    const hidden = document.createElement('span');
+    hidden.className = 'sr-only';
+    hidden.textContent = el.dataset.text;
+    const visible = document.createElement('span');
+    visible.setAttribute('aria-hidden', 'true');
+    el.append(hidden, visible);
+    typeObserver.observe(el);
+  });
+}
+
+const journey = document.getElementById('journey');
+
+if (journey) {
+  journey.classList.add('live');
+  const stops = journey.querySelectorAll('.stop');
+  const last = stops.length - 1;
+  let journeyTicking = false;
+
+  const walk = () => {
+    journeyTicking = false;
+    const rect = journey.getBoundingClientRect();
+    const raw = (innerHeight * 0.8 - rect.top) / (rect.height + innerHeight * 0.3);
+    const p = reduceMotion ? 1 : Math.min(Math.max(raw, 0), 1);
+    journey.style.setProperty('--p', p.toFixed(3));
+    stops.forEach((stop, i) => stop.classList.toggle('reached', p >= i / last - 0.02));
+  };
+
+  addEventListener('scroll', () => {
+    if (journeyTicking) return;
+    journeyTicking = true;
+    requestAnimationFrame(walk);
+  }, { passive: true });
+  addEventListener('resize', walk);
+  walk();
+}
+
+const bubble = document.querySelector('.hero-bubble');
+
+if (bubble && !reduceMotion) {
+  const lines = bubble.dataset.lines.split('|');
+  const text = bubble.querySelector('.bubble-text');
+  const me = bubble.closest('.hero-me');
+  const wait = ms => new Promise(done => setTimeout(done, ms));
+  let index = 0;
+
+  const say = async () => {
+    const line = lines[index];
+    text.innerHTML = '<span class="bubble-dots"><i></i><i></i><i></i></span>';
+    await wait(900);
+    me.classList.remove('talking');
+    void me.offsetWidth;
+    me.classList.add('talking');
+    text.textContent = '';
+    for (let i = 1; i <= line.length; i += 1) {
+      text.textContent = line.slice(0, i);
+      await wait(28);
+    }
+    await wait(2600);
+    index = (index + 1) % lines.length;
+    say();
+  };
+
+  setTimeout(say, 700);
+}
+
+const timeline = document.getElementById('timeline');
+
+if (timeline && !reduceMotion) {
+  timeline.classList.add('live');
+  let timelineTicking = false;
+
+  const fillLine = () => {
+    timelineTicking = false;
+    const rect = timeline.getBoundingClientRect();
+    const p = Math.min(Math.max((innerHeight * 0.85 - rect.top) / (innerHeight * 0.6), 0), 1);
+    timeline.style.setProperty('--p', p.toFixed(3));
+  };
+
+  const reveal = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('seen');
+      reveal.unobserve(entry.target);
+    });
+  }, { threshold: 0.25 });
+  timeline.querySelectorAll('.tl-item').forEach(item => reveal.observe(item));
+
+  addEventListener('scroll', () => {
+    if (timelineTicking) return;
+    timelineTicking = true;
+    requestAnimationFrame(fillLine);
+  }, { passive: true });
+  fillLine();
 }
 
 const contactForm = document.getElementById('contact-form');
