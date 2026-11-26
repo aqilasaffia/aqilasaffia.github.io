@@ -45,6 +45,7 @@
     <div class="hero-links">
       <a href="https://github.com/aqilasaffia" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/aqilasaffia" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="NurAqilaSaffia_Resume.pdf" target="_blank" rel="noopener">Resume</a>
     </div>
   </section>
 
@@ -73,6 +74,15 @@
         <p class="muted">Vmax Concept Group Sdn Bhd</p>
       </div>
       <p class="job-summary">Building business applications from requirements through deployment, using Flutter, Laravel, PHP and MySQL in an Agile team.</p>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <span class="date">Aug 2026 — Now</span>
+        <h3>Freelance Developer</h3>
+        <p class="muted">Pastellicious Bakery</p>
+      </div>
+      <p class="job-summary">Built and launched the bakery's POS and management system, now used in daily operations: a Laravel back end, a Flutter cashier app on tablet and iPad, an admin dashboard for sales, stock and staff, and an online catalogue for customer pre-orders.</p>
     </article>
 
     <article class="job">
@@ -175,7 +185,7 @@
         <dl>
           <div><dt>Problem</dt><dd>Invoices had to be processed by hand to meet LHDN e-Invoice requirements.</dd></div>
           <div><dt>What I did</dt><dd>Built a Laravel REST API middleware that automates compliant submissions to LHDN.</dd></div>
-          <div><dt>Result</dt><dd>Manual processing time down 65%, with a 99.5% successful submission rate.</dd></div>
+          <div><dt>Result</dt><dd>Recurring submission failures fixed. Invoices now go through, confirmed by MyInvois verification emails.</dd></div>
         </dl>
       </div>
     </article>
@@ -234,8 +244,61 @@
         <dl>
           <div><dt>Problem</dt><dd>Contact details on printed cards have to be typed in manually.</dd></div>
           <div><dt>What I did</dt><dd>Built wallet-style tap-to-share cards, with Google ML Kit OCR and Gemma to extract contact details automatically.</dd></div>
-          <div><dt>Result</dt><dd>95% data parsing accuracy.</dd></div>
+          <div><dt>Result</dt><dd>Contact details are read from printed cards automatically, tested with real business cards.</dd></div>
         </dl>
+      </div>
+    </article>
+
+    <article class="project project-wide">
+      <div class="project-body">
+        <div class="wide-head">
+          <div>
+            <span class="date">Freelance · Flutter · Laravel · MySQL</span>
+            <h3>Pastellicious Bakery POS</h3>
+          </div>
+          <dl>
+            <div><dt>Problem</dt><dd>My sister's bakery needed one system for the counter, the stock and the business side, instead of tracking sales and stock by hand.</dd></div>
+            <div><dt>What I did</dt><dd>Built and launched a Laravel back end, a Flutter cashier app for tablet and iPad, and a mobile-friendly web app to manage stock and monitor the shop.</dd></div>
+            <div><dt>Result</dt><dd>In daily use at the bakery.</dd></div>
+          </dl>
+        </div>
+        <div class="feature-cols">
+          <div>
+            <h4>Cashier</h4>
+            <ul><li>Staff PIN login</li><li>Menu by category, best sellers first</li><li>Options, toppings and multi-piece pricing</li><li>Live stock and sold-out tags</li><li>Cash and QR payments with receipts</li><li>Hold, void and order history</li><li>Safe drops and end-of-day declaration</li></ul>
+          </div>
+          <div>
+            <h4>Stock</h4>
+            <ul><li>Top up stock per item</li><li>Adjust stock counts</li><li>Cut whole cakes into slices</li><li>Low stock alerts</li></ul>
+          </div>
+          <div>
+            <h4>Dashboard &amp; online</h4>
+            <ul><li>Store open and opening staff</li><li>Today's sales against target</li><li>Cash and QR breakdown, sales by time</li><li>Pre-order reminders</li><li>Staff accounts and PIN reset</li><li>Online catalogue with pre-orders and customer feedback</li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="project-media mockups bakery-stage">
+        <figure class="bk-device bk-phone bk-left">
+          <div class="bk-screen stock-demo" role="img" aria-label="Add Menu screen. Tapping Brownies opens a top-up dialog, 12 are added and the stock count updates">
+            <img src="images/projects/bakery-stock.webp" alt="">
+            <span class="sd-tap" aria-hidden="true"></span>
+            <div class="sd-dialog" aria-hidden="true">
+              <strong>Brownies</strong>
+              <small>Current stock: 0</small>
+              <div class="sd-stepper"><span>&minus;</span><b>12</b><span class="sd-plus">+</span></div>
+              <small>New stock: 12</small>
+              <div class="sd-actions"><span>Cancel</span><span class="sd-done">Done</span></div>
+            </div>
+            <span class="sd-count" aria-hidden="true">12</span>
+            <span class="sd-toast" aria-hidden="true">Added 12 to Brownies</span>
+          </div>
+        </figure>
+        <figure class="bk-device bk-ipad">
+          <div class="bk-screen"><img src="images/projects/bakery-cashier.webp" alt="Cashier app on a tablet showing the menu by category with stock tags"></div>
+        </figure>
+        <figure class="bk-device bk-phone bk-right">
+          <div class="bk-screen"><img src="images/projects/bakery-dashboard.webp" alt="Owner dashboard showing store status, today's sales against target and low stock"></div>
+        </figure>
       </div>
     </article>
 

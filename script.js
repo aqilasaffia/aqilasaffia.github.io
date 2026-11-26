@@ -124,13 +124,11 @@ if (mockups.length && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   updateMockups();
 }
 
-const nfcDemo = document.querySelector('.nfc-demo');
-
-if (nfcDemo) {
+document.querySelectorAll('.nfc-demo, .stock-demo').forEach(demo => {
   new IntersectionObserver(([entry]) => {
-    nfcDemo.classList.toggle('playing', entry.isIntersecting);
-  }, { threshold: 0.25 }).observe(nfcDemo);
-}
+    demo.classList.toggle('playing', entry.isIntersecting);
+  }, { threshold: 0.25 }).observe(demo);
+});
 
 const contactForm = document.getElementById('contact-form');
 
